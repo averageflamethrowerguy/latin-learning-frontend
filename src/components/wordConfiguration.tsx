@@ -3,7 +3,7 @@
  *  [English, Latin (Form 1), Latin (Form 2)]
  */
 const wordList = [
-    ["dog", "canis"],
+    ["dog", "canis", "canem"],
     ["cook", "coquus"],
     ["is", "est"],
     ["daughter", "fīlia"],
