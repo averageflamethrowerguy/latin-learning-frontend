@@ -72,10 +72,10 @@ export function Home() {
 			componentToRender = <EnglishToLatinMultipleChoice wordList={wordList} currentWord={currentWord} updateLevel={
 				(success) => {
 					let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
-					newLearningLevelsMap[currentWord[0]].learningLevel += success ? 1 : 0;
+					let newLearningLevel = newLearningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
+					newLearningLevelsMap[currentWord[0]].learningLevel = newLearningLevel
 					if (success) {
-						console.log("setting localstorage")
-						localStorage.setItem(currentWord[0], `${newLearningLevelsMap[currentWord[0]].learningLevel+1}`)
+						localStorage.setItem(currentWord[0], `${newLearningLevel}`)
 					}
 					setLearningLevelsMap(newLearningLevelsMap)
 				}
@@ -85,11 +85,10 @@ export function Home() {
 			componentToRender = <LatinToEnglishMultipleChoice wordList={wordList} currentWord={currentWord} updateLevel={
 				(success) => {
 					let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
-					let updateAmount = success ? 1 : 0
-					console.log(updateAmount)
-					newLearningLevelsMap[currentWord[0]].learningLevel += updateAmount
+					let newLearningLevel = newLearningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
+					newLearningLevelsMap[currentWord[0]].learningLevel = newLearningLevel
 					if (success) {
-						localStorage.setItem(currentWord[0], `${newLearningLevelsMap[currentWord[0]].learningLevel+updateAmount}`)
+						localStorage.setItem(currentWord[0], `${newLearningLevel}`)
 					}
 					setLearningLevelsMap(newLearningLevelsMap)
 				}
@@ -100,9 +99,10 @@ export function Home() {
 				componentToRender = <LatinToLatin wordList={wordList} currentWord={currentWord} updateLevel={
 					(success) => {
 						let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
-						newLearningLevelsMap[currentWord[0]].learningLevel += success ? 1 : 0;
+						let newLearningLevel = newLearningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
+						newLearningLevelsMap[currentWord[0]].learningLevel = newLearningLevel
 						if (success) {
-							localStorage.setItem(currentWord[0], `${newLearningLevelsMap[currentWord[0]].learningLevel+1}`)
+							localStorage.setItem(currentWord[0], `${newLearningLevel}`)
 						}
 						setLearningLevelsMap(newLearningLevelsMap)
 					}
@@ -112,9 +112,10 @@ export function Home() {
 				componentToRender = <EnglishToLatinFreeResponse wordList={wordList} currentWord={currentWord} updateLevel={
 					(success) => {
 						let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
-						newLearningLevelsMap[currentWord[0]].learningLevel += success ? 1 : 0;
+						let newLearningLevel = newLearningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
+						newLearningLevelsMap[currentWord[0]].learningLevel = newLearningLevel
 						if (success) {
-							localStorage.setItem(currentWord[0], `${newLearningLevelsMap[currentWord[0]].learningLevel+1}`)
+							localStorage.setItem(currentWord[0], `${newLearningLevel}`)
 						}
 						setLearningLevelsMap(newLearningLevelsMap)
 					}
@@ -126,9 +127,10 @@ export function Home() {
 			componentToRender = <EnglishToLatinFreeResponse wordList={wordList} currentWord={currentWord} updateLevel={
 				(success) => {
 					let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
-					newLearningLevelsMap[currentWord[0]].learningLevel += success ? 1 : 0;
+					let newLearningLevel = newLearningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
+					newLearningLevelsMap[currentWord[0]].learningLevel = newLearningLevel
 					if (success) {
-						localStorage.setItem(currentWord[0], `${newLearningLevelsMap[currentWord[0]].learningLevel+1}`)
+						localStorage.setItem(currentWord[0], `${newLearningLevel}`)
 					}
 					setLearningLevelsMap(newLearningLevelsMap)
 				}
@@ -139,8 +141,9 @@ export function Home() {
 				(success) => {
 					let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
 					let updateAmount = success ? 1 : -1
-					newLearningLevelsMap[currentWord[0]].learningLevel += updateAmount;
-					localStorage.setItem(currentWord[0], `${newLearningLevelsMap[currentWord[0]].learningLevel+updateAmount}`)
+					let newLearningLevel = newLearningLevelsMap[currentWord[0]].learningLevel + updateAmount
+					newLearningLevelsMap[currentWord[0]].learningLevel = newLearningLevel
+					localStorage.setItem(currentWord[0], `${newLearningLevel}`)
 					setLearningLevelsMap(newLearningLevelsMap)
 				}
 			} updateCurrentIndex={updateIndex} />

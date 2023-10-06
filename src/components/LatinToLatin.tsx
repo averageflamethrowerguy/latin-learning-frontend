@@ -22,7 +22,7 @@ export function LatinToLatin(props: PropTypes) {
     const testingWord = props.currentWord[2] ? props.currentWord[2] : props.currentWord[1]
 
     return <div>
-        <div>{props.currentWord[1]} in English is?</div>
+        <div>{props.currentWord[1]} in the other Latin form is?</div>
         <div style={{display: "flex"}}>
             <input onChange={(e) => setGuessedWord(e.target.value)} />
             {
@@ -35,14 +35,14 @@ export function LatinToLatin(props: PropTypes) {
                 style={{cursor: "pointer", backgroundColor: "blue"}}
                 onClick={() => {
                     setDidSubmit(true)
-                    const isCorrectTemp = (guessedWord === props.currentWord[0])
+                    const isCorrectTemp = (guessedWord === props.currentWord[2])
                     setIsCorrect(isCorrectTemp)
                 }}>Submit</div>
 
             {
                 didSubmit &&
                 <div>
-                    <div>{props.currentWord[0]}</div>
+                    <div>{props.currentWord[2]}</div>
                     <div
                         style={{cursor: 'pointer', color: "green"}}
                         onClick={() => {
