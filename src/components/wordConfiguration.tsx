@@ -232,10 +232,96 @@ const wordList = [
     ["stupid", "stultus"],
     ["goodbye!", "valē!"],
     ["strikes, beats", "verberat", "verberāvit"],
-    ["man", "vir", "virum"]
+    ["man", "vir", "virum"],
+    ["loses", "āmittit", "āmīsit"],
+    ["fills", "complet", "complēvit"],
+    ["guards", "custōdit", "custōdīvit"],
+    ["letter", "epistula"],
+    ["flame", "flamma"],
+    ["bravely", "fortiter"],
+    ["in vain", "frūstrā"],
+    ["runs away, flees", "fugit", "fūgit"],
+    ["farm", "fundus"],
+    ["lies", "iacet", "iacuit"],
+    ["now", "iam"],
+    ["therefore", "igitur"],
+    ["strange, extraordinary", "mirābilis", "mirābilem"],
+    ["sends", "mittit", "mīsit"],
+    ["mountain", "mōns", "montem"],
+    ["very well", "optimē"],
+    ["nearly, almost", "paene"],
+    ["feels", "sentit", "sēnsit"],
+    ["at last", "tandem"],
+    ["temple", "templum"],
+    ["ground, land", "terra"],
+    ["is afraid, fears", "timet", "timuit"],
+    ["one","ūnus"],
+    ["duo", "two"],
+    ["three", "trēs"]
 ]
 
-export {wordList}
+const verbFormList = [
+    {
+        active: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["sum", "es", "est"],
+                        plural: ["sumus", "estis", "sunt"]
+                    },
+                    perfect: {
+                        singular: ["eram", "erās", "erat"],
+                        plural: ["erāmus", "erātis", "erant"]
+                    }
+                }
+            }
+        }
+    },
+    {
+        active: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["dīco", "dīcis", "dīcit"],
+                        plural: ["dīcimus", "dīcitis", "dīcunt"]
+                    },
+                    imperfect: {
+                        singular: ["dīcēbam", "dīcēbās", "dīcēbat"],
+                        plural: ["dīcēbāmus", "dīcēbātis", "dīcēbant"]
+                    },
+                    perfect: {
+                        singular: ["dīxī", "dīxistī", "dīxit"],
+                        plural: ["dīximus", "dīxistis", "diērunt"]
+                    }
+                }
+            }
+        }
+    },
+]
+
+const verbEndingStructure = {
+    active: {
+        masculine: {
+            indicative: {
+                present: {
+                    singular: ["ō/m", "s", "t"],
+                    plural: ["mus", "tis", "nt"]
+                },
+                imperfect: {
+
+                },
+                perfect: {
+                    singular: ["ī", "istī", "it"],
+                    plural: ["imus", "istis", "ērunt"]
+                }
+            }
+        }
+    }
+}
+
+// const verbFormList = []
+
+export {wordList, verbEndingStructure, verbFormList}
 
 
 
