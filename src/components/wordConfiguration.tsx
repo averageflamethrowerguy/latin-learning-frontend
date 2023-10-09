@@ -256,7 +256,7 @@ const wordList = [
     ["ground, land", "terra"],
     ["is afraid, fears", "timet", "timuit"],
     ["one","ūnus"],
-    ["duo", "two"],
+    ["two", "duo"],
     ["three", "trēs"]
 ]
 
