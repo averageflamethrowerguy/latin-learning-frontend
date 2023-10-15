@@ -8,6 +8,7 @@ import {EnglishToLatinMultipleChoice} from "./EnglishToLatinMultipleChoice";
 import {LatinToEnglishMultipleChoice} from "./LatinToEnglishMultipleChoice";
 import {LatinToLatin} from "./LatinToLatin";
 import {EnglishToLatinFreeResponse} from "./EnglishToLatinFreeResponse";
+import {VerbChecks} from "./VerbChecks";
 
 export function Home() {
 	// const cognitoId = "607865"  // 19
@@ -37,13 +38,16 @@ export function Home() {
 
 	const updateIndex = () => {
 		let tempIndex = currentIndex;
-		// skip any indexes with a level of 6
-		while (learningLevelsMap[wordList[(tempIndex += 1) % wordList.length][0]].learningLevel >= 6) {
-			if (tempIndex === currentIndex) {
-				console.log("ALL WORDS LEARNED");
-				break;
+		if (wordList.length > 0) {
+			// skip any indexes with a level of 6
+			while (learningLevelsMap[wordList[(tempIndex += 1) % wordList.length][0]].learningLevel >= 6) {
+				if (tempIndex === currentIndex) {
+					console.log("ALL WORDS LEARNED");
+					break;
+				}
 			}
 		}
+
 		setCurrentIndex(tempIndex)
 	}
 
@@ -154,22 +158,27 @@ export function Home() {
 	console.log(componentToRender)
 
 	return (
-		<div style={{display: "flex"}}>
-			<div style={{fontSize: 24, width: 400}}>
-				{componentToRender}
+		<div>
+			<div style={{display: "flex"}}>
+				<div style={{fontSize: 24, width: 400}}>
+					{componentToRender}
+				</div>
+
+				<div>
+					{
+						Object.entries(levelCounts).map(([key, value]) => {
+							return (
+								<div>
+									Level {key} : {100 * value / wordList.length}%
+								</div>
+							)
+						})
+					}
+				</div>
 			</div>
 
-			<div>
-				{
-					Object.entries(levelCounts).map(([key, value]) => {
-						return (
-							<div>
-								Level {key} : {100 * value / wordList.length}%
-							</div>
-						)
-					})
-				}
-			</div>
+			<VerbChecks />
 		</div>
+
 	)
 }

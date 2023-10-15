@@ -282,6 +282,70 @@ const verbFormList = [
             masculine: {
                 indicative: {
                     present: {
+                        singular: ["sum", "es", "est"],
+                        plural: ["sumus", "estis", "sunt"]
+                    },
+                    perfect: {
+                        singular: ["eram", "erās", "erat"],
+                        plural: ["erāmus", "erātis", "erant"]
+                    }
+                }
+            }
+        }
+    },
+    {
+        active: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["possum", "potes", "potest"],
+                        plural: ["possumus", "potestis", "possunt"]
+                    },
+                    perfect: {
+                        singular: ["", "", ""],
+                        plural: ["", "", ""]
+                    }
+                }
+            }
+        }
+    },
+    {
+        active: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["volō", "vīs", "vult"],
+                        plural: ["volumus", "vultis", "volunt"]
+                    },
+                    perfect: {
+                        singular: ["", "", ""],
+                        plural: ["", "", ""]
+                    }
+                }
+            }
+        }
+    },
+    {
+        active: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["nōlō", "nōn vīs", "nōn vult"],
+                        plural: ["nōlumus", "nōn vultis", "nōlunt"]
+                    },
+                    perfect: {
+                        singular: ["", "", ""],
+                        plural: ["", "", ""]
+                    }
+                }
+            }
+        }
+    },
+    {
+        active: {
+            masculine: {
+                indicative: {
+                    present: {
                         singular: ["dīco", "dīcis", "dīcit"],
                         plural: ["dīcimus", "dīcitis", "dīcunt"]
                     },
