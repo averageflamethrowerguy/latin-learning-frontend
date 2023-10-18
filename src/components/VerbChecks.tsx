@@ -15,7 +15,10 @@ export function VerbChecks(props: {}) {
             <div onClick={() => setInEndingMode(false)}>Check Verbs</div>
             {
                 !inEndingMode &&
-                <div onClick={() => setVerbIndex(verbIndex+1)}>
+                <div onClick={() => {
+                    setVerbIndex(verbIndex+1)
+                    setDidSubmit(false)
+                }}>
                     Next Verb
                 </div>
             }

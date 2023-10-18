@@ -383,9 +383,64 @@ const verbEndingStructure = {
     }
 }
 
-// const verbFormList = []
+const nounFormList = [
+    {
+        nominative: {
+            singular: "puella",
+            plural: "puellae"
+        },
+        dative: {
+            singular: "puellae",
+            plural: "puellīs"
+        },
+        accusative: {
+            singular: "puellam",
+            plural: "puellās"
+        },
+        ablative: {
+            singular: "puellā",
+            plural: "puellīs"
+        }
+    },
+    {
+        nominative: {
+            singular: "survus",
+            plural: "servī"
+        },
+        dative: {
+            singular: "servō",
+            plural: "servīs"
+        },
+        accusative: {
+            singular: "servum",
+            plural: "servōs"
+        },
+        ablative: {
+            singular: "servō",
+            plural: "servīs"
+        }
+    },
+    {
+        nominative: {
+            singular: "leō",
+            plural: "leōnēs"
+        },
+        dative: {
+            singular: "leōnī",
+            plural: "leōnibus"
+        },
+        accusative: {
+            singular: "leōnem",
+            plural: "leōnēs"
+        },
+        ablative: {
+            singular: "leōne",
+            plural: "leōnibus"
+        }
+    },
+]
 
-export {wordList, verbEndingStructure, verbFormList}
+export {wordList, verbEndingStructure, verbFormList, nounFormList}
 
 
 
