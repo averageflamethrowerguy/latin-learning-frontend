@@ -282,12 +282,12 @@ const verbFormList = [
             masculine: {
                 indicative: {
                     present: {
-                        singular: ["sum", "es", "est"],
-                        plural: ["sumus", "estis", "sunt"]
+                        singular: ["portō", "portās", "portat"],
+                        plural: ["portāmus", "portātis", "portant"]
                     },
                     perfect: {
-                        singular: ["eram", "erās", "erat"],
-                        plural: ["erāmus", "erātis", "erant"]
+                        singular: ["", "", ""],
+                        plural: ["", "", ""]
                     }
                 }
             }
@@ -302,8 +302,8 @@ const verbFormList = [
                         plural: ["possumus", "potestis", "possunt"]
                     },
                     perfect: {
-                        singular: ["", "", ""],
-                        plural: ["", "", ""]
+                        singular: ["potuī", "potuistī", "potuit"],
+                        plural: ["potuimus", "potuistis", "potuērunt"]
                     }
                 }
             }
@@ -318,8 +318,8 @@ const verbFormList = [
                         plural: ["volumus", "vultis", "volunt"]
                     },
                     perfect: {
-                        singular: ["", "", ""],
-                        plural: ["", "", ""]
+                        singular: ["voluī", "voluistī", "voluit"],
+                        plural: ["voluimus", "voluistis", "voluērunt"]
                     }
                 }
             }
@@ -334,8 +334,8 @@ const verbFormList = [
                         plural: ["nōlumus", "nōn vultis", "nōlunt"]
                     },
                     perfect: {
-                        singular: ["", "", ""],
-                        plural: ["", "", ""]
+                        singular: ["nōluī", "nōluistī", "nōluit"],
+                        plural: ["nōluimus", "nōluistis", "nōluērunt"]
                     }
                 }
             }
