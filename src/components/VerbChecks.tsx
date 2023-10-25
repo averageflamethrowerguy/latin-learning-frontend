@@ -49,6 +49,35 @@ export function VerbChecks(props: {}) {
                 </tr>
             </table>
 
+            {
+                workingObject.active.masculine.indicative.imperfect &&
+                <div>
+                    <div>Imperfect</div>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Singular</th>
+                            <th>Plural</th>
+                        </tr>
+                        <tr>
+                            <th>1st</th>
+                            <th><input />{didSubmit && workingObject.active.masculine.indicative.imperfect.singular[0]}</th>
+                            <th><input />{didSubmit && workingObject.active.masculine.indicative.imperfect.plural[0]}</th>
+                        </tr>
+                        <tr>
+                            <th>2nd</th>
+                            <th><input />{didSubmit && workingObject.active.masculine.indicative.imperfect.singular[1]}</th>
+                            <th><input />{didSubmit && workingObject.active.masculine.indicative.imperfect.plural[1]}</th>
+                        </tr>
+                        <tr>
+                            <th>3rd</th>
+                            <th><input />{didSubmit && workingObject.active.masculine.indicative.imperfect.singular[2]}</th>
+                            <th><input />{didSubmit && workingObject.active.masculine.indicative.imperfect.plural[2]}</th>
+                        </tr>
+                    </table>
+                </div>
+            }
+
             <div>Perfect</div>
             <table>
                 <tr>
@@ -72,6 +101,35 @@ export function VerbChecks(props: {}) {
                     <th><input />{didSubmit && workingObject.active.masculine.indicative.perfect.plural[2]}</th>
                 </tr>
             </table>
+
+            {
+                workingObject.active.masculine.indicative.imperfect &&
+                <div>
+                    <div>Pluperfect</div>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Singular</th>
+                            <th>Plural</th>
+                        </tr>
+                        <tr>
+                            <th>1st</th>
+                            <th><input />{didSubmit && workingObject.active.masculine.indicative.pluperfect.singular[0]}</th>
+                            <th><input />{didSubmit && workingObject.active.masculine.indicative.pluperfect.plural[0]}</th>
+                        </tr>
+                        <tr>
+                            <th>2nd</th>
+                            <th><input />{didSubmit && workingObject.active.masculine.indicative.pluperfect.singular[1]}</th>
+                            <th><input />{didSubmit && workingObject.active.masculine.indicative.pluperfect.plural[1]}</th>
+                        </tr>
+                        <tr>
+                            <th>3rd</th>
+                            <th><input />{didSubmit && workingObject.active.masculine.indicative.pluperfect.singular[2]}</th>
+                            <th><input />{didSubmit && workingObject.active.masculine.indicative.pluperfect.plural[2]}</th>
+                        </tr>
+                    </table>
+                </div>
+            }
 
             <div
                 style={{cursor: "pointer"}}

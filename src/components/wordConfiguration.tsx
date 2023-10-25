@@ -285,9 +285,89 @@ const verbFormList = [
                         singular: ["portō", "portās", "portat"],
                         plural: ["portāmus", "portātis", "portant"]
                     },
+                    imperfect: {
+                        singular: ["portābam", "portābās", "portābat"],
+                        plural: ["portābāmus", "portābātis", "portābant"]
+                    },
                     perfect: {
-                        singular: ["", "", ""],
-                        plural: ["", "", ""]
+                        singular: ["portāvī", "portāvistī", "portāvit"],
+                        plural: ["portāvimus", "portāvistis", "portāvērunt"]
+                    },
+                    pluperfect: {
+                        singular: ["portāveram", "portāverās", "portāverat"],
+                        plural: ["portāverāmus", "portāverātis", "portāverant"]
+                    }
+                }
+            }
+        }
+    },
+    {
+        active: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["doceō", "docēs", "docet"],
+                        plural: ["docēmus", "docētis", "docent"]
+                    },
+                    imperfect: {
+                        singular: ["docēbam", "docēbās", "docēbat"],
+                        plural: ["docēbāmus", "docēbātis", "docēbant"]
+                    },
+                    perfect: {
+                        singular: ["docuī", "docuistī", "docuit"],
+                        plural: ["docuimus", "docuistis", "docuērunt"]
+                    },
+                    pluperfect: {
+                        singular: ["docueram", "docuerās", "docuerat"],
+                        plural: ["docuerāmus", "docuerātis", "docuerant"]
+                    }
+                }
+            }
+        }
+    },
+    {
+        active: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["trahō", "trahis", "trahit"],
+                        plural: ["trahimus", "trahitis", "trahunt"]
+                    },
+                    imperfect: {
+                        singular: ["trahēbam", "trahēbās", "trahēbat"],
+                        plural: ["trahēbāmus", "trahēbātis", "trahēbant"]
+                    },
+                    perfect: {
+                        singular: ["trāxī", "trāxistī", "trāxit"],
+                        plural: ["trāximus", "trāxistis", "trāxērunt"]
+                    },
+                    pluperfect: {
+                        singular: ["trāxeram", "trāxerās", "trāxerat"],
+                        plural: ["trāxerāmus", "trāxerātis", "trāxerant"]
+                    }
+                }
+            }
+        }
+    },
+    {
+        active: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["audiō", "audīs", "audit"],
+                        plural: ["audīmus", "audītis", "audiunt"]
+                    },
+                    imperfect: {
+                        singular: ["audiēbam", "audiēbās", "audiēbat"],
+                        plural: ["audiēbāmus", "audiēbātis", "audiēbant"]
+                    },
+                    perfect: {
+                        singular: ["audīvī", "audīvistī", "audīvit"],
+                        plural: ["audīvimus", "audīvistis", "audīvērunt"]
+                    },
+                    pluperfect: {
+                        singular: ["audīveram", "audīverās", "audīverat"],
+                        plural: ["audīverāmus", "audīverātis", "audīverant"]
                     }
                 }
             }

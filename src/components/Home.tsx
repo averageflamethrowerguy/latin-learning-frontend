@@ -15,7 +15,7 @@ export function Home() {
 
 
 	return (
-		<div>
+		<div style={{maxHeight: "100vh", overflow: "scroll"}}>
 			<Vocabulary />
 			<VerbChecks />
 			<NounChecks />
