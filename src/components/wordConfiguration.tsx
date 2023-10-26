@@ -269,9 +269,13 @@ const verbFormList = [
                         singular: ["sum", "es", "est"],
                         plural: ["sumus", "estis", "sunt"]
                     },
-                    perfect: {
+                    imperfect: {
                         singular: ["eram", "erās", "erat"],
                         plural: ["erāmus", "erātis", "erant"]
+                    },
+                    perfect: {
+                        singular: ["fuī", "fuistī", "fuit"],
+                        plural: ["fuimus", "fuistis", "fuērunt"]
                     }
                 }
             }
@@ -296,7 +300,8 @@ const verbFormList = [
                     pluperfect: {
                         singular: ["portāveram", "portāverās", "portāverat"],
                         plural: ["portāverāmus", "portāverātis", "portāverant"]
-                    }
+                    },
+                    infinitive: "portāre"
                 }
             }
         }
@@ -320,7 +325,8 @@ const verbFormList = [
                     pluperfect: {
                         singular: ["docueram", "docuerās", "docuerat"],
                         plural: ["docuerāmus", "docuerātis", "docuerant"]
-                    }
+                    },
+                    infinitive: "docēre"
                 }
             }
         }
@@ -344,7 +350,8 @@ const verbFormList = [
                     pluperfect: {
                         singular: ["trāxeram", "trāxerās", "trāxerat"],
                         plural: ["trāxerāmus", "trāxerātis", "trāxerant"]
-                    }
+                    },
+                    infinitive: "trahere"
                 }
             }
         }
@@ -368,7 +375,8 @@ const verbFormList = [
                     pluperfect: {
                         singular: ["audīveram", "audīverās", "audīverat"],
                         plural: ["audīverāmus", "audīverātis", "audīverant"]
-                    }
+                    },
+                    infinitive: "audīre"
                 }
             }
         }
@@ -381,10 +389,15 @@ const verbFormList = [
                         singular: ["possum", "potes", "potest"],
                         plural: ["possumus", "potestis", "possunt"]
                     },
+                    imperfect: {
+                        singular: ["poteram", "poterās", "poterat"],
+                        plural: ["poterāmus", "poterātis", "poterant"]
+                    },
                     perfect: {
                         singular: ["potuī", "potuistī", "potuit"],
                         plural: ["potuimus", "potuistis", "potuērunt"]
-                    }
+                    },
+                    infinitive: "posse"
                 }
             }
         }
@@ -397,10 +410,15 @@ const verbFormList = [
                         singular: ["volō", "vīs", "vult"],
                         plural: ["volumus", "vultis", "volunt"]
                     },
+                    imperfect: {
+                        singular: ["volēbam", "volēbas", "volēbat"],
+                        plural: ["volēbāmus", "volēbātis", "volēbant"]
+                    },
                     perfect: {
                         singular: ["voluī", "voluistī", "voluit"],
                         plural: ["voluimus", "voluistis", "voluērunt"]
-                    }
+                    },
+                    infinitive: "velle"
                 }
             }
         }

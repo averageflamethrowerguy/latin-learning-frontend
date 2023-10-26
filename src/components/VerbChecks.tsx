@@ -23,7 +23,13 @@ export function VerbChecks(props: {}) {
                 </div>
             }
 
-            {!inEndingMode && workingObject.active.masculine.indicative.present.singular[2]}
+            {!inEndingMode &&
+                <div>
+                    {workingObject.active.masculine.indicative.present.singular[0]},
+                    {workingObject.active.masculine.indicative.infinitive},
+                    {workingObject.active.masculine.indicative.perfect.singular[0]}
+                </div>
+            }
 
             <div>Present</div>
             <table>
@@ -103,7 +109,7 @@ export function VerbChecks(props: {}) {
             </table>
 
             {
-                workingObject.active.masculine.indicative.imperfect &&
+                workingObject.active.masculine.indicative.pluperfect &&
                 <div>
                     <div>Pluperfect</div>
                     <table>
