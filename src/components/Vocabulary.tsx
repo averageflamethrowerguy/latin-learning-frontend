@@ -58,32 +58,29 @@ export function Vocabulary() {
       levelCounts[`${value.learningLevel}`] += 1
     }
   }
+
+  const updateLearningLevel = (level: number) => {
+    let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
+    newLearningLevelsMap[currentWord[0]].learningLevel = level
+    localStorage.setItem(currentWord[0], `${level}`)
+    setLearningLevelsMap(newLearningLevelsMap)
+  }
   
   let componentToRender
   switch (currentLevel) {
     case 1:
       componentToRender = <EnglishToLatinMultipleChoice wordList={wordList} currentWord={currentWord} updateLevel={
         (success) => {
-          let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
-          let newLearningLevel = newLearningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
-          newLearningLevelsMap[currentWord[0]].learningLevel = newLearningLevel
-          if (success) {
-            localStorage.setItem(currentWord[0], `${newLearningLevel}`)
-          }
-          setLearningLevelsMap(newLearningLevelsMap)
+          let newLearningLevel = learningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
+          updateLearningLevel(newLearningLevel)
         }
       } updateCurrentIndex={updateIndex} />
       break;
     case 2:
       componentToRender = <LatinToEnglishMultipleChoice wordList={wordList} currentWord={currentWord} updateLevel={
         (success) => {
-          let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
-          let newLearningLevel = newLearningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
-          newLearningLevelsMap[currentWord[0]].learningLevel = newLearningLevel
-          if (success) {
-            localStorage.setItem(currentWord[0], `${newLearningLevel}`)
-          }
-          setLearningLevelsMap(newLearningLevelsMap)
+          let newLearningLevel = learningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
+          updateLearningLevel(newLearningLevel)
         }
       } updateCurrentIndex={updateIndex} />
       break;
@@ -91,26 +88,16 @@ export function Vocabulary() {
       if (currentWord.length > 2) {
         componentToRender = <LatinToLatin wordList={wordList} currentWord={currentWord} updateLevel={
           (success) => {
-            let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
-            let newLearningLevel = newLearningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
-            newLearningLevelsMap[currentWord[0]].learningLevel = newLearningLevel
-            if (success) {
-              localStorage.setItem(currentWord[0], `${newLearningLevel}`)
-            }
-            setLearningLevelsMap(newLearningLevelsMap)
+            let newLearningLevel = learningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
+            updateLearningLevel(newLearningLevel)
           }
         } updateCurrentIndex={updateIndex} />
       }
       else {
         componentToRender = <EnglishToLatinFreeResponse wordList={wordList} currentWord={currentWord} updateLevel={
           (success) => {
-            let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
-            let newLearningLevel = newLearningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
-            newLearningLevelsMap[currentWord[0]].learningLevel = newLearningLevel
-            if (success) {
-              localStorage.setItem(currentWord[0], `${newLearningLevel}`)
-            }
-            setLearningLevelsMap(newLearningLevelsMap)
+            let newLearningLevel = learningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
+            updateLearningLevel(newLearningLevel)
           }
         } updateCurrentIndex={updateIndex} />
       }
@@ -119,37 +106,34 @@ export function Vocabulary() {
     case 4:
       componentToRender = <EnglishToLatinFreeResponse wordList={wordList} currentWord={currentWord} updateLevel={
         (success) => {
-          let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
-          let newLearningLevel = newLearningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
-          newLearningLevelsMap[currentWord[0]].learningLevel = newLearningLevel
-          if (success) {
-            localStorage.setItem(currentWord[0], `${newLearningLevel}`)
-          }
-          setLearningLevelsMap(newLearningLevelsMap)
+          let newLearningLevel = learningLevelsMap[currentWord[0]].learningLevel + (success ? 1 : 0)
+          updateLearningLevel(newLearningLevel)
         }
       } updateCurrentIndex={updateIndex} />
       break;
     default:
       componentToRender = <EnglishToLatinFreeResponse wordList={wordList} currentWord={currentWord} updateLevel={
         (success) => {
-          let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
           let updateAmount = success ? 1 : -1
-          let newLearningLevel = newLearningLevelsMap[currentWord[0]].learningLevel + updateAmount
-          newLearningLevelsMap[currentWord[0]].learningLevel = newLearningLevel
-          localStorage.setItem(currentWord[0], `${newLearningLevel}`)
-          setLearningLevelsMap(newLearningLevelsMap)
+          let newLearningLevel = learningLevelsMap[currentWord[0]].learningLevel + updateAmount
+          updateLearningLevel(newLearningLevel)
         }
       } updateCurrentIndex={updateIndex} />
       break;
   }
   
   return (
-    <div style={{display: "flex"}}>
+    <div style={{
+      display: "flex",
+      padding: 10,
+      backgroundColor: "lightgrey",
+      justifyContent: "space-evenly"}}
+    >
       <div style={{fontSize: 24, width: 400}}>
         {componentToRender}
       </div>
   
-      <div>
+      <div style={{backgroundColor: "white", padding: 10, borderRadius: 10}}>
         {
           Object.entries(levelCounts).map(([key, value]) => {
             return (
@@ -159,6 +143,18 @@ export function Vocabulary() {
             )
           })
         }
+        <div style={{marginTop: 10, textDecoration: "underline", cursor: "pointer"}}
+          onClick={() => {
+            let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
+            let newLearningLevel = 6
+            newLearningLevelsMap[currentWord[0]].learningLevel = newLearningLevel
+            localStorage.setItem(currentWord[0], `${newLearningLevel}`)
+            setLearningLevelsMap(newLearningLevelsMap)
+            updateIndex()
+          }}
+        >
+          I know this word
+        </div>
       </div>
     </div>
   )
