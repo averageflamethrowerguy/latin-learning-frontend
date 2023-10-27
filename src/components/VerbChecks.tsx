@@ -8,36 +8,28 @@ export function VerbChecks(props: {}) {
     const [inEndingMode, setInEndingMode] = useState(false)
     const [didSubmit, setDidSubmit] = useState(false)
     const [verbIndex, setVerbIndex] = useState(0)
+    
+    const [verbPerson, setVerbPerson] = useState([0, 1, 2])
+    const [verbNumber, setVerbNumber] = useState(["singular", "plural"])
+    const [verbTense, setVerbTense] = useState(["present", "perfect"])
+    const [verbMood, setVerbMood] = useState(["indicative"])
+    const [verbGender, setVerbGender] = useState(["masculine"])
+    const [verbVoice, setVerbVoice] = useState(["active"])
+    
+    const genericClickListener = (modifyString: string, unmodifiedArray: string[], setter: any, remove: boolean) => {
+        let newArray = [...unmodifiedArray]
+        
+        // removing and re-adding will add the element to the end of the newArray
+        newArray = newArray.filter(element => element !== modifyString)
 
-    const [testOnElements] = useState({
-        active: {
-            masculine: {
-                indicative: {
-                    present: {
-                       singular: [true, true, true],
-                       plural: [true, true, true]
-                    }
-                }
-            }
+        if (!remove) {
+            newArray.push(modifyString)
         }
-    })
+        
+        setter(newArray)
+    }
 
     const workingObject = inEndingMode ? verbEndingStructure : verbFormList[verbIndex]
-
-    const toggleTestElements = (testElement: string[], remove: boolean) => {
-        let newTestOnElements = [...testOnElements]
-
-        if (remove) {
-            newTestOnElements = newTestOnElements.filter((elem: string[]) => {
-                for (let i = 0; i < elem.length; i++) {
-                    if (elem[i] !== testElement[i]) {
-                        return true
-                    }
-                }
-                return false
-            })
-        }
-    }
 
     return (
         <div style={{marginTop: 60, backgroundColor: "lightgrey", padding: 10,
@@ -64,89 +56,77 @@ export function VerbChecks(props: {}) {
             }
     
             {
-                Object.entries(workingObject).map(elem => {
-                    console.log(elem[0])
-                    console.log(testOnElements)
-                    let outerTest = testOnElements[elem[0]]
-                    console.log(outerTest)
-                    if (outerTest) {
+                Object.entries(workingObject).map(voice => {
+                    if (verbVoice.includes(voice[0])) {
                         return (
                           <div>
                               {
-                                  Object.entries(elem[1]).map(gender => {
-                                      let genderTest = outerTest[gender[0]]
-                                      console.log(genderTest)
-                                      if (genderTest) {
+                                  Object.entries(voice[1]).map(gender => {
+                                      if (verbGender.includes(gender[0])) {
                                           return (
                                             <div>
                                                 {
-                                                    Object.entries(gender[1]).map(middleElem => {
-                                                        let middleTest = genderTest[middleElem[0]]
-                                                        console.log(middleTest)
-                                                        if (middleTest) {
+                                                    Object.entries(gender[1]).map(mood => {
+                                                        if (verbMood.includes(mood[0])) {
                                                             return (
                                                               <div>
                                                                   {
-                                                                      Object.entries(middleElem[1]).map(caseElem => {
-                                                                          let caseTest = middleTest[caseElem[0]]
-                                                                          if (caseTest) {
+                                                                      Object.entries(mood[1]).map(tense => {
+                                                                          if (verbTense.includes(tense[0])) {
                                                                               return (
                                                                                 <TenseMatrix>
-                                                                                    <div>{caseElem[0]}</div>
+                                                                                    <div>{tense[0]}</div>
                                                                                     <table>
                                                                                         <tr>
                                                                                             <th></th>
                                                                                             {
-                                                                                                caseTest.singular && <th>Singular</th>
+                                                                                                verbNumber.includes("singular") && <th>Singular</th>
                                                                                             }
                                                                                             {
-                                                                                                caseTest.plural && <th>Plural</th>
+                                                                                                verbNumber.includes("plural") && <th>Plural</th>
                                                                                             }
                                                                                         </tr>
                                                                                         {
-                                                                                            ((caseTest.singular && caseTest.singular[0]) ||
-                                                                                            (caseTest.plural && caseTest.plural[0])) &&
+                                                                                            verbPerson.includes(0) &&
                                                                                             <tr>
                                                                                                 <th>1st</th>
                                                                                                 {
-                                                                                                    (caseTest.singular && caseTest.singular[0]) &&
-                                                                                                    <th><input/>{didSubmit && caseElem.singular[0]}</th>
+                                                                                                    (verbNumber.includes("singular")) &&
+                                                                                                    <th><input/>{didSubmit && workingObject[voice[0]][gender[0]][mood[0]][tense[0]].singular[0]}</th>
                                                                                                 }
                                                                                                 {
-                                                                                                    (caseTest.plural && caseTest.plural[0]) &&
-                                                                                                    <th><input />{didSubmit && caseElem.plural[0]}</th>
-                                                                                                }
-                                                                                            </tr>
-                                                                                        }
-    
-                                                                                        {
-                                                                                            ((caseTest.singular && caseTest.singular[1]) ||
-                                                                                              (caseTest.plural && caseTest.plural[1])) &&
-                                                                                            <tr>
-                                                                                                <th>2nd</th>
-                                                                                                {
-                                                                                                    (caseTest.singular && caseTest.singular[1]) &&
-                                                                                                    <th><input/>{didSubmit && caseElem.singular[1]}</th>
-                                                                                                }
-                                                                                                {
-                                                                                                    (caseTest.plural && caseTest.plural[1]) &&
-                                                                                                    <th><input />{didSubmit && caseElem.plural[1]}</th>
+                                                                                                    (verbNumber.includes("plural")) &&
+                                                                                                    <th><input/>{didSubmit && workingObject[voice[0]][gender[0]][mood[0]][tense[0]].plural[0]}</th>
                                                                                                 }
                                                                                             </tr>
                                                                                         }
     
                                                                                         {
-                                                                                            ((caseTest.singular && caseTest.singular[2]) ||
-                                                                                              (caseTest.plural && caseTest.plural[2])) &&
+                                                                                            verbPerson.includes(1) &&
                                                                                             <tr>
-                                                                                                <th>3rd</th>
+                                                                                                <th>1st</th>
                                                                                                 {
-                                                                                                    (caseTest.singular && caseTest.singular[2]) &&
-                                                                                                    <th><input/>{didSubmit && caseElem.singular[2]}</th>
+                                                                                                    (verbNumber.includes("singular")) &&
+                                                                                                    <th><input/>{didSubmit && workingObject[voice[0]][gender[0]][mood[0]][tense[0]].singular[1]}</th>
                                                                                                 }
                                                                                                 {
-                                                                                                    (caseTest.plural && caseTest.plural[2]) &&
-                                                                                                    <th><input />{didSubmit && caseElem.plural[2]}</th>
+                                                                                                    (verbNumber.includes("plural")) &&
+                                                                                                    <th><input/>{didSubmit && workingObject[voice[0]][gender[0]][mood[0]][tense[0]].plural[1]}</th>
+                                                                                                }
+                                                                                            </tr>
+                                                                                        }
+    
+                                                                                        {
+                                                                                            verbPerson.includes(2) &&
+                                                                                            <tr>
+                                                                                                <th>1st</th>
+                                                                                                {
+                                                                                                    (verbNumber.includes("singular")) &&
+                                                                                                    <th><input/>{didSubmit && workingObject[voice[0]][gender[0]][mood[0]][tense[0]].singular[2]}</th>
+                                                                                                }
+                                                                                                {
+                                                                                                    (verbNumber.includes("plural")) &&
+                                                                                                    <th><input/>{didSubmit && workingObject[voice[0]][gender[0]][mood[0]][tense[0]].plural[2]}</th>
                                                                                                 }
                                                                                             </tr>
                                                                                         }
@@ -192,18 +172,10 @@ export function VerbChecks(props: {}) {
                         </div>
 
                         <div>
-                            <div>
-                                Present
-                            </div>
-                            <div>
-                                Imperfect
-                            </div>
-                            <div>
-                                Perfect
-                            </div>
-                            <div>
-                                Pluperfect
-                            </div>
+                            <ControlInputElement stringValue={"present"} originalArray={verbTense} setter={setVerbTense} genericClickListener={genericClickListener} />
+                            <ControlInputElement stringValue={"imperfect"} originalArray={verbTense} setter={setVerbTense} genericClickListener={genericClickListener} />
+                            <ControlInputElement stringValue={"perfect"} originalArray={verbTense} setter={setVerbTense} genericClickListener={genericClickListener} />
+                            <ControlInputElement stringValue={"pluperfect"} originalArray={verbTense} setter={setVerbTense} genericClickListener={genericClickListener} />
                         </div>
                     </div>
 
@@ -243,6 +215,18 @@ export function VerbChecks(props: {}) {
 
             </div>
         </div>
+    )
+}
+
+function ControlInputElement(props: {stringValue: string, originalArray: string[], setter: any, genericClickListener: any}) {
+    return (
+      <div>
+          <input type={"checkbox"} checked={props.originalArray.includes(props.stringValue)}
+                 onClick={(e) => props.genericClickListener(
+                   props.stringValue , props.originalArray, props.setter, props.originalArray.includes(props.stringValue))}
+          />
+          {props.stringValue}
+      </div>
     )
 }
 
