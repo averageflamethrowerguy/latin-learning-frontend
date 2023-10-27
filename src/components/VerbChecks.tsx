@@ -104,7 +104,7 @@ export function VerbChecks(props: {}) {
                                                                                         {
                                                                                             verbPerson.includes(1) &&
                                                                                             <tr>
-                                                                                                <th>1st</th>
+                                                                                                <th>2nd</th>
                                                                                                 {
                                                                                                     (verbNumber.includes("singular")) &&
                                                                                                     <th><input/>{didSubmit && workingObject[voice[0]][gender[0]][mood[0]][tense[0]].singular[1]}</th>
@@ -119,7 +119,7 @@ export function VerbChecks(props: {}) {
                                                                                         {
                                                                                             verbPerson.includes(2) &&
                                                                                             <tr>
-                                                                                                <th>1st</th>
+                                                                                                <th>3rd</th>
                                                                                                 {
                                                                                                     (verbNumber.includes("singular")) &&
                                                                                                     <th><input/>{didSubmit && workingObject[voice[0]][gender[0]][mood[0]][tense[0]].singular[2]}</th>
@@ -166,7 +166,7 @@ export function VerbChecks(props: {}) {
             <div>
                 <div>Test me on</div>
                 <div>
-                    <div>
+                    <ControlPanelSection>
                         <div>
                             Forms
                         </div>
@@ -177,40 +177,30 @@ export function VerbChecks(props: {}) {
                             <ControlInputElement stringValue={"perfect"} originalArray={verbTense} setter={setVerbTense} genericClickListener={genericClickListener} />
                             <ControlInputElement stringValue={"pluperfect"} originalArray={verbTense} setter={setVerbTense} genericClickListener={genericClickListener} />
                         </div>
-                    </div>
+                    </ControlPanelSection>
 
-                    <div>
+                    <ControlPanelSection>
                         <div>
                             Number
                         </div>
 
                         <div>
-                            <div>
-                                Singular
-                            </div>
-                            <div>
-                                Plural
-                            </div>
+                            <ControlInputElement stringValue={"singular"} originalArray={verbNumber} setter={setVerbNumber} genericClickListener={genericClickListener} />
+                            <ControlInputElement stringValue={"plural"} originalArray={verbNumber} setter={setVerbNumber} genericClickListener={genericClickListener} />
                         </div>
-                    </div>
+                    </ControlPanelSection>
 
-                    <div>
+                    <ControlPanelSection>
                         <div>
                             Person
                         </div>
 
                         <div>
-                            <div>
-                                1st
-                            </div>
-                            <div>
-                                2nd
-                            </div>
-                            <div>
-                                3rd
-                            </div>
+                            <ControlInputElement stringValue={0} originalArray={verbPerson} setter={setVerbPerson} genericClickListener={genericClickListener} />
+                            <ControlInputElement stringValue={1} originalArray={verbPerson} setter={setVerbPerson} genericClickListener={genericClickListener} />
+                            <ControlInputElement stringValue={2} originalArray={verbPerson} setter={setVerbPerson} genericClickListener={genericClickListener} />
                         </div>
-                    </div>
+                    </ControlPanelSection>
                 </div>
 
             </div>
@@ -218,7 +208,7 @@ export function VerbChecks(props: {}) {
     )
 }
 
-function ControlInputElement(props: {stringValue: string, originalArray: string[], setter: any, genericClickListener: any}) {
+function ControlInputElement(props: {stringValue: any, originalArray: any[], setter: any, genericClickListener: any}) {
     return (
       <div>
           <input type={"checkbox"} checked={props.originalArray.includes(props.stringValue)}
