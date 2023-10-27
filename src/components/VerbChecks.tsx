@@ -9,7 +9,7 @@ export function VerbChecks(props: {}) {
     const [didSubmit, setDidSubmit] = useState(false)
     const [verbIndex, setVerbIndex] = useState(0)
 
-    const testOnElements = useState({
+    const [testOnElements] = useState({
         active: {
             masculine: {
                 indicative: {
@@ -65,19 +65,24 @@ export function VerbChecks(props: {}) {
     
             {
                 Object.entries(workingObject).map(elem => {
+                    console.log(elem[0])
+                    console.log(testOnElements)
                     let outerTest = testOnElements[elem[0]]
+                    console.log(outerTest)
                     if (outerTest) {
                         return (
                           <div>
                               {
                                   Object.entries(elem[1]).map(gender => {
                                       let genderTest = outerTest[gender[0]]
+                                      console.log(genderTest)
                                       if (genderTest) {
                                           return (
                                             <div>
                                                 {
                                                     Object.entries(gender[1]).map(middleElem => {
                                                         let middleTest = genderTest[middleElem[0]]
+                                                        console.log(middleTest)
                                                         if (middleTest) {
                                                             return (
                                                               <div>
@@ -169,92 +174,6 @@ export function VerbChecks(props: {}) {
                     return <div />
                   }
                 )
-            }
-
-            
-
-            {
-                workingObject.active.masculine.indicative.imperfect &&
-                <TenseMatrix>
-                    <div>Imperfect</div>
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th>Singular</th>
-                            <th>Plural</th>
-                        </tr>
-                        <tr>
-                            <th>1st</th>
-                            <th><input />{didSubmit && workingObject.active.masculine.indicative.imperfect.singular[0]}</th>
-                            <th><input />{didSubmit && workingObject.active.masculine.indicative.imperfect.plural[0]}</th>
-                        </tr>
-                        <tr>
-                            <th>2nd</th>
-                            <th><input />{didSubmit && workingObject.active.masculine.indicative.imperfect.singular[1]}</th>
-                            <th><input />{didSubmit && workingObject.active.masculine.indicative.imperfect.plural[1]}</th>
-                        </tr>
-                        <tr>
-                            <th>3rd</th>
-                            <th><input />{didSubmit && workingObject.active.masculine.indicative.imperfect.singular[2]}</th>
-                            <th><input />{didSubmit && workingObject.active.masculine.indicative.imperfect.plural[2]}</th>
-                        </tr>
-                    </table>
-                </TenseMatrix>
-            }
-
-            <TenseMatrix>
-                <div>Perfect</div>
-                <table>
-                    <tr>
-                        <th></th>
-                        <th>Singular</th>
-                        <th>Plural</th>
-                    </tr>
-                    <tr>
-                        <th>1st</th>
-                        <th><input />{didSubmit && workingObject.active.masculine.indicative.perfect.singular[0]}</th>
-                        <th><input />{didSubmit && workingObject.active.masculine.indicative.perfect.plural[0]}</th>
-                    </tr>
-                    <tr>
-                        <th>2nd</th>
-                        <th><input />{didSubmit && workingObject.active.masculine.indicative.perfect.singular[1]}</th>
-                        <th><input />{didSubmit && workingObject.active.masculine.indicative.perfect.plural[1]}</th>
-                    </tr>
-                    <tr>
-                        <th>3rd</th>
-                        <th><input />{didSubmit && workingObject.active.masculine.indicative.perfect.singular[2]}</th>
-                        <th><input />{didSubmit && workingObject.active.masculine.indicative.perfect.plural[2]}</th>
-                    </tr>
-                </table>
-            </TenseMatrix>
-
-            {
-                workingObject.active.masculine.indicative.pluperfect &&
-                <TenseMatrix>
-                    <div>Pluperfect</div>
-                    <table>
-                        <tr>
-                            <th></th>
-                            <th>Singular</th>
-                            <th>Plural</th>
-                        </tr>
-                        <tr>
-                            <th>1st</th>
-                            <th><input />{didSubmit && workingObject.active.masculine.indicative.pluperfect.singular[0]}</th>
-                            <th><input />{didSubmit && workingObject.active.masculine.indicative.pluperfect.plural[0]}</th>
-                        </tr>
-                        <tr>
-                            <th>2nd</th>
-                            <th><input />{didSubmit && workingObject.active.masculine.indicative.pluperfect.singular[1]}</th>
-                            <th><input />{didSubmit && workingObject.active.masculine.indicative.pluperfect.plural[1]}</th>
-                        </tr>
-                        <tr>
-                            <th>3rd</th>
-                            <th><input />{didSubmit && workingObject.active.masculine.indicative.pluperfect.singular[2]}</th>
-                            <th><input />{didSubmit && workingObject.active.masculine.indicative.pluperfect.plural[2]}</th>
-                        </tr>
-                    </table>
-                </TenseMatrix>
             }
 
             <div
