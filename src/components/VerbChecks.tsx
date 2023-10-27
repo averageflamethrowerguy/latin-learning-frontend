@@ -5,17 +5,22 @@ import styled from "styled-components";
 export function VerbChecks(props: {}) {
     // for now, we'll just show the verb chart
 
-    const [inEndingMode, setInEndingMode] = useState(true)
+    const [inEndingMode, setInEndingMode] = useState(false)
     const [didSubmit, setDidSubmit] = useState(false)
     const [verbIndex, setVerbIndex] = useState(0)
 
-    const testOnElements = useState([[
-        "active", "masculine", "indicative", "present"
-    ],
-    [
-        "active", "masculine", "indicative", "perfect"
-    ]
-    ])
+    const testOnElements = useState({
+        active: {
+            masculine: {
+                indicative: {
+                    present: {
+                       singular: [true, true, true],
+                       plural: [true, true, true]
+                    }
+                }
+            }
+        }
+    })
 
     const workingObject = inEndingMode ? verbEndingStructure : verbFormList[verbIndex]
 
@@ -57,32 +62,116 @@ export function VerbChecks(props: {}) {
                     {workingObject.active.masculine.indicative.perfect.singular[0]}
                 </div>
             }
+    
+            {
+                Object.entries(workingObject).map(elem => {
+                    let outerTest = testOnElements[elem[0]]
+                    if (outerTest) {
+                        return (
+                          <div>
+                              {
+                                  Object.entries(elem[1]).map(gender => {
+                                      let genderTest = outerTest[gender[0]]
+                                      if (genderTest) {
+                                          return (
+                                            <div>
+                                                {
+                                                    Object.entries(gender[1]).map(middleElem => {
+                                                        let middleTest = genderTest[middleElem[0]]
+                                                        if (middleTest) {
+                                                            return (
+                                                              <div>
+                                                                  {
+                                                                      Object.entries(middleElem[1]).map(caseElem => {
+                                                                          let caseTest = middleTest[caseElem[0]]
+                                                                          if (caseTest) {
+                                                                              return (
+                                                                                <TenseMatrix>
+                                                                                    <div>{caseElem[0]}</div>
+                                                                                    <table>
+                                                                                        <tr>
+                                                                                            <th></th>
+                                                                                            {
+                                                                                                caseTest.singular && <th>Singular</th>
+                                                                                            }
+                                                                                            {
+                                                                                                caseTest.plural && <th>Plural</th>
+                                                                                            }
+                                                                                        </tr>
+                                                                                        {
+                                                                                            ((caseTest.singular && caseTest.singular[0]) ||
+                                                                                            (caseTest.plural && caseTest.plural[0])) &&
+                                                                                            <tr>
+                                                                                                <th>1st</th>
+                                                                                                {
+                                                                                                    (caseTest.singular && caseTest.singular[0]) &&
+                                                                                                    <th><input/>{didSubmit && caseElem.singular[0]}</th>
+                                                                                                }
+                                                                                                {
+                                                                                                    (caseTest.plural && caseTest.plural[0]) &&
+                                                                                                    <th><input />{didSubmit && caseElem.plural[0]}</th>
+                                                                                                }
+                                                                                            </tr>
+                                                                                        }
+    
+                                                                                        {
+                                                                                            ((caseTest.singular && caseTest.singular[1]) ||
+                                                                                              (caseTest.plural && caseTest.plural[1])) &&
+                                                                                            <tr>
+                                                                                                <th>2nd</th>
+                                                                                                {
+                                                                                                    (caseTest.singular && caseTest.singular[1]) &&
+                                                                                                    <th><input/>{didSubmit && caseElem.singular[1]}</th>
+                                                                                                }
+                                                                                                {
+                                                                                                    (caseTest.plural && caseTest.plural[1]) &&
+                                                                                                    <th><input />{didSubmit && caseElem.plural[1]}</th>
+                                                                                                }
+                                                                                            </tr>
+                                                                                        }
+    
+                                                                                        {
+                                                                                            ((caseTest.singular && caseTest.singular[2]) ||
+                                                                                              (caseTest.plural && caseTest.plural[2])) &&
+                                                                                            <tr>
+                                                                                                <th>3rd</th>
+                                                                                                {
+                                                                                                    (caseTest.singular && caseTest.singular[2]) &&
+                                                                                                    <th><input/>{didSubmit && caseElem.singular[2]}</th>
+                                                                                                }
+                                                                                                {
+                                                                                                    (caseTest.plural && caseTest.plural[2]) &&
+                                                                                                    <th><input />{didSubmit && caseElem.plural[2]}</th>
+                                                                                                }
+                                                                                            </tr>
+                                                                                        }
+                                                                                    </table>
+                                                                                </TenseMatrix>
+                                                                              )
+                                                                          }
+                                                                      })
+                                                                  }
+                                                              </div>
+                                                            )
+                                                        }
+                                                        return <div />
+                                                    })
+                                                }
+                                            </div>
+                                          )
+                                      }
+                                      return <div />
+                                  })
+                              }
+                          </div>
+                        )
+                    }
+                    return <div />
+                  }
+                )
+            }
 
-            <TenseMatrix>
-                <div>Present</div>
-                <table>
-                    <tr>
-                        <th></th>
-                        <th>Singular</th>
-                        <th>Plural</th>
-                    </tr>
-                    <tr>
-                        <th>1st</th>
-                        <th><input />{didSubmit && workingObject.active.masculine.indicative.present.singular[0]}</th>
-                        <th><input />{didSubmit && workingObject.active.masculine.indicative.present.plural[0]}</th>
-                    </tr>
-                    <tr>
-                        <th>2nd</th>
-                        <th><input />{didSubmit && workingObject.active.masculine.indicative.present.singular[1]}</th>
-                        <th><input />{didSubmit && workingObject.active.masculine.indicative.present.plural[1]}</th>
-                    </tr>
-                    <tr>
-                        <th>3rd</th>
-                        <th><input />{didSubmit && workingObject.active.masculine.indicative.present.singular[2]}</th>
-                        <th><input />{didSubmit && workingObject.active.masculine.indicative.present.plural[2]}</th>
-                    </tr>
-                </table>
-            </TenseMatrix>
+            
 
             {
                 workingObject.active.masculine.indicative.imperfect &&
