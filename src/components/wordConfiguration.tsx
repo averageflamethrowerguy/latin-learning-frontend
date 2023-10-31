@@ -276,7 +276,12 @@ const verbFormList = [
                     perfect: {
                         singular: ["fuī", "fuistī", "fuit"],
                         plural: ["fuimus", "fuistis", "fuērunt"]
-                    }
+                    },
+                    pluperfect: {
+                        singular: ["fueram", "fuerās", "fuerat"],
+                        plural: ["fuerāmus", "fuerātis", "fuerant"]
+                    },
+                    infinitive: "esse"
                 }
             }
         }
@@ -397,6 +402,10 @@ const verbFormList = [
                         singular: ["potuī", "potuistī", "potuit"],
                         plural: ["potuimus", "potuistis", "potuērunt"]
                     },
+                    pluperfect: {
+                        singular: ["potueram", "potuerās", "potuerat"],
+                        plural: ["potuerāmus", "potuerātis", "potuerant"]
+                    },
                     infinitive: "posse"
                 }
             }
@@ -418,6 +427,10 @@ const verbFormList = [
                         singular: ["voluī", "voluistī", "voluit"],
                         plural: ["voluimus", "voluistis", "voluērunt"]
                     },
+                    pluperfect: {
+                        singular: ["volueram", "voluerās", "voluerat"],
+                        plural: ["voluerāmus", "voluerātis", "voluerant"]
+                    },
                     infinitive: "velle"
                 }
             }
@@ -431,10 +444,44 @@ const verbFormList = [
                         singular: ["nōlō", "nōn vīs", "nōn vult"],
                         plural: ["nōlumus", "nōn vultis", "nōlunt"]
                     },
+                    imperfect: {
+                        singular: ["nōlēbam", "nōlēbās", "nōlēbat"],
+                        plural: ["nōlēbāmus", "nōlēbātis", "nōlēbant"],
+                    },
                     perfect: {
                         singular: ["nōluī", "nōluistī", "nōluit"],
                         plural: ["nōluimus", "nōluistis", "nōluērunt"]
-                    }
+                    },
+                    pluperfect: {
+                        singular: ["nōlueram", "nōluerās", "nōluerat"],
+                        plural: ["nōluerāmus", "nōluerātis", "nōluerant"]
+                    },
+                    infinitive: "nōlle"
+                }
+            }
+        }
+    },
+    {
+        active: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["eō", "īs", "it"],
+                        plural: ["īmus", "ītis", "eunt"]
+                    },
+                    imperfect: {
+                        singular: ["ībam", "ībās", "ībat"],
+                        plural: ["ībāmus", "ībātis", "ībant"],
+                    },
+                    perfect: {
+                        singular: ["iī", "iistī", "iit"],
+                        plural: ["iimus", "iitis", "iērunt"]
+                    },
+                    pluperfect: {
+                        singular: ["ieram", "ierās", "ierat"],
+                        plural: ["ierāmus", "ierātis", "ierant"]
+                    },
+                    infinitive: "nōlle"
                 }
             }
         }
