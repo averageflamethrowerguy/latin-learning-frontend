@@ -670,6 +670,7 @@ const nounFormList = [
     },
 
     // corpus is neuter
+    // the neuter nouns have the following adjustments from other 3rd-declension nouns
     {
         nominative: {
             singular: "corpus",
@@ -692,6 +693,9 @@ const nounFormList = [
             plural: ""
         }
     },
+
+    // this is a special type of 3rd-declension noun
+    // an i-stem 3rd declension noun
     {
         nominative: {
             singular: "cīvis",
