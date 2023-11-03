@@ -529,6 +529,7 @@ const verbEndingStructure = {
 }
 
 const nounFormList = [
+    /** First Declension Nouns **/
     {
         nominative: {
             singular: "puella",
@@ -553,6 +554,75 @@ const nounFormList = [
     },
     {
         nominative: {
+            singular: "poena",
+            plural: "poenae"
+        },
+        genitive: {
+            singular: "poenae",
+            plural: "poenarum"
+        },
+        dative: {
+            singular: "poenī",
+            plural: "poenīs"
+        },
+        accusative: {
+            singular: "poenam",
+            plural: "poenas"
+        },
+        ablative: {
+            singular: "poenī",
+            plural: "poenīs"
+        }
+    },
+    /** End first declension nouns **/
+
+    /** Second declension nouns **/
+    {
+        nominative: {
+            singular: "faber",
+            plural: "fabrī"
+        },
+        genitive: {
+            singular: "fabri",
+            plural: "faborum"
+        },
+        dative: {
+            singular: "fabrō",
+            plural: "fabris"
+        },
+        accusative: {
+            singular: "fabrum",
+            plural: "fabrōs"
+        },
+        ablative: {
+            singular: "fabrō",
+            plural: "fabrīs"
+        }
+    },
+    {
+        nominative: {
+            singular: "otium",
+            plural: "otia"
+        },
+        genitive: {
+            singular: "otiī",
+            plural: "otiorum"
+        },
+        dative: {
+            singular: "otiō",
+            plural: "otiis"
+        },
+        accusative: {
+            singular: "otium",
+            plural: "otia"
+        },
+        ablative: {
+            singular: "otiō",
+            plural: "otiīs"
+        }
+    },
+    {
+        nominative: {
             singular: "servus",
             plural: "servī"
         },
@@ -573,6 +643,9 @@ const nounFormList = [
             plural: "servīs"
         }
     },
+    /** End Second Declension Nouns **/
+
+    /** Begin Third Declension Nouns **/
     {
         nominative: {
             singular: "leō",
@@ -593,6 +666,30 @@ const nounFormList = [
         ablative: {
             singular: "leōne",
             plural: "leōnibus"
+        }
+    },
+
+    // corpus is neuter
+    {
+        nominative: {
+            singular: "corpus",
+            plural: "corpora"
+        },
+        genitive: {
+            singular: "corporis",
+            plural: ""
+        },
+        dative: {
+            singular: "",
+            plural: ""
+        },
+        accusative: {
+            singular: "corporus",
+            plural: "corpora"
+        },
+        ablative: {
+            singular: "",
+            plural: ""
         }
     },
     {
