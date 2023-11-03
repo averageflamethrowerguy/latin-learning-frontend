@@ -534,6 +534,10 @@ const nounFormList = [
             singular: "puella",
             plural: "puellae"
         },
+        genitive: {
+            singular: "puellae",
+            plural: "puellarum"
+        },
         dative: {
             singular: "puellae",
             plural: "puellīs"
@@ -549,8 +553,12 @@ const nounFormList = [
     },
     {
         nominative: {
-            singular: "survus",
+            singular: "servus",
             plural: "servī"
+        },
+        genitive: {
+            singular: "servī",
+            plural: "servōrum"
         },
         dative: {
             singular: "servō",
@@ -570,6 +578,10 @@ const nounFormList = [
             singular: "leō",
             plural: "leōnēs"
         },
+        genitive: {
+            singular: "leōnis",
+            plural: "leōnum"
+        },
         dative: {
             singular: "leōnī",
             plural: "leōnibus"
@@ -581,6 +593,28 @@ const nounFormList = [
         ablative: {
             singular: "leōne",
             plural: "leōnibus"
+        }
+    },
+    {
+        nominative: {
+            singular: "cīvis",
+            plural: "cīvēs"
+        },
+        genitive: {
+            singular: "cīvis",
+            plural: "cīvium"
+        },
+        dative: {
+            singular: "cīvī",
+            plural: "cīvibus"
+        },
+        accusative: {
+            singular: "cīvem",
+            plural: "cīvēs"
+        },
+        ablative: {
+            singular: "cīve",
+            plural: "cīvibus"
         }
     },
 ]
