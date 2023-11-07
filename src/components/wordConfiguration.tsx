@@ -1,264 +1,4 @@
-/**
- * Format:
- *  [English, Latin (Form 1), Latin (Form 2)]
- */
-const wordList = [
-    ["dog", "canis", "canem"],
-    ["cook", "coquus"],
-    ["is", "est"],
-    ["daughter", "fīlia"],
-    ["son", "fīlius"],
-    ["garden", "hortus"],
-    ["in/on", "in"],
-    ["works, is working", "labōrat"],
-    ["mother", "māter"],
-    ["father", "pater"],
-    ["sits, is sitting", "sedet"],
-    ["slave", "servus"],
-    ["street", "via"],
-    ["greets", "salūtat", "salūtāvit"],
-    ["friend", "amīcus"],
-    ["slave-girl, slave-woman", "ancilla"],
-    ["dinner", "cēna"],
-    ["food", "cibus"],
-    ["master", "dominus"],
-    ["sleeps", "dormit", "dormīvit"],
-    ["enters", "intrat", "intrāvit"],
-    ["happy", "laetus"],
-    ["praises", "laudat", "laudāvit"],
-    ["merchant", "mercātor"],
-    ["also", "quoque"],
-    ["to", "ad"],
-    ["drinks", "bibit", "bibit"],
-    ["looks around", "circumspectat", "circumspectāvit"],
-    ["shouts", "clāmat", "clāmāvit"],
-    ["look!", "ecce!"],
-    ["and", "et"],
-    ["goes out", "exit"],
-    ["waits for", "exspectat"],
-    ["door", "iānua"],
-    ["angry", "īrātus"],
-    ["lion", "leō"],
-    ["big, large, great", "magnus"],
-    ["ship", "nāvis"],
-    ["not", "nōn"],
-    ["carries", "portat", "portāvit"],
-    ["replies", "respondet", "respondit"],
-    ["laughs, smiles", "rīdet", "rīsit"],
-    ["hello!", "salvē!"],
-    ["gets up, stands up", "surgit", "surrēxit"],
-    ["store, shop, inn", "taberna"],
-    ["sees", "videt", "vīdit"],
-    ["wine", "vīnum"],
-    ["does", "agit", "agitāvit"],
-    ["ring", "ānulus"],
-    ["cooks", "coquit"],
-    ["why?", "cūr?"],
-    ["out of, from", "ē, ex"],
-    ["I", "ego"],
-    ["alas! oh dear!", "ēheu!"],
-    ["has", "habet"],
-    ["says", "inquit"],
-    ["judge", "iūdex"],
-    ["liar", "mendāx"],
-    ["money", "pecūnia"],
-    ["terrified", "perterritus"],
-    ["poet", "poēta"],
-    ["searches for, looks for", "quaerit", "quaesīvit"],
-    ["who?", "quis?"],
-    ["gives back", "reddit"],
-    ["enough", "satis"],
-    ["but", "sed"],
-    ["sign, seal, signal", "signum"],
-    ["you", "tū"],
-    ["calls", "vocat", "vocāvit"],
-    ["is here", "adest"],
-    ["are here", "adsunt"],
-    ["farmer", "agricola"],
-    ["walks", "ambulat", "ambulāvit"],
-    ["hears, listens to", "audit", "audīvit"],
-    ["shout, uproar", "clāmor"],
-    ["hurries", "contendit", "contendit"],
-    ["runs", "currit", "cucurrit"],
-    ["hurrah!", "euge!"],
-    ["play, story", "fābula"],
-    ["woman", "fēmina"],
-    ["today", "hodiē"],
-    ["young man", "iuvenis"],
-    ["my, mine", "meus"],
-    ["many", "multī"],
-    ["much", "multus"],
-    ["very good, excellent, best", "optimus"],
-    ["heads for, attacks, seeks", "petit", "petīvit"],
-    ["applauds, claps", "plaudit", "plausit"],
-    ["girl", "puella"],
-    ["old man", "senex"],
-    ["looks at, watches", "spectat", "spectāvit"],
-    ["stands", "stat"],
-    ["crowd", "turba"],
-    ["where?", "ubi?"],
-    ["city", "urbs"],
-    ["comes", "venit", "vēnit"],
-    ["out, absent", "abest", "aberat"],
-    ["bedroom", "cubiculum"],
-    ["good", "bonus"],
-    ["buys", "emit", "ēmit"],
-    ["fiercely", "ferōciter"],
-    ["hurries", "festīnat", "festināvit"],
-    ["brave, strong", "fortis"],
-    ["thief", "fūr"],
-    ["intently", "intentē"],
-    ["freedman, ex-slave", "lībertus"],
-    ["once, some time ago", "ōlim"],
-    ["small, little", "parvus"],
-    ["through", "per"],
-    ["after, when", "postquam"],
-    ["hits, punches, whacks", "pulsat", "pulsāvit"],
-    ["because", "quod"],
-    ["thing", "rēs", "rem"],
-    ["writes", "scrībit", "scrīpsit"],
-    ["suddenly", "subitō"],
-    ["overcomes, overpowers", "superat", "superāvit"],
-    ["then", "tum"],
-    ["sells", "vēndit", "vēndidit"],
-    ["your", "tuus"],
-    ["finds fault with, tells off, curses", "vituperat", "vituperāvit"],
-    ["eats dinner, dines", "cēnat", "cēnāvit"],
-    ["catches sight of", "cōnspicit", "cōnspexit"],
-    ["with", "cum"],
-    ["makes, does", "facit", "fēcit"],
-    ["yesterday", "heri"],
-    ["huge", "ingēns"],
-    ["understands", "intellegit", "intellēxit"],
-    ["weeps, cries", "lacrimat", "lacrimāvit"],
-    ["dead", "mortuus"],
-    ["tells, relates", "nārrat", "nārrāvit"],
-    ["kills", "necat", "necāvit"],
-    ["nothing", "nihil"],
-    ["all", "omnis"],
-    ["prepares", "parat", "parāvit"],
-    ["near", "prope"],
-    ["asks", "rogat", "rogāvit"],
-    ["quietly", "tacitē"],
-    ["however", "tamen"],
-    ["frightens", "terret", "terruit"],
-    ["very much, very", "valdē"],
-    ["chases, hunts", "agitat", "agitāvit"],
-    ["eats", "cōnsūmit", "cōnsūmpsit"],
-    ["leads, takes", "dūcit", "dūxit"],
-    ["him", "eum"],
-    ["easily", "facile"],
-    ["fierce", "ferōx", "ferōcem"],
-    ["sword", "gladius"],
-    ["this", "hic"],
-    ["cowardly", "ignāvus"],
-    ["messenger", "nūntius"],
-    ["foot", "pēs", "pedem"],
-    ["gate", "porta"],
-    ["demands", "postulat", "postulāvit"],
-    ["boy", "puer"],
-    ["fights", "pugnat", "pugnāvit"],
-    ["often", "saepe"],
-    ["blood", "sanguis", "sanguinem"],
-    ["woods, forest", "silva"],
-    ["show, spectacle", "spectāculum"],
-    ["at once", "statim"],
-    ["whole", "totus"],
-    ["recognizes", "agnōscit", "agnōvit"],
-    ["quickly", "celeriter"],
-    ["wants", "cupit", "cupīvit"],
-    ["gives", "dat", "dedit"],
-    ["day", "diēs", "diem"],
-    ["throws, sends out", "ēmittit", "ēmīsit"],
-    ["brings, carries", "fert", "tulit"],
-    ["human being, man", "homō", "hominem"],
-    ["guest", "hospes", "hospitem"],
-    ["that", "ille"],
-    ["looks at, inspects, examines", "īnspicit", "īnspexit"],
-    ["again", "iterum"],
-    ["remains, stays", "manet", "mānsit"],
-    ["middle", "medius"],
-    ["soon", "mox"],
-    ["offers", "offert", "obtulit"],
-    ["shows", "ostendit", "ostendit"],
-    ["after", "post"],
-    ["proceeds, advances", "prōcēdit", "prōcessit"],
-    ["beautiful", "pulcher"],
-    ["comes back, returns", "revenit", "revēnit"],
-    ["hands over", "trādit", "trādidit"],
-    ["goes away", "abit", "abiit"],
-    ["accepts", "accipit", "accēpit"],
-    ["clever, cunning", "callidus"],
-    ["satisfied", "contentus"],
-    ["exclaims", "exclāmat", "exclāmāvit"],
-    ["brother", "frāter", "frātrem"],
-    ["lives", "habitat", "habitāvit"],
-    ["empire", "imperium"],
-    ["finds", "invenit", "invēnit"],
-    ["book", "liber"],
-    ["we", "nōs"],
-    ["announces", "nūntiat", "nūntiāvit"],
-    ["peace", "pāx", "pācem"],
-    ["harbor", "portus"],
-    ["than", "quam"],
-    ["always", "semper"],
-    ["saves, looks after", "servat", "servāvit"],
-    ["alone", "sōlus"],
-    ["his, her, their", "suus"],
-    ["is silent, is quiet", "tacet", "tacuit"],
-    ["wife", "uxor", "uxōrem"],
-    ["violently, loudly", "vehementer"],
-    ["you all", "vōs"],
-    ["takes", "capit", "cēpit"],
-    ["citizen", "cīvis", "cīvem"],
-    ["gathers, meets", "convenit", "convēnit"],
-    ["trusts, believes", "crēdit", "crēdidit"],
-    ["about", "dē"],
-    ["supports", "favet", "fāvet"],
-    ["invites", "invītat", "invitāvit"],
-    ["goes", "it", "iit"],
-    ["reads", "legit", "lēgit"],
-    ["generous", "liberālis", "liberālem"],
-    ["no!", "minimē!"],
-    ["wall", "mūrus"],
-    ["our", "noster"],
-    ["now", "nunc"],
-    ["it pleases", "placet", "placuit"],
-    ["first", "prīmus"],
-    ["promises", "prōmittit", "prōmīsit"],
-    ["fight", "pugna"],
-    ["senator", "senātor", "senātōrem"],
-    ["worried, anxious", "sollicitus"],
-    ["stupid", "stultus"],
-    ["goodbye!", "valē!"],
-    ["strikes, beats", "verberat", "verberāvit"],
-    ["man", "vir", "virum"],
-    ["loses", "āmittit", "āmīsit"],
-    ["fills", "complet", "complēvit"],
-    ["guards", "custōdit", "custōdīvit"],
-    ["letter", "epistula"],
-    ["flame", "flamma"],
-    ["bravely", "fortiter"],
-    ["in vain", "frūstrā"],
-    ["runs away, flees", "fugit", "fūgit"],
-    ["farm", "fundus"],
-    ["lies", "iacet", "iacuit"],
-    ["now", "iam"],
-    ["therefore", "igitur"],
-    ["strange, extraordinary", "mirābilis", "mirābilem"],
-    ["sends", "mittit", "mīsit"],
-    ["mountain", "mōns", "montem"],
-    ["very well", "optimē"],
-    ["nearly, almost", "paene"],
-    ["feels", "sentit", "sēnsit"],
-    ["at last", "tandem"],
-    ["temple", "templum"],
-    ["ground, land", "terra"],
-    ["is afraid, fears", "timet", "timuit"],
-    ["one","ūnus"],
-    ["two", "duo"],
-    ["three", "trēs"]
-]
+
 
 const verbFormList = [
     {
@@ -552,75 +292,77 @@ const nounFormList = [
             plural: "puellīs"
         }
     },
-    {
-        nominative: {
-            singular: "poena",
-            plural: "poenae"
-        },
-        genitive: {
-            singular: "poenae",
-            plural: "poenarum"
-        },
-        dative: {
-            singular: "poenī",
-            plural: "poenīs"
-        },
-        accusative: {
-            singular: "poenam",
-            plural: "poenas"
-        },
-        ablative: {
-            singular: "poenī",
-            plural: "poenīs"
-        }
-    },
+    // {
+    //     nominative: {
+    //         singular: "poena",
+    //         plural: "poenae"
+    //     },
+    //     genitive: {
+    //         singular: "poenae",
+    //         plural: "poenarum"
+    //     },
+    //     dative: {
+    //         singular: "poenī",
+    //         plural: "poenīs"
+    //     },
+    //     accusative: {
+    //         singular: "poenam",
+    //         plural: "poenas"
+    //     },
+    //     ablative: {
+    //         singular: "poenī",
+    //         plural: "poenīs"
+    //     }
+    // },
     /** End first declension nouns **/
 
     /** Second declension nouns **/
-    {
-        nominative: {
-            singular: "faber",
-            plural: "fabrī"
-        },
-        genitive: {
-            singular: "fabri",
-            plural: "faborum"
-        },
-        dative: {
-            singular: "fabrō",
-            plural: "fabris"
-        },
-        accusative: {
-            singular: "fabrum",
-            plural: "fabrōs"
-        },
-        ablative: {
-            singular: "fabrō",
-            plural: "fabrīs"
-        }
-    },
-    {
-        nominative: {
-            singular: "otium",
-            plural: "otia"
-        },
-        genitive: {
-            singular: "otiī",
-            plural: "otiorum"
-        },
-        dative: {
-            singular: "otiō",
-            plural: "otiis"
-        },
-        accusative: {
-            singular: "otium",
-            plural: "otia"
-        },
-        ablative: {
-            singular: "otiō",
-            plural: "otiīs"
-        }
-    },
+    // {
+    //     nominative: {
+    //         singular: "faber",
+    //         plural: "fabrī"
+    //     },
+    //     genitive: {
+    //         singular: "fabri",
+    //         plural: "faborum"
+    //     },
+    //     dative: {
+    //         singular: "fabrō",
+    //         plural: "fabris"
+    //     },
+    //     accusative: {
+    //         singular: "fabrum",
+    //         plural: "fabrōs"
+    //     },
+    //     ablative: {
+    //         singular: "fabrō",
+    //         plural: "fabrīs"
+    //     }
+    // },
+    // {
+    //     nominative: {
+    //         singular: "otium",
+    //         plural: "otia"
+    //     },
+    //     genitive: {
+    //         singular: "otiī",
+    //         plural: "otiorum"
+    //     },
+    //     dative: {
+    //         singular: "otiō",
+    //         plural: "otiis"
+    //     },
+    //     accusative: {
+    //         singular: "otium",
+    //         plural: "otia"
+    //     },
+    //     ablative: {
+    //         singular: "otiō",
+    //         plural: "otiīs"
+    //     }
+    // },
+
+    // second declension masculine
     {
         nominative: {
             singular: "servus",
@@ -643,9 +385,34 @@ const nounFormList = [
             plural: "servīs"
         }
     },
+
+    // this is a 2nd-declension neuter noun
     /** End Second Declension Nouns **/
+    {
+        nominative: {
+            singular: "templum",
+            plural: "templa"
+        },
+        genitive: {
+            singular: "templī",
+            plural: "templōrum"
+        },
+        dative: {
+            singular: "templō",
+            plural: "templīs"
+        },
+        accusative: {
+            singular: "templum",
+            plural: "templa"
+        },
+        ablative: {
+            singular: "templō",
+            plural: "templīs"
+        }
+    },
 
     /** Begin Third Declension Nouns **/
+    // leō is third declension masculine/feminine
     {
         nominative: {
             singular: "leō",
@@ -669,30 +436,30 @@ const nounFormList = [
         }
     },
 
-    // corpus is neuter
-    // the neuter nouns have the following adjustments from other 3rd-declension nouns
-    {
-        nominative: {
-            singular: "corpus",
-            plural: "corpora"
-        },
-        genitive: {
-            singular: "corporis",
-            plural: ""
-        },
-        dative: {
-            singular: "",
-            plural: ""
-        },
-        accusative: {
-            singular: "corporus",
-            plural: "corpora"
-        },
-        ablative: {
-            singular: "",
-            plural: ""
-        }
-    },
+    // // corpus is neuter 3rd declension
+    // // the neuter nouns have the following adjustments from other 3rd-declension nouns
+    // {
+    //     nominative: {
+    //         singular: "corpus",
+    //         plural: "corpora"
+    //     },
+    //     genitive: {
+    //         singular: "corporis",
+    //         plural: ""
+    //     },
+    //     dative: {
+    //         singular: "",
+    //         plural: ""
+    //     },
+    //     accusative: {
+    //         singular: "corporus",
+    //         plural: "corpora"
+    //     },
+    //     ablative: {
+    //         singular: "",
+    //         plural: ""
+    //     }
+    // },
 
     // this is a special type of 3rd-declension noun
     // an i-stem 3rd declension noun
@@ -718,9 +485,284 @@ const nounFormList = [
             plural: "cīvibus"
         }
     },
+
+    // this is a 3rd-declension neuter noun
+    {
+        nominative: {
+            singular: "nōmen",
+            plural: "nōmina"
+        },
+        genitive: {
+            singular: "nōminis",
+            plural: "nōminum"
+        },
+        dative: {
+            singular: "nōminī",
+            plural: "nōminibus"
+        },
+        accusative: {
+            singular: "nōmen",
+            plural: "nōmina"
+        },
+        ablative: {
+            singular: "nōmine",
+            plural: "nōminibus"
+        }
+    },
 ]
 
-export {wordList, verbEndingStructure, verbFormList, nounFormList}
+const pronounFormList = [
+    {
+        nominative: {
+            singular: {
+                masculine: "hic",
+                feminine: "haec",
+                neuter: "hoc"
+            },
+            plural: {
+                masculine: "hī",
+                feminine: "hae",
+                neuter: "haec"
+            },
+        },
+        genitive: {
+            singular: {
+                masculine: "huius",
+                feminine: "huius",
+                neuter: "huius"
+            },
+            plural: {
+                masculine: "hōrum",
+                feminine: "hārum",
+                neuter: "hōrum"
+            },
+        },
+        dative: {
+            singular: {
+                masculine: "huic",
+                feminine: "huic",
+                neuter: "huic"
+            },
+            plural: {
+                masculine: "hīs",
+                feminine: "hīs",
+                neuter: "hīs"
+            },
+        },
+        accusative: {
+            singular: {
+                masculine: "hunc",
+                feminine: "hanc",
+                neuter: "hoc"
+            },
+            plural: {
+                masculine: "hōs",
+                feminine: "hās",
+                neuter: "haec"
+            },
+        },
+        ablative: {
+            singular: {
+                masculine: "hōc",
+                feminine: "hāc",
+                neuter: "hōc"
+            },
+            plural: {
+                masculine: "hīs",
+                feminine: "hīs",
+                neuter: "hīs"
+            },
+        }
+    },
+    {
+        nominative: {
+            singular: {
+                masculine: "ille",
+                feminine: "illa",
+                neuter: "illud"
+            },
+            plural: {
+                masculine: "illī",
+                feminine: "illae",
+                neuter: "illa"
+            },
+        },
+        genitive: {
+            singular: {
+                masculine: "illīus",
+                feminine: "illīus",
+                neuter: "illīus"
+            },
+            plural: {
+                masculine: "illōrum",
+                feminine: "illārum",
+                neuter: "illōrum"
+            },
+        },
+        dative: {
+            singular: {
+                masculine: "illī",
+                feminine: "illī",
+                neuter: "illī"
+            },
+            plural: {
+                masculine: "illīs",
+                feminine: "illīs",
+                neuter: "illīs"
+            },
+        },
+        accusative: {
+            singular: {
+                masculine: "illum",
+                feminine: "illam",
+                neuter: "illud"
+            },
+            plural: {
+                masculine: "illōs",
+                feminine: "illās",
+                neuter: "illa"
+            },
+        },
+        ablative: {
+            singular: {
+                masculine: "illō",
+                feminine: "illā",
+                neuter: "illō"
+            },
+            plural: {
+                masculine: "illīs",
+                feminine: "illīs",
+                neuter: "illīs"
+            },
+        }
+    },
+    {
+        nominative: {
+            singular: {
+                masculine: "is",
+                feminine: "ea",
+                neuter: "id"
+            },
+            plural: {
+                masculine: "eī",
+                feminine: "eae",
+                neuter: "ae"
+            },
+        },
+        genitive: {
+            singular: {
+                masculine: "eius",
+                feminine: "eius",
+                neuter: "eius"
+            },
+            plural: {
+                masculine: "eōrum",
+                feminine: "eārum",
+                neuter: "eōrum"
+            },
+        },
+        dative: {
+            singular: {
+                masculine: "eī",
+                feminine: "eī",
+                neuter: "eī"
+            },
+            plural: {
+                masculine: "eīs",
+                feminine: "eīs",
+                neuter: "eīs"
+            },
+        },
+        accusative: {
+            singular: {
+                masculine: "eum",
+                feminine: "ea",
+                neuter: "id"
+            },
+            plural: {
+                masculine: "eōs",
+                feminine: "eās",
+                neuter: "ea"
+            },
+        },
+        ablative: {
+            singular: {
+                masculine: "eō",
+                feminine: "eā",
+                neuter: "eō"
+            },
+            plural: {
+                masculine: "eīs",
+                feminine: "eīs",
+                neuter: "eīs"
+            },
+        }
+    },
+    {
+        nominative: {
+            singular: {
+                masculine: "quī",
+                feminine: "quae",
+                neuter: "quod"
+            },
+            plural: {
+                masculine: "quī",
+                feminine: "quae",
+                neuter: "quae"
+            },
+        },
+        genitive: {
+            singular: {
+                masculine: "cuius",
+                feminine: "cuius",
+                neuter: "cuius"
+            },
+            plural: {
+                masculine: "quōrum",
+                feminine: "quārum",
+                neuter: "quōrum"
+            },
+        },
+        dative: {
+            singular: {
+                masculine: "cui",
+                feminine: "cui",
+                neuter: "cui"
+            },
+            plural: {
+                masculine: "quibus",
+                feminine: "quibus",
+                neuter: "quibus"
+            },
+        },
+        accusative: {
+            singular: {
+                masculine: "quem",
+                feminine: "quam",
+                neuter: "quod"
+            },
+            plural: {
+                masculine: "quōs",
+                feminine: "quās",
+                neuter: "quae"
+            },
+        },
+        ablative: {
+            singular: {
+                masculine: "quō",
+                feminine: "quā",
+                neuter: "quō"
+            },
+            plural: {
+                masculine: "quibus",
+                feminine: "quibus",
+                neuter: "quibus"
+            },
+        }
+    },
+]
+
+export {verbEndingStructure, verbFormList, nounFormList, pronounFormList}
 
 
 

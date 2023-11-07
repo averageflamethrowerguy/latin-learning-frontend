@@ -1,8 +1,8 @@
 import {useEffect, useState} from "react";
-import {wordList} from "./wordConfiguration";
+import {vocabularyList} from "./vocabularyList";
 
 interface PropTypes {
-    wordList: string[][];
+    vocabularyList: string[][];
     currentWord: string[];
     updateLevel: (success : boolean) => void
     updateCurrentIndex: () => void
@@ -12,7 +12,7 @@ interface PropTypes {
 const getInitialRandomIndices = () => {
     let randomIndices = []
     for (let i = 0; i < 3; i++) {
-        randomIndices.push(Math.floor(Math.random() * (wordList.length)))
+        randomIndices.push(Math.floor(Math.random() * (vocabularyList.length)))
     }
     return randomIndices
 }
@@ -36,7 +36,7 @@ export function LatinToEnglishMultipleChoice(props: PropTypes) {
             possibleAnswers.push(props.currentWord[0])
         }
         else {
-            possibleAnswers.push(props.wordList[randomIndices[j]][0])
+            possibleAnswers.push(props.vocabularyList[randomIndices[j]][0])
             j++
         }
     }
