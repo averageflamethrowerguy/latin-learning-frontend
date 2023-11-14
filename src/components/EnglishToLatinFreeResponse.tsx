@@ -1,11 +1,10 @@
 import {useEffect, useState} from "react";
 
 interface PropTypes {
-    wordList: string[][];
-    currentWord: string[];
+    vocabularyList: VocabEntry[];
+    currentWord: VocabEntry;
     updateLevel: (success : boolean) => void
     updateCurrentIndex: () => void
-
 }
 
 export function EnglishToLatinFreeResponse(props: PropTypes) {
@@ -20,7 +19,7 @@ export function EnglishToLatinFreeResponse(props: PropTypes) {
     }, [props.currentWord])
 
     return <div>
-        <div>{props.currentWord[0]} in Latin is?</div>
+        <div>{props.currentWord.English} in Latin is?</div>
         <div style={{display: "flex"}}>
             <input onChange={(e) => setGuessedWord(e.target.value)} />
             {
@@ -33,14 +32,14 @@ export function EnglishToLatinFreeResponse(props: PropTypes) {
                 style={{cursor: "pointer", backgroundColor: "blue"}}
                 onClick={() => {
                 setDidSubmit(true)
-                const isCorrectTemp = (guessedWord === props.currentWord[1])
+                const isCorrectTemp = (guessedWord === props.currentWord.Latin.split(", ")[0])
                 setIsCorrect(isCorrectTemp)
             }}>Submit</div>
 
             {
                 didSubmit &&
                 <div>
-                    <div>{props.currentWord[1]}</div>
+                    <div>{props.currentWord.Latin.split(", ")}</div>
                     <div
                         style={{cursor: 'pointer', color: "green"}}
                         onClick={() => {

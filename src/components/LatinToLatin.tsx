@@ -1,11 +1,10 @@
 import {useEffect, useState} from "react";
 
 interface PropTypes {
-    wordList: string[][];
-    currentWord: string[];
+    vocabularyList: VocabEntry[];
+    currentWord: VocabEntry;
     updateLevel: (success : boolean) => void
     updateCurrentIndex: () => void
-
 }
 
 export function LatinToLatin(props: PropTypes) {
@@ -19,10 +18,11 @@ export function LatinToLatin(props: PropTypes) {
         setGuessedWord("")
     }, [props.currentWord])
 
-    const testingWord = props.currentWord[2] ? props.currentWord[2] : props.currentWord[1]
+    const splitLatin = props.currentWord.Latin.split(", ")
+    const testingWord = splitLatin[1] ? splitLatin[1] : splitLatin[0]
 
     return <div>
-        <div>{props.currentWord[1]} in the other Latin form is?</div>
+        <div>{splitLatin[0]} in the other Latin form is?</div>
         <div style={{display: "flex"}}>
             <input onChange={(e) => setGuessedWord(e.target.value)} />
             {
@@ -35,14 +35,14 @@ export function LatinToLatin(props: PropTypes) {
                 style={{cursor: "pointer", backgroundColor: "blue"}}
                 onClick={() => {
                     setDidSubmit(true)
-                    const isCorrectTemp = (guessedWord === props.currentWord[2])
+                    const isCorrectTemp = (guessedWord === splitLatin[1])
                     setIsCorrect(isCorrectTemp)
                 }}>Submit</div>
 
             {
                 didSubmit &&
                 <div>
-                    <div>{props.currentWord[2]}</div>
+                    <div>{splitLatin[1]}</div>
                     <div
                         style={{cursor: 'pointer', color: "green"}}
                         onClick={() => {

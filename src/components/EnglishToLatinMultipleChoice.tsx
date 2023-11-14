@@ -1,14 +1,13 @@
-import {vocabularyList} from "./vocabularyList";
 import {useEffect, useState} from "react";
 
 interface PropTypes {
-    vocabularyList: string[][];
-    currentWord: string[];
+    vocabularyList: VocabEntry[];
+    currentWord: VocabEntry;
     updateLevel: (success : boolean) => void
     updateCurrentIndex: () => void
 }
 
-const getInitialRandomIndices = () => {
+const getInitialRandomIndices = (vocabularyList: VocabEntry[]) => {
     let randomIndices = []
     for (let i = 0; i < 3; i++) {
         randomIndices.push(Math.floor(Math.random() * (vocabularyList.length)))
@@ -18,12 +17,12 @@ const getInitialRandomIndices = () => {
 
 export function EnglishToLatinMultipleChoice(props: PropTypes) {
 
-    const [randomIndices, setRandomIndices] = useState(getInitialRandomIndices())
+    const [randomIndices, setRandomIndices] = useState(getInitialRandomIndices(props.vocabularyList))
     const [correctAnswerRandomIndex, setCorrectAnswerRandomIndex] = useState(Math.floor(Math.random() * 4))
     const [selectedIndex, setSelectedIndex] = useState(-1)
 
     useEffect(() => {
-        setRandomIndices(getInitialRandomIndices)
+        setRandomIndices(getInitialRandomIndices(props.vocabularyList))
         setCorrectAnswerRandomIndex(Math.floor(Math.random() * 4))
         setSelectedIndex(-1)
     }, [props.currentWord])
@@ -32,10 +31,10 @@ export function EnglishToLatinMultipleChoice(props: PropTypes) {
     let j = 0
     for (let i = 0; i < 4; i++) {
         if (i === correctAnswerRandomIndex) {
-            possibleAnswers.push(props.currentWord[1])
+            possibleAnswers.push(props.currentWord.Latin.split(", ")[0])
         }
         else {
-            possibleAnswers.push(props.vocabularyList[randomIndices[j]][1])
+            possibleAnswers.push(props.vocabularyList[randomIndices[j]].Latin.split(", ")[0])
             j++
         }
     }
@@ -43,7 +42,7 @@ export function EnglishToLatinMultipleChoice(props: PropTypes) {
     return <div>
         <div>
             "{
-                props.currentWord[0]
+                props.currentWord.English
             }" is what in latin?
         </div>
         <div>

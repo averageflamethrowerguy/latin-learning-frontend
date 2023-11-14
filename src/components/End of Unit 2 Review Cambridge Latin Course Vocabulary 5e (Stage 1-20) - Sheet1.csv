@@ -1,0 +1,446 @@
+Latin,English,Stage,Part of Speech,Noun Declension,Verb Conjugation,Adjective Declension,Random Number
+"ā, ab (+ abl)",from,17,preposition,,,,0.2268319319
+"abeō, abīre, abiī",go away,10,verb,,irregular,,0.8690437969
+"absum, abesse, āfuī","be out, be absent",6,verb,,irregular,,0.3180746798
+"accipiō, accipere, accēpī",accept,10,verb,,3i,,0.4522394432
+ad,to,3,preposition,,,,0.3129955751
+"adeō, adīre, adiī","go up to, approach",20,verb,,4,,0.04288513985
+"adsum, adesse, adfuī",be here,5,verb,,irregular,,0.5616527392
+"adveniō, advenīre, advēnī",arrive,13,verb,,2,,0.7757935305
+"aedificium, aedificiī, n.",building,13,noun,2,,,0.7191662677
+"aedificō, aedificāre, aedificāvī",build,16,verb,,1,,0.04079042349
+"aeger, aegra, aegrum","sick, ill",13,adjective,,,,0.4600035879
+"agitō, agitāre, agitāvī","chase, hunt",8,verb,,1,,0.2976932049
+"agmen, agminis, n.","column (of people), procession",15,noun,3,,,0.6656372599
+"agnōscō, agnōscere, agnōvī",recognize,9,verb,,3,,0.1169079712
+"agō, agere, ēgī, actus",do,4,verb,,3,,0.5255978721
+"agricola, agricolae, m.",farmer,5,noun,1,,,0.1835754203
+aliquid,something,14,pronoun,,,,0.9009073537
+"alius, alia, aliud","other, another",15,adjective,,,,0.628654392
+"alter, altera, alterum","the other, the second",13,adjective,,,,0.09015038103
+"ambulō, ambulāre, ambulāvī",walk,5,verb,,1,,0.3929419956
+"amīcus, amīcī, m.",friend,2,noun,2,,,0.7237358059
+"āmittō, āmittere, āmīsī",lose,12,verb,,3,,0.8611579014
+"amō, amāre, amāvī","love, like",19,verb,,1,,0.1974220871
+"ancilla, ancillae, f.","slave-girl, slave-woman",2,noun,1,,,0.885794948
+"animus, animī, m.","spirit, soul, mind",17,noun,2,,,0.1376093123
+"ānulus, ānulī, m.",ring,4,noun,2,,,0.5299299591
+"appropinquō, appropinquāre, appropinquāvī (+ dat)","approach, come near to",17,verb,,1,,0.3246800073
+apud (+ acc),"among, at the house of",14,preposition,,,,0.08327224371
+"aqua, aquae, f.",water,15,noun,1,,,0.9643482463
+"āra, ārae, f.",altar,17,noun,1,,,0.4979365651
+"arcessō, arcessere, arcessīvī","summon, send for",20,verb,,3,,0.3858423006
+"ars, artis, f.",art,20,noun,3,,,0.7135083785
+"attonitus, attonita, attonitum",astonished,14,adjective,,,,0.07290119849
+"audeō, audēre",dare,18,verb,,2,,0.5827419621
+"audiō, audīre, audīvī","hear, listen to",5,verb,,4,,0.03494872116
+"aula, aulae, f.",palace,14,noun,1,,,0.9571570022
+"auxilium, auxiliī, n.",help,16,noun,,2,,0.701478275
+bene,well,17,adverb,,,,0.9071418753
+"benignus, benigna, benignum",kind,17,adjective,,,,0.04600268762
+"bibō, bibere, bibī",drink,3,verb,,3,,0.5646452257
+"bonus, bona, bonum",good,6,adjective,,,,0.7703671544
+"bonus, bona, bonum",good,16,adjective,,,,0.789582192
+"callidus, callida, callidum","clever, cunning",10,adjective,,,,0.501251471
+"canis, canis, m. or f.",dog,1,noun,3,,,0.1501733
+"cantō, cantāre, cantāvī",sing,13,verb,,1,,0.6659940371
+"capiō, capere, cēpī",take,11,verb,,3i,,0.947897339
+"caput, capitis, n.",head,18,noun,3,,,0.2908947571
+"cārus, cāra, cārum",dear,19,adjective,,,1st/2nd,0.5445532933
+celeriter,quickly,9,adverb,,,,0.2758850386
+"cēna, cēnae, f.",dinner,2,noun,1,,,0.2544065968
+"cēnō, cēnāre, cēnāvī","eat dinner, dine",7,verb,,1,,0.8193355436
+"cēterī, cēterae, cētera","the others, the rest",13,adjective,,,,0.8877435743
+"cibus, cibī, m.",food,2,noun,2,,,0.2755614401
+"circumspectō, circumspectāre, circumspectāvī, circumspectātus",look around,3,verb,,1,,0.5686454693
+"cīvis, cīvis, m.",citizen,11,noun,3,,,0.8592418635
+"clāmō, clāmāre, clāmāvī, clāmātus",shout,3,verb,,1,,0.2824813364
+"clāmor, clāmōris, m.","shout, uproar",5,noun,3,,,0.8167089075
+"claudō, claudere, clausī","shut, block",15,verb,,3,,0.1105751133
+coepī,I began,18,defective verb,,,,0.5112987817
+"cōgitō, cōgitāre, cōgitāvī","think, consider",19,verb,,1,,0.6885490764
+"cognōscō, cognōscere, cognōvī","get to know, find out",18,verb,,3,,0.7773355039
+"commodus, commoda, commodum",convenient,15,adjective,,,1st/2nd,0.3246278643
+"comparō, comparāre, comparāvī",obtain,19,verb,,1,,0.5026063284
+"compleō, complēre, complēvī",fill,12,verb,,2,,0.394813848
+"cōnficiō, cōnficere, cōnfēcī",finish,19,verb,,3i,,0.364312237
+"cōnsentiō, cōnsentīre, cōnsēnsī",agree,16,verb,,3i,,0.6157169081
+"cōnsilium, cōnsiliī, n.","plan, idea",16,noun,2,,,0.08047595584
+"cōnspiciō, conspicere, cōnspexī",catch sight of,7,verb,,3i,,0.5264831774
+"cōnsūmō, cōnsūmere, cōnsūmpsī",eat,8,verb,,3,,0.5940249482
+"contendō, contendere, contendī",hurry,5,verb,,3,,0.4223695123
+"contentus, contenta, contentum",satisfied,10,adjective,,,,0.4932269634
+"conveniō, convenīre, convēnī","gather, meet",11,verb,,4,,0.3659637145
+"coquō, coquere, cōxī, coctus",cook,4,verb,,3,,0.6621057158
+"coquus, coquī, m.",cook,1,noun,2,,,0.6817791519
+cotīdiē,every day,14,adverb,,,,0.6831018158
+"crēdō, crēdere, crēdidī (+ dat.)","trust, believe",11,verb,,3,,0.604717778
+"crūdēlis, crūdēlis, crūdēle",cruel,20,adjective,,,3rd,0.9780435985
+"cubiculum, cubiculī, n.",bedroom,6,noun,2,,,0.8739898009
+cum,with,7,preposition,,,,0.09445462532
+"cupiō, cupere, cupīvī",want,9,verb,,3i,,0.4855968926
+cūr?,why?,4,interrogative,,,,0.580917319
+"cūrō, cūrāre, cūrāvī",look after,19,verb,,1,,0.08343630996
+"currō, currere, cucurrī",run,5,verb,,3,,0.03058775108
+"custōdiō, custōdīre, custōdīvī",guard,12,verb,,4,,0.6358411473
+"custōs, custōdis, m.",guard,13,noun,3,,,0.7009304058
+dē,about,11,preposition,,,,0.5402880206
+"dea, deae, f.",goddess,18,noun,1,,,0.5644473254
+"dēbeō, dēbēre, dēbuī","owe, ought",15,verb,,2,,0.6702073813
+decem,ten,20,cardinal numeral,,,indeclinable adjective,0.9028008056
+"decōrus, decōra, decōrum","right, proper",14,adjective,,,,0.1087506185
+deinde,then,16,adverb,,,,0.1128525823
+"dēlectō, dēlectāre, dēlectāvī",delight,16,verb,,1,,0.5078973766
+"dēleō, dēlēre, dēlēvī",destroy,14,verb,,2,,0.1711023813
+"dēmōnstrō, dēmōnstrāre, dēmōnstrāvī","point out, show",18,verb,,1,,0.4279514136
+dēnique,"at last, finally",20,adverb,,,,0.5758419698
+"dēspērō, dēspērāre, dēspērāvī",despair,20,verb,,1,,0.6827607112
+"deus, deī, m. [deī or dī, nom. plural]",god,14,noun,2,,,0.8776233175
+"dīcō, dīcere, dīxī",say,13,verb,,3,,0.2443571625
+"diēs, diēī, m.",day,9,noun,5,,,0.1029111345
+"difficilis, difficilis, difficile",difficult,14,adjective,,,,0.8889108069
+dīligenter,carefully,14,adverb,,,,0.1491598338
+"discēdō, discēdere, discessī","depart, leave",18,verb,,3,,0.5286624876
+diū,for a long time,17,adverb,,,,0.06950879217
+"dō, dare, dedī",give,9,verb,,1,,0.9193795882
+"doctus, docta, doctum","learned, clever",20,adjective,,,1st/2nd,0.6093555688
+"domina, dominae, f.","lady (of the house), mistress",14,noun,1,,,0.925347256
+"dominus, dominī, m.",master,2,noun,2,,,0.4465896858
+"domus, domūs, f.",home,20,noun,4,,,0.6750651376
+"dōnum, dōnī, n.","present, gift",14,noun,2,,,0.4039847992
+"dormiō, dormīre, dormīvī, dormītus",sleep,2,verb,3,4,,0.9007589088
+"dūcō, dūcere, dūxī","lead, take",8,verb,,3,,0.6539192483
+"duo, duae, duo",two,12,numeral,,,,0.2062068913
+"duo, duae, duo",two,20,cardinal numeral,,,,0.6389693288
+"ē, ex","out of, from",4,preposition,,,,0.8117671137
+ecce!,look!,3,exclamation,,,,0.1329247861
+"effugiō, effugere, effūgī",escape,16,verb,,3,,0.1132264587
+ego,I,4,pronoun,,,,0.2202325382
+ēheu!,alas! oh dear!,4,exclamation,,,,0.945888589
+"ēmittō, ēmittere, ēmīsī","throw, send out",9,verb,,3,,0.6603642504
+"emō, emere, ēmī",buy,6,verb,,3,,0.7252794785
+"eō, īre, iī",go,11,verb,,2,,0.4525094265
+"epistula, epistulae, f.",letter,12,noun,1,,,0.1295943479
+"equus, equī, m.",horse,15,noun,2,,,0.6545403548
+et,and,3,conjunction,,,,0.9468737217
+etiam,even,15,other,,,,0.7148417824
+euge!,hurrah!,5,exclamation,,,,0.828069534
+eum,him,8,pronoun/adjective,,,,0.8066538406
+"excitō, excitāre, excitāvī","arouse, wake up",13,verb,,1,,0.6369503106
+"exclāmō, exclāmṝe, exclāmāvī",exclaim,10,verb,,1,,0.7768849505
+"exeō, exīre, exiī, exitus",go out,3,verb,,3,,0.7526508431
+"exspectō, exspectāre, exspectāvī",wait for,3,verb,,1,,0.2059842741
+"faber, fabrī, m.",craftsman,17,noun,2,,,0.7190590795
+"fābula, fābulae, f.","play, story",5,noun,,,,0.04844692572
+facile,easily,8,adverb,,,,0.1662353819
+"facilis, facilis, facile",easy,17,adjective,,,,0.01943562101
+"faciō, facere, fēcī","make, do",7,verb,,3i,,0.5277212869
+"faveō, favēre, fāvi (+ dat.)",support,11,verb,,1,,0.8874218804
+"fēmina, fēminae, f.",woman,5,noun,1,,,0.4570472595
+"ferō, ferre, tulī","bring, carry",9,verb,,3,,0.03855063912
+ferōciter,fiercely,6,adverb,,,,0.3362905169
+"ferōx, ferōx, ferōx, gen. ferōcis",fierce,8,adjective,,,,0.4135506699
+"fessus, fessa, fessum",tired,13,adjective,,,,0.6372033336
+"festīnō, festīnāre, festināvī",hurry,6,verb,,1,,0.625457648
+"fidēlis. fidēlis, fidēle","faithful, loyal",14,adjective,,,,0.00507134725
+"fīlia, fīliae, f.",daughter,1,noun,1,,,0.5261029395
+"fīlius, fīliī, m.",son,1,noun,2,,,0.8613910334
+"flamma, flammae, f.",flame,12,noun,1,,,0.9129491533
+"flōs, flōris, m.",flower,16,noun,3,,,0.4801078638
+"fluō, fluere, flūxī",flow,19,verb,,3,,0.6438937244
+fortasse,perhaps,18,adverb,,,,0.900904038
+forte,by chance,19,adverb,,,,0.005611608828
+"fortis, fortis, forte","brave, strong",6,adjective,,,,0.9270397435
+fortiter,bravely,12,adverb,,,,0.9594828284
+"frāter, frātris, m.",brother,10,noun,3,,,0.6795714463
+frūstrā,in vain,12,adverb,,,,0.4568839437
+"fugiō, fugere, fūgī","run away, flee",12,verb,,3i,,0.2497402388
+"fundus, fundī, m.",farm,12,noun,2,,,0.4668914653
+"fūr, fūris, m.",thief,6,noun,3,,,0.02733857275
+"gladius, gladiī, m.",sword,8,noun,2,,,0.543418402
+"grātiās agō, agere, ēgī","thank, give thanks",19,verb,,3,,0.1537294777
+graviter,seriously,17,adverb,,,,0.4191775966
+"habeō, habere, habuī, habitus",have,4,verb,,2,,0.1658428896
+"habitō, habitāre, habitāvī",live,10,verb,,1,,0.851963543
+"hasta, hastae, f.",spear,19,noun,1,,,0.5407389181
+heri,yesterday,7,adverb,,,,0.3434033697
+"hic, haec, hoc",this,8,pronoun/adjective,,,,0.9488643042
+hodiē,today,5,adverb,,,,0.3261302795
+"homō, hominis, m.","human being, man",9,noun,3,,,0.9304454802
+"hortus, hortī, m.",garden,1,noun,2,,,0.6709273758
+"hospes, hospitis, m.",guest,9,noun,3,,,0.3622958261
+hūc,"here, to this place",17,adverb,,,,0.1889965881
+"iaceō, iacēre, iacuī",lie,12,verb,,2,,0.1945278812
+iam,now,12,adverb,,,,0.2177350989
+"iānua, ianuae, f.",door,3,noun,,,,0.6278689925
+ibi,there,18,adverb,,,,0.1076009583
+igitur,therefore,12,other,,,,0.2231016528
+"ignāvus, ignāva, ignāvum",cowardly,8,adjective,,,,0.3023642791
+"ille, illa, illud",that,9,pronoun/adjective,,,,0.8037365202
+illūc,"there, to that place",19,adverb,,,,0.8299637173
+"impediō, impedīre, impedīvī","delay, hinder",15,verb,,4,,0.6083579987
+"imperātor, imperātōris, m.",emperor,16,noun,3,,,0.9812009891
+"imperium, imperiī, n",empire,10,noun,2,,,0.656384824
+in,"in, on",1,preposition,,,,0.4259278284
+"īnferō, īnferre, īntulī","bring in, bring on",20,verb,,3,,0.8409266475
+"ingēns, ingēns, ingēns, gen. ingentis",huge,7,adjective,,,,0.5200499533
+inquit,says,4,defective verb,,,,0.07765577043
+"īnspiciō, inspicere, īnspexī","look at, inspect, examine",9,verb,,3i,,0.301079303
+"īnsula, īnsulae, f.",island,17,noun,1,,,0.2612964951
+"intellegō, intellegere, intellēxī",understand,7,verb,,3,,0.2120563898
+intentē,intently,6,adverb,,,,0.2869074005
+inter (+ acc),among,16,preposition,,,,0.4398399458
+"interficiō, interficere, interfēcī",kill,13,verb,,3i,,0.9754615494
+"intrō, intrāre, intrāvī, intrātus",enter,2,verb,,1,,0.8402775468
+"inveniō, invenīre, invēnī",find,10,verb,,4,,0.6895336585
+"invītō, invītāre, invitāvī",invite,11,verb,,irregular,,0.009226066
+"invītus, invīta, invītum",unwilling,17,adjective,,,,0.4174280306
+"ipse, ipsa, ipsum","himself, herself",14,pronoun/adjective,,,,0.9094554836
+"īrātus, īrāta, īrātum",angry,3,adjective,,,,0.2371477939
+"iste, ista, istud",that,14,pronoun/adjective,,,,0.6267766358
+ita,in this way,16,adverb,,,,0.2572785534
+ita vērō,yes,13,other,,,,0.716465718
+itaque,and so,17,other,,,,0.197745319
+"iter, itineris, n.",journey,19,noun,3,,,0.9780280426
+iterum,again,9,adverb,,,,0.6229905362
+"iūdex, iūdicis, m.",judge,4,noun,3,,,0.1236917632
+"iuvenis, iuvenis, m.",young man,5,noun,3,,,0.3666707907
+"labōrō, labōrāre, labōravī, labōrātus",work,1,verb,,,,0.2524272064
+"lacrimō, lacrimāre, lacrimāvī","weep, cry",7,verb,,1,,0.08117788482
+"laetus, laeta, laetum",happy,2,adjective,2,,,0.5983914391
+"laudō, laudāre, laudāvī, laudātus",praise,2,verb,,1,,0.6696540634
+"lectus, lectī, m.",couch,15,noun,2,,,0.6547772697
+"legō, legere, lēgī",read,11,verb,,3,,0.1018233546
+lentē,slowly,15,adverb,,,,0.5630096421
+"leō, leōnis, m. or f.",lion,3,noun,,,,0.7838155112
+libenter,gladly,18,adverb,,,,0.7368116857
+"liber, librī, m.",book,10,noun,2,,,0.06211630446
+"liberālis, liberālis, liberāle",generous,11,adjective,,,,0.2188284532
+"līberō, līberāre, līberāvī","free, set free",20,verb,,1,,0.4240211933
+"lībertus, lībertī, m.","freedman, ex-slave",6,noun,2,,,0.7164879287
+"lītus, lītoris, n.",seashore,15,noun,3,,,
+"locus, locī, m.",place,19,noun,2,,,0.7714170187
+"lūna, lūnae, f.",moon,20,noun,1,,,0.4170958233
+"magnus, magna, magnum","big, large, great",3,adjective,,,,0.5655765834
+māne,in the morning,19,adverb,,,,0.4065021227
+"maneō, manēre, mānsī","remain, stay",9,verb,,2,,0.4862960426
+"manus, manūs, f.",hand,18,noun,4,,,0.07264846892
+"mare, maris, n.",sea,15,noun,3,,,0.4733223358
+"marītus, marītī, m.",husband,14,noun,2,,,0.5997253997
+"māter, mātris, f.",mother,1,noun,3,,,0.7807811903
+"maximus, maxima, maximum",very big,17,adjective,,,,0.9124131072
+"medius, media, medium",middle,9,adjective,,,,0.7387914605
+"melior, melior, melius",better,16,adjective,,,,0.9040961872
+"mendāx, mendācis, m. or f.",liar,4,adjective,,,,0.5429015177
+"mercātor, mercātōris, m.",merchant,2,noun,3,,,0.7969979428
+"meus, mea, meum","my, mine",5,adjective,,,,0.03715251758
+"mīlēs, mīlitis, m.",solder,18,noun,3,,,0.7810501363
+minimē!,no!,11,adverb,,,,0.0985076202
+"mirābilis, mirābilis, mirābile","strange, extraordinary",12,adjective,,,,0.7399321649
+"miser, misera, miserum","miserable, wretched",15,adjective,,,1st/2nd,0.9918928588
+"mittō, mittere, mīsī",send,12,verb,,3,,0.8889353407
+"mōns, montis, m.",mountain,12,noun,3,,,0.4966386854
+"mors, mortis, f.",death,20,noun,3,,,0.5276600889
+"mortuus, mortua, mortuum",dead,7,adjective,,,,0.4431818447
+mox,soon,9,adverb,,,,0.323433303
+multī,many,5,adjective,,,,0.9876097172
+"multus, multa, multum",much,5,adjective,,,,0.4035351361
+"mūrus, mūrī, m.",wall,11,noun,2,,,0.4814896466
+nam,for,18,other,,,,0.02758870348
+"nārrō, nārrāre, nārrāvī","tell, relate",7,verb,,1,,0.888496834
+"nauta, nautae. m.",sailor,15,noun,1,,,0.4053753049
+"nāvigō, nāvigāre, nāvigāvī",sail,16,verb,,1,,0.4980310736
+"nāvis, nāvis, f.",ship,3,noun,,,,0.3386898834
+necesse,necessary,14,adjective,,,,0.7228572262
+"necō, necāre, necāvī",kill,7,verb,,1,,0.1676099084
+"negōtium, negōtiī, n.",business,17,noun,2,,,0.1447172001
+"nēmō, nēminis, m.",no one,18,noun,,,,0.9140362939
+nihil,nothing,7,noun,indeclinable,,,0.863392672
+"nōlō, nōlle, nōluī","do not want, refuse",13,verb,,3,,0.237836037
+nōn,not,3,adverb,,,,0.8475850824
+nōnne?,surely?,16,other,,,,0.9655202744
+nōs,we,10,pronoun,,,,0.8903088406
+"noster, nostra, nostrum",our,11,adjective,,,,0.8156458482
+novem,nine,20,cardinal numeral,,,indeclinable adjective,0.5680527943
+nōvī,I know,19,verb,,3,,0.4286326574
+"novus, nova, novum",new,13,adjective,,,,0.8757681689
+"nūllus, nūlla, nūllum","not any, no",13,adjective,,,,0.3132113837
+num?,"surely…not? (expects answer ""no"")",14,other,,,,0.1670430095
+numquam,never,17,adverb,,,,0.3688400116
+nunc,now,11,adverb,,,,0.187045319
+"nūntiō, nuntiāre, nūntiāvī",announce,10,verb,,1,,0.8241546001
+"nūntius, nūntiī, m.",messenger,8,noun,2,,,0.7817719458
+"obstō, obstāre, obstitī (+ dat)","obstruct, block the way",18,verb,,1,,0.449624755
+octō,eight,20,cardinal numeral,,,indeclinable adjective,0.6286939416
+"oculus, oculī, m.",eye,20,noun,2,,,0.9849630247
+"offerō, offerre, obtulī",offer,9,verb,,3,,0.4131269064
+ōlim,"once, some time ago",6,adverb,,,,0.01445505933
+"omnis, omnis, omne",all,7,adjective,,,,0.6945953506
+optimē,very well,12,adverb,,,,0.5660127018
+"optimus, optima, optimum","very good, excellent, best",5,adjective,,,,0.9345164262
+"ostendō, ostendere, ostendī",show,9,verb,,3,,0.7129823991
+paene,"nearly, almost",12,adverb,,,,0.3899649847
+"parō, parāre, parāvī",prepare,7,verb,,1,,0.9235165767
+"pars, partis, f.",part,18,noun,3,,,0.4909783768
+"parvus, parva, parvum","small, little",6,adjective,,,,0.9047223687
+"pater, patris, m.",father,1,noun,3,,,0.6740829314
+"paucī, paucae, pauca","few, a few",17,adjective,,,,0.4685488719
+"pāx, pācis, f.",peace,10,noun,3,,,0.6892209042
+"pecūnia, pecūniae, f.",money,4,noun,1,,,0.5641199939
+per,through,6,preposition,,,,0.213319927
+"pereō, perīre, periī","die, perish",16,verb,,4,,0.8385135092
+"perīculum, perīculī, n.",danger,19,noun,2,,,0.9064431478
+"persuadeō, persudēre, persuāsī (+dat)",persuade,20,verb,,2,,0.9192196012
+"perterritus, perterrita, perterritum",terrified,4,adjective,,,,0.9180635011
+"perveniō, pervenīre, pervēnī","reach, arrive at",17,verb,,4,,0.7893958235
+"pēs, pedis, m.",foot,8,noun,3,,,0.3817161848
+"pessimus, pessima, pessimum","very bad, worst",20,adjective,,,1st/2nd,0.1115140771
+"petō, petere, petīvī","head for, attack, seek",5,verb,,3,,0.6309914164
+"petō, petere, petīvī","beg for, ask for",18,verb,,3,,0.7577506179
+"placeō, placēre, placuī (+ dat.)",please,11,verb,,2,,0.8574556261
+"plaudō, plaudere, plausī","applaud, clap",5,verb,,3,,0.4787743395
+plūrimī,very many,19,adjective,,,1st/2nd,0.9604745572
+"poēta, poētae, m.",poet,4,noun,1,,,0.7567014251
+"pōnō, pōnere, posuī","place, put",16,verb,,3,,0.8239367817
+"porta, portae, f.",gate,8,noun,1,,,0.2041044601
+"portō, portāre, portāvī, portātus",carry,3,verb,,1,,0.8290542937
+"portus, portūs, m.",harbor,10,noun,2,,,0.8623971832
+"poscō, poscere, poposcī","demand, ask for",19,verb,,3,,0.7288883889
+"possum, posse, potuī","can, be able",13,verb,,irregular,,0.9747364547
+post,after,9,preposition,,,,0.1735474855
+posteā,afterwards,18,adverb,,,,0.1437664063
+postquam,"after, when",6,other,,,,0.07835947712
+postrīdiē,(on) the next day,16,adverb,,,,0.3430550568
+"postulō, postulāre, postulāvī",demand,8,verb,,1,,0.150207902
+"prīmus, prīma, prīmum",first,11,adjective,,,,0.1466507371
+"prīnceps, prīncipis, m.","chief, chieftain",15,noun,3,,,0.5218494007
+prō (+ abl),in front of,18,preposition,,,,0.03347019159
+"prōcēdō, prōcedere, prōcessī","proceed, advance",9,verb,,3,,0.3120823824
+"prōmittō, prōmittere, prōmīsī",promise,11,verb,,3,,0.1735007732
+prope,near,7,preposition,,,,0.711352071
+"puella, puellae, f.",girl,5,noun,1,,,0.1107110012
+"puer, puerī, m.",boy,8,noun,2,,,0.2797249561
+"pugna, pugnae, f.",fight,11,noun,1,,,0.9605518855
+"pugnō, pugnāre, pugnāvī",fight,8,verb,,1,,0.2442362662
+"pulcher, pulchra, pulchrum",beautiful,9,adjective,,,,0.03743045788
+"pulsō, pulsāre, pulsāvī","hit, punch, whack",6,verb,,1,,0.5441157808
+"pūniō, pūnīre, pūnīvī",punish,16,verb,,4,,0.4179092744
+quadrāgintā,forty,20,cardinal numeral,,,indeclinable adjective,0.633871664
+"quaerō, quarere, quaesīvī, quaesītus","search for, look for",4,verb,,3,,0.70577688
+quam,how,14,other,,,,0.488153746
+quam,than,10,other,,,,0.9716012527
+quamquam,although,14,conjunction,,,,0.7107848236
+quattuor,four,20,cardinal numeral,,,indeclinable adjective,0.8663528805
+que (enclitic),and,14,conjunction,,,,0.6292379166
+"quī, quae, quod",who,15,pronoun,,,,0.5235814252
+quīnquāgīntā,fifty,20,cardinal numeral,,,indeclinable adjective,0.6439776425
+quīnque,five,20,cardinal numeral,,,indeclinable adjective,0.2068199137
+quis?,who?,4,interrogative pronoun,,,,0.9763635529
+quō?,where? where to?,18,interrogative,,,,0.496868902
+quod,because,6,conjunction,,,,0.03385522061
+quondam,"one day, once",17,adverb,,,,0.5177800121
+quoque,also,2,adverb,,,,0.2567784785
+"recipiō, recipere, recēpī","recover, take back",17,verb,,3i,,0.7307693987
+"recūsō, recūsāre, recūsāvī",refuse,18,verb,,1,,0.9461622452
+"reddō, reddere, reddidī, redditus",give back,4,verb,,3,,0.4272394975
+"redeō, redīre, rediī","return, go back",15,verb,,4,,0.07905140963
+"relinquō, relinquere, relīquī",leave,20,verb,,3,,0.3553532158
+"rēs, reī, f.",thing,6,noun,5,,,0.179177892
+"resistō, resistere, restitī (+ dat)",resist,17,verb,,3,,0.2047491865
+"respondeō, respondēre, respondī, responsus",reply,3,verb,,2,,0.4276634517
+"reveniō, revenīre, revēnī","come back, return",9,verb,,4,,0.4839323009
+"rēx, rēgis, m.",king,14,noun,3,,,0.621567899
+"rīdeō, rīdēre, rīsī, rīsus","laugh, smile",3,verb,,2,,0.806112868
+"rogō, rogāre, rogāvī",ask,7,verb,,1,,0.8999242129
+"ruō, ruere, ruī",rush,13,verb,,3,,0.3143696761
+"sacerdōs, sacerdōtis, m.",priest,15,noun,3,,,0.2873929394
+saepe,often,8,adverb,,,,0.5983850714
+"salūtō, salītāre, salūtāvī, salūtātus",greet,2,verb,,1,,0.9104584504
+salvē!,hello!,3,verb,,2,,0.05782929975
+"sanguis, sanguinis, m.",blood,8,noun,3,,,0.03016633157
+satis,enough,4,adverb,,,,0.4203150293
+"scrībō, scrībere, scrīpsī",write,6,verb,,3,,0.7026376394
+sē,"himself, herself, themselves",13,pronoun,,,,0.2169814035
+sed,but,4,conjunction,,,,0.06377775758
+"sedeō, sedēre, sēdī, sessus",sit,1,verb,,1,,0.8722023697
+semper,always,10,adverb,,,,0.2802373281
+"senātor, senātōris, m.",senator,11,noun,3,,,0.5167194653
+"senex. senis, m.",old man,5,noun,3,,,0.8564792085
+"sentiō, sentīre, sēnsī",feel,12,verb,,4,,0.1614878634
+septem,seven,20,cardinal numeral,,,indeclinable adjective,0.6829725925
+"servō, servāre, servāvī","save, look after",10,verb,,1,,0.3195425113
+"servus, servī, m.",slave,1,noun,2,,,0.2229593771
+sex,six,20,cardinal numeral,,,indeclinable adjective,0.459984279
+sīcut,like,20,conjunction,,,,0.4394661317
+"signum, signī, n.","sign, seal, signal",4,noun,,,,0.7114243003
+"silva, silvae, f.","woods, forest",8,noun,1,,,0.4871877334
+"simulac, simulatque",as soon as,16,other,,,,0.7036587033
+"soleō, solēre",be accustomed,18,verb,,2,,0.4864080124
+"sollicitus, sollicita, sollicitum","worried, anxious",11,adjective,,,,0.1612137276
+"sōlus, sōla, sōlum",alone,10,adjective,,,,0.3252957085
+"spectāculum, spectāculī, n.","show, spectacle",8,noun,2,,,0.2502222903
+"spectō, spectāre, spectāvī","look at, watch",5,verb,,1,,0.8951237341
+statim,at once,8,adverb,,,,0.3958801593
+"stō, stāre, stetī",stand,5,verb,,1,,0.5399194415
+"stultus, stulta, stultum",stupid,11,adjective,,,,0.8898980948
+subitō,suddenly,6,adverb,,,,0.9995859306
+"sum, esse, fuī",be,1,verb,,2,,0.1583630339
+"summus, summa, summum","highest, greatest, top",16,adjective,,irregular,,0.1806656381
+"superō, superāre, superāvī","overcome, overpower",6,verb,,1,,0.09304194575
+"surgō, surgere, surrēxī","get up, stand up",3,verb,,3,,0.8955377009
+"suus, sua, suum","his, her, their",10,adjective,,,,0.851963543
+"taberna, tabernae, f.","store, shop, inn",3,noun,,,,0.7104052353
+"taceō, tacēre, tacuī","be silent, be quiet",10,verb,,2,,0.3418300398
+tacitē,quietly,7,adverb,,,,0.3840176687
+tam,so,20,adverb,,,,0.2630578208
+tamen,however,7,other,,,,0.6490885291
+tandem,at last,12,adverb,,,,0.449480182
+"templum, templī, n.",temple,12,noun,2,,,0.9977469578
+"temptō, temptāre, temptāvī",try,20,verb,,1,,0.4272769587
+"teneō, tenēre, tenuī",hold,15,verb,,2,,0.3195469869
+"terra, terrae, f.","ground, land",12,noun,1,,,0.8235881263
+"terreō, terrēre, terruī",frighten,7,verb,,2,,0.2753851124
+"timeō, timēre, timuī","be afraid, fear",12,verb,,2,,0.9075424664
+"tollō, tollere, sustulī","raise, lift up",16,verb,,3,,0.9639750399
+tot,so many,19,adverb,,,,0.62237456
+"tōtus, tōta, tōtum",whole,8,adjective,,,,0.7056395276
+"trādō, trādere, trādidī",hand over,9,verb,,3,,0.1792499298
+"trahō, trahere, trāxī",drag,13,verb,,3,,0.6034562912
+"trēs, trēs, tria",three,20,cardinal numeral,,,3rd,0.282859318
+"trēs, trēs, tria",three,12,numeral,,,,0.3614695622
+trīgintā,thirty,20,cardinal numeral,,,indeclinable adjective,0.04113163587
+tū,you,4,pronoun,,,,0.3216581427
+tum,then,6,adverb,,,,0.2236816462
+"turba, turbae, f.",crowd,5,noun,1,,,0.594064515
+"tuus, tua, tuum",your,6,adjective,,,,0.677664366
+ubi,when,14,conjunction,,,,0.7447644516
+ubi?,where?,5,interrogative,,,,0.02614951647
+"unda, undae f.",wave,15,noun,1,,,0.6159567384
+"ūnus, ūna, ūnum",one,20,cardinal numeral,,,1st/2nd (gen in -īus),0.3883804313
+"ūnus, ūna, ūnum",one,12,numeral,,,,0.9631481422
+"urbs, urbis, f.",city,5,noun,3,,,0.4145750406
+"uxor, uxōris, f.",wife,10,noun,3,,,0.437835028
+valdē,"very much, very",7,adverb,,,,0.2713384547
+valē!,good-bye,11,verb,,,,0.7778745541
+vehementer,"violently, loudly",10,adverb,,,,0.3207112235
+"vēndō, vēndere, vēndidī",sell,6,verb,,3,,0.7114529515
+"veniō, venīre, vēnī",come,5,verb,,4,,0.9420091333
+"verberō, verberāre, verberāvī","strike, beat",11,verb,,1,,0.04826776357
+"vertō, vertere, vertī",turn,16,verb,,3,,0.05482150911
+"vexō, vexāre, vexāvī",annoy,19,verb,,1,,0.3097906801
+"via, viae, f.",street,1,noun,1,,,0.3895372475
+"videō, vidēre, vīdī, vīsus",see,3,verb,,2,,0.8025676048
+vīgintī,twenty,20,cardinal numeral,,,indeclinable adjective,0.3485179682
+"vincō, vincere, vīcī",win,15,verb,,3,,0.5823522297
+"vīnum, vīnī, n.",wine,3,noun,2,,,0.1709313453
+"vir, virī, m.",man,11,noun,2,,,0.1416057861
+"vīta, vītae, f.",life,13,noun,1,,,0.9229432756
+"vituperō, vituperāre, vituperāvī","find fault with, tell off, curse",6,verb,,1,,0.6556059298
+"vīvō, vīvere, vīxī",live,19,verb,,3,,0.5841197234
+vix,"hardly, scarcely",19,adverb,,,,0.6495650969
+"vocō, vocāre, vocāvī, vocātus",call,4,verb,,1,,0.9562363886
+"volō, velle, voluī",want,13,verb,,3,,0.9450413537
+vōs,you (plural),10,pronoun,,,,0.2608587656
+"vōx, vōcis, f.",voice,19,noun,3,,,0.2328001988
+"vulnerō, vulnerāre, vulnerāvī",wound,13,verb,,1,,0.7479916016
+"vulnus, vulneris, n.",wound,20,noun,3,,,0.7397754204

@@ -103,3 +103,15 @@ declare interface Conversation {
   user0Read: boolean
   user1Read: boolean
 }
+
+declare interface VocabEntry {
+  "Latin": string,
+  "English": string,
+  "Stage": number,
+  "Part of Speech": string,
+  "Noun Declension": string,
+  "Verb Conjugation": string,
+  "Adjective Declension": string,
+  "Random Number"?: number
+  "learningLevel"?: number
+}
