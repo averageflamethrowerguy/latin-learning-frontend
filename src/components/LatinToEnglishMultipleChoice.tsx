@@ -8,22 +8,29 @@ interface PropTypes {
     updateCurrentIndex: () => void
 }
 
-const getInitialRandomIndices = (vocabularyList: VocabEntry[]) => {
+const getInitialRandomIndices = (vocabularyList: VocabEntry[], currentWord: VocabEntry) => {
     let randomIndices = []
     for (let i = 0; i < 3; i++) {
-        randomIndices.push(Math.floor(Math.random() * (vocabularyList.length)))
+        let index = Math.floor(Math.random() * (vocabularyList.length))
+        // prevent duplicate entries
+        while (vocabularyList[index].English === currentWord.English) {
+            index = Math.floor(Math.random() * (vocabularyList.length))
+        }
+        randomIndices.push(index)
     }
     return randomIndices
 }
 
 export function LatinToEnglishMultipleChoice(props: PropTypes) {
 
-    const [randomIndices, setRandomIndices] = useState(getInitialRandomIndices(props.vocabularyList))
+    const [randomIndices, setRandomIndices] = useState(
+        getInitialRandomIndices(props.vocabularyList, props.currentWord)
+    )
     const [correctAnswerRandomIndex, setCorrectAnswerRandomIndex] = useState(Math.floor(Math.random() * 4))
     const [selectedIndex, setSelectedIndex] = useState(-1)
 
     useEffect(() => {
-        setRandomIndices(getInitialRandomIndices(props.vocabularyList))
+        setRandomIndices(getInitialRandomIndices(props.vocabularyList, props.currentWord))
         setCorrectAnswerRandomIndex(Math.floor(Math.random() * 4))
         setSelectedIndex(-1)
     }, [props.currentWord])
