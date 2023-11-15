@@ -3660,7 +3660,7 @@ const vocab = [
         "Random Number": 0.5167194653
     },
     {
-        "Latin": "senex. senis, m.",
+        "Latin": "senex, senis, m.",
         "English": "old man",
         "Stage": 5,
         "Part of Speech": "noun",

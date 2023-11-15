@@ -39,7 +39,7 @@ export function EnglishToLatinFreeResponse(props: PropTypes) {
             {
                 didSubmit &&
                 <div>
-                    <div>{props.currentWord.Latin.split(", ")}</div>
+                    <div>{props.currentWord.Latin.split(", ")[0]}</div>
                     <div
                         style={{cursor: 'pointer', color: "green"}}
                         onClick={() => {

@@ -27,16 +27,13 @@ export function Vocabulary() {
   const [ currentIndex, setCurrentIndex ] = useState(0);
   
   const updateIndex = () => {
-    let tempIndex = currentIndex;
+    let tempIndex = Math.floor(Math.random()*vocabularyAsJSON.length);
     if (vocabularyAsJSON.length > 0) {
       // skip any indexes with a level of 6
       while (learningLevelsMap[
-          vocabularyAsJSON[(tempIndex += 1) % vocabularyAsJSON.length].Latin.split(", ")[0]
-          ].learningLevel >= 6) {
-        if (tempIndex === currentIndex) {
-          console.log("ALL WORDS LEARNED");
-          break;
-        }
+        vocabularyAsJSON[tempIndex].Latin.split(", ")[0]].learningLevel >= 6
+      ) {
+        tempIndex = Math.floor(Math.random()*vocabularyAsJSON.length);
       }
     }
     
@@ -88,22 +85,22 @@ export function Vocabulary() {
       } updateCurrentIndex={updateIndex} />
       break;
     case 3:
-      if (currentWord.Latin.split(", ").length > 1) {
-        componentToRender = <LatinToLatin vocabularyList={vocabularyAsJSON} currentWord={currentWord} updateLevel={
-          (success) => {
-            let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + (success ? 1 : 0)
-            updateLearningLevel(newLearningLevel)
-          }
-        } updateCurrentIndex={updateIndex} />
-      }
-      else {
+      // if (currentWord.Latin.split(", ").length > 1) {
+      //   componentToRender = <LatinToLatin vocabularyList={vocabularyAsJSON} currentWord={currentWord} updateLevel={
+      //     (success) => {
+      //       let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + (success ? 1 : 0)
+      //       updateLearningLevel(newLearningLevel)
+      //     }
+      //   } updateCurrentIndex={updateIndex} />
+      // }
+      // else {
         componentToRender = <EnglishToLatinFreeResponse vocabularyList={vocabularyAsJSON} currentWord={currentWord} updateLevel={
           (success) => {
             let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + (success ? 1 : 0)
             updateLearningLevel(newLearningLevel)
           }
         } updateCurrentIndex={updateIndex} />
-      }
+      // }
       
       break;
     case 4:

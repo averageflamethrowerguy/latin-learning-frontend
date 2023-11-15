@@ -51,19 +51,20 @@ export function LatinToEnglishMultipleChoice(props: PropTypes) {
                 possibleAnswers.map((word, index) => {
                     return <div
                         key={index}
-                        style={(selectedIndex === index) ?
-                            ((selectedIndex === correctAnswerRandomIndex) ?
+                        style={
+                            (selectedIndex !== -1 && index === correctAnswerRandomIndex) ?
                                 {backgroundColor: "green"} :
-                                {backgroundColor: "red"}) :
-                            {}
+                                (selectedIndex === index) ?
+                                    {backgroundColor: "red"} :
+                                    {}
                         }
                         onClick={() => {
                             if (selectedIndex === -1) {
                                 setSelectedIndex(index)
                             }
                         }}>
-                        {word}
-                    </div>
+                            {word}
+                        </div>
                 })
             }
         </div>
