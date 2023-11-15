@@ -57,11 +57,11 @@ export function EnglishToLatinMultipleChoice(props: PropTypes) {
                 possibleAnswers.map((word, index) => {
                     return <div
                         key={index}
-                        style={(selectedIndex === index) ?
-                            ((selectedIndex === correctAnswerRandomIndex) ?
-                                {backgroundColor: "green"} :
-                                {backgroundColor: "red"}) :
-                            {}
+                        style={(selectedIndex !== -1 && index === correctAnswerRandomIndex) ?
+                            {backgroundColor: "green"} :
+                            (selectedIndex === index) ?
+                                {backgroundColor: "red"} :
+                                {}
                         }
                         onClick={() => {
                             if (selectedIndex === -1) {
