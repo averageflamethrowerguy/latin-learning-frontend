@@ -1,9 +1,10 @@
 import { BrowserRouter, useNavigate, useParams } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
-import {VerbChecks} from "./VerbChecks";
+import {AdjAdverbChecks} from "./AdjAdverbChecks";
 import {Vocabulary} from "./Vocabulary";
 import {NounChecks} from "./NounChecks";
 import {PronounChecks} from "./PronounChecks";
+import {VerbChecks} from "./VerbChecks";
 
 export function Home() {
 	// const cognitoId = "607865"  // 19
@@ -16,6 +17,7 @@ export function Home() {
 		<div style={{maxHeight: "100vh", overflow: "scroll"}}>
 			<Vocabulary />
 			<VerbChecks />
+			<AdjAdverbChecks />
 			<NounChecks />
 			<PronounChecks />
 		</div>

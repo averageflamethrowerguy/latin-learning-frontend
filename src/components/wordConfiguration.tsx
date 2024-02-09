@@ -6,31 +6,6 @@ const verbFormList = [
             masculine: {
                 indicative: {
                     present: {
-                        singular: ["sum", "es", "est"],
-                        plural: ["sumus", "estis", "sunt"]
-                    },
-                    imperfect: {
-                        singular: ["eram", "erās", "erat"],
-                        plural: ["erāmus", "erātis", "erant"]
-                    },
-                    perfect: {
-                        singular: ["fuī", "fuistī", "fuit"],
-                        plural: ["fuimus", "fuistis", "fuērunt"]
-                    },
-                    pluperfect: {
-                        singular: ["fueram", "fuerās", "fuerat"],
-                        plural: ["fuerāmus", "fuerātis", "fuerant"]
-                    },
-                    infinitive: "esse"
-                }
-            }
-        }
-    },
-    {
-        active: {
-            masculine: {
-                indicative: {
-                    present: {
                         singular: ["portō", "portās", "portat"],
                         plural: ["portāmus", "portātis", "portant"]
                     },
@@ -47,6 +22,30 @@ const verbFormList = [
                         plural: ["portāverāmus", "portāverātis", "portāverant"]
                     },
                     infinitive: "portāre"
+                },
+                subjunctive: {
+                    imperfect: {
+                        singular: ["portārem", "portārēs", "portāret"],
+                        plural: ["portārēmus", "portārētis", "portārent"]
+                    },
+                    pluperfect: {
+                        singular: ["portāvissem", "portāvissēs", "portāvisset"],
+                        plural: ["portāvissēmus", "portāvissētis", "portāvissent"]
+                    },
+                }
+            }
+        },
+        passive: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["portor", "portāris", "portātur"],
+                        plural: ["portāmur", "portāminī", "portantur"]
+                    },
+                    imperfect: {
+                        singular: ["portābar", "portābāris", "portābātur"],
+                        plural: ["portābāmur", "portābāminī", "portābantur"]
+                    },
                 }
             }
         }
@@ -72,6 +71,30 @@ const verbFormList = [
                         plural: ["docuerāmus", "docuerātis", "docuerant"]
                     },
                     infinitive: "docēre"
+                },
+                subjunctive: {
+                    imperfect: {
+                        singular: ["docērem", "docērēs", "docēret"],
+                        plural: ["docērēmus", "docērētis", "docērent"]
+                    },
+                    pluperfect: {
+                        singular: ["docuissem", "docuissēs", "docuisset"],
+                        plural: ["docuissēmus", "docuissētis", "docuissent"]
+                    },
+                }
+            }
+        },
+        passive: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["doceor", "docēris", "docētur"],
+                        plural: ["docēmur", "docēminī", "decentur"]
+                    },
+                    imperfect: {
+                        singular: ["docēbar", "docēbāris", "docēbātur"],
+                        plural: ["docēbāmur", "docēbāminī", "docēbantur"]
+                    },
                 }
             }
         }
@@ -97,6 +120,30 @@ const verbFormList = [
                         plural: ["trāxerāmus", "trāxerātis", "trāxerant"]
                     },
                     infinitive: "trahere"
+                },
+                subjunctive: {
+                    imperfect: {
+                        singular: ["traherem", "traherēs", "traheret"],
+                        plural: ["traherēmus", "traherētis", "traherent"]
+                    },
+                    pluperfect: {
+                        singular: ["trāxissem", "trāxissēs", "trāxisset"],
+                        plural: ["trāxissēmus", "trāxissētis", "trāxissent"]
+                    },
+                }
+            }
+        },
+        passive: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["trahor", "traheris", "trahitur"],
+                        plural: ["trahimur", "trahiminī", "trahuntur"]
+                    },
+                    imperfect: {
+                        singular: ["trahēbar", "trahēbāris", "trahēbātur"],
+                        plural: ["trahēbāmur", "tragēbāminī", "tragēbantur"]
+                    },
                 }
             }
         }
@@ -122,6 +169,55 @@ const verbFormList = [
                         plural: ["audīverāmus", "audīverātis", "audīverant"]
                     },
                     infinitive: "audīre"
+                },
+                subjunctive: {
+                    imperfect: {
+                        singular: ["audīrem", "audīrēs", "audīret"],
+                        plural: ["audīrēmus", "audīrētis", "audīrent"]
+                    },
+                    pluperfect: {
+                        singular: ["audīvissem", "audīvissēs", "audīvisset"],
+                        plural: ["audīvissēmus", "audīvissētis", "audīvissent"]
+                    },
+                }
+            }
+        },
+        passive: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["audior", "audīris", "audītur"],
+                        plural: ["audīmur", "audīminī", "audiuntur"]
+                    },
+                    imperfect: {
+                        singular: ["audiēbar", "audiēbāris", "audiēbātur"],
+                        plural: ["audiēbāmur", "audiēbāminī", "audiēbantur"]
+                    },
+                }
+            }
+        }
+    },
+    {
+        active: {
+            masculine: {
+                indicative: {
+                    present: {
+                        singular: ["sum", "es", "est"],
+                        plural: ["sumus", "estis", "sunt"]
+                    },
+                    imperfect: {
+                        singular: ["eram", "erās", "erat"],
+                        plural: ["erāmus", "erātis", "erant"]
+                    },
+                    perfect: {
+                        singular: ["fuī", "fuistī", "fuit"],
+                        plural: ["fuimus", "fuistis", "fuērunt"]
+                    },
+                    pluperfect: {
+                        singular: ["fueram", "fuerās", "fuerat"],
+                        plural: ["fuerāmus", "fuerātis", "fuerant"]
+                    },
+                    infinitive: "esse"
                 }
             }
         }
@@ -762,7 +858,35 @@ const pronounFormList = [
     },
 ]
 
-export {verbEndingStructure, verbFormList, nounFormList, pronounFormList}
+const adjAdverbList = [
+    {
+        adjectives: ["bonus", "melior", "optimus"],
+        adverbs: ["bene", "melius", "optimē"]
+    },
+    {
+        adjectives: ["malus", "peior", "pessimus"],
+        adverbs: ["male", "peius", "pessimē"]
+    },
+    {
+        adjectives: ["magnus", "maior", "maximus"],
+        adverbs: ["magnopere", "magis", "maximē"]
+    },
+    {
+        adjectives: ["parvus", "minor", "minimus"],
+        adverbs: ["paulum", "minus", "minimē"]
+    },
+    {
+        adjectives: ["multus", "plūs", "plūrimus"],
+        adverbs: ["multum", "plūs", "plūrimum"]
+    },
+    {
+        adjectives: ["multī", "plūrēs", "plūrimī"],
+        adverbs: ["--", "--", "--"]
+    }
+]
+
+
+export {verbEndingStructure, verbFormList, nounFormList, pronounFormList, adjAdverbList}
 
 
 

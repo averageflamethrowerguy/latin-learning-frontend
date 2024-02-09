@@ -18,22 +18,24 @@ export function Vocabulary() {
   const [ learningLevelsMap, setLearningLevelsMap ] = useState(Object.fromEntries(vocabularyAsJSON.map(wordObject => {
     const firstLatinWord = wordObject.Latin.split(", ")[0]
     const storedLevel = localStorage.getItem(firstLatinWord)
-    if (storedLevel) {
-      console.log(storedLevel)
-    }
+    // if (storedLevel) {
+    //   console.log(storedLevel)
+    // }
     return [firstLatinWord, {learningLevel: storedLevel ? Number(storedLevel) : 1,
       latin: wordObject}]
   })))
   const [ currentIndex, setCurrentIndex ] = useState(0);
-  
+  const [ currentChapter, setCurrentChapter ] = useState(28)
+  const vocabularyAsJSONFiltered = vocabularyAsJSON.filter(word => word.Stage <= currentChapter)
+
   const updateIndex = () => {
-    let tempIndex = Math.floor(Math.random()*vocabularyAsJSON.length);
-    if (vocabularyAsJSON.length > 0) {
+    let tempIndex = Math.floor(Math.random()*vocabularyAsJSONFiltered.length);
+    if (vocabularyAsJSONFiltered.length > 0) {
       // skip any indexes with a level of 6
       while (learningLevelsMap[
-        vocabularyAsJSON[tempIndex].Latin.split(", ")[0]].learningLevel >= 6
+        vocabularyAsJSONFiltered[tempIndex].Latin.split(", ")[0]].learningLevel >= 6
       ) {
-        tempIndex = Math.floor(Math.random()*vocabularyAsJSON.length);
+        tempIndex = Math.floor(Math.random()*vocabularyAsJSONFiltered.length);
       }
     }
     
@@ -44,10 +46,10 @@ export function Vocabulary() {
     updateIndex()
   }, [])
   
-  const currentWord = vocabularyAsJSON[currentIndex]
+  const currentWord = vocabularyAsJSONFiltered[currentIndex]
   const currentLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel
   
-  console.log("before switch")
+  // console.log("before switch")
   
   let levelCounts = {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0}
   for (let [key, value] of Object.entries(learningLevelsMap)) {
@@ -69,7 +71,7 @@ export function Vocabulary() {
   let componentToRender
   switch (currentLevel) {
     case 1:
-      componentToRender = <EnglishToLatinMultipleChoice vocabularyList={vocabularyAsJSON} currentWord={currentWord} updateLevel={
+      componentToRender = <EnglishToLatinMultipleChoice vocabularyList={vocabularyAsJSONFiltered} currentWord={currentWord} updateLevel={
         (success) => {
           let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + (success ? 1 : 0)
           updateLearningLevel(newLearningLevel)
@@ -77,7 +79,7 @@ export function Vocabulary() {
       } updateCurrentIndex={updateIndex} />
       break;
     case 2:
-      componentToRender = <LatinToEnglishMultipleChoice vocabularyList={vocabularyAsJSON} currentWord={currentWord} updateLevel={
+      componentToRender = <LatinToEnglishMultipleChoice vocabularyList={vocabularyAsJSONFiltered} currentWord={currentWord} updateLevel={
         (success) => {
           let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + (success ? 1 : 0)
           updateLearningLevel(newLearningLevel)
@@ -86,7 +88,7 @@ export function Vocabulary() {
       break;
     case 3:
       // if (currentWord.Latin.split(", ").length > 1) {
-      //   componentToRender = <LatinToLatin vocabularyList={vocabularyAsJSON} currentWord={currentWord} updateLevel={
+      //   componentToRender = <LatinToLatin vocabularyList={vocabularyAsJSONFiltered} currentWord={currentWord} updateLevel={
       //     (success) => {
       //       let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + (success ? 1 : 0)
       //       updateLearningLevel(newLearningLevel)
@@ -94,7 +96,7 @@ export function Vocabulary() {
       //   } updateCurrentIndex={updateIndex} />
       // }
       // else {
-        componentToRender = <EnglishToLatinFreeResponse vocabularyList={vocabularyAsJSON} currentWord={currentWord} updateLevel={
+        componentToRender = <EnglishToLatinFreeResponse vocabularyList={vocabularyAsJSONFiltered} currentWord={currentWord} updateLevel={
           (success) => {
             let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + (success ? 1 : 0)
             updateLearningLevel(newLearningLevel)
@@ -104,7 +106,7 @@ export function Vocabulary() {
       
       break;
     case 4:
-      componentToRender = <EnglishToLatinFreeResponse vocabularyList={vocabularyAsJSON} currentWord={currentWord} updateLevel={
+      componentToRender = <EnglishToLatinFreeResponse vocabularyList={vocabularyAsJSONFiltered} currentWord={currentWord} updateLevel={
         (success) => {
           let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + (success ? 1 : 0)
           updateLearningLevel(newLearningLevel)
@@ -112,7 +114,7 @@ export function Vocabulary() {
       } updateCurrentIndex={updateIndex} />
       break;
     default:
-      componentToRender = <EnglishToLatinFreeResponse vocabularyList={vocabularyAsJSON} currentWord={currentWord} updateLevel={
+      componentToRender = <EnglishToLatinFreeResponse vocabularyList={vocabularyAsJSONFiltered} currentWord={currentWord} updateLevel={
         (success) => {
           let updateAmount = success ? 1 : -1
           let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + updateAmount
@@ -138,7 +140,7 @@ export function Vocabulary() {
           Object.entries(levelCounts).map(([key, value]) => {
             return (
               <div>
-                Level {key} : {100 * value / vocabularyAsJSON.length}%
+                Level {key} : {100 * value / vocabularyAsJSONFiltered.length}%
               </div>
             )
           })
@@ -154,6 +156,9 @@ export function Vocabulary() {
           }}
         >
           I know this word
+        </div>
+        <div>
+          Current chapter: {currentChapter}
         </div>
       </div>
     </div>

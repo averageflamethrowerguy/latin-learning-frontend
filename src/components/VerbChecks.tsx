@@ -12,7 +12,7 @@ export function VerbChecks(props: {}) {
     const [verbPerson, setVerbPerson] = useState([0, 1, 2])
     const [verbNumber, setVerbNumber] = useState(["singular", "plural"])
     const [verbTense, setVerbTense] = useState(["present", "perfect"])
-    const [verbMood, setVerbMood] = useState(["indicative"])
+    const [verbMood, setVerbMood] = useState(["indicative", "subjunctive"])
     const [verbGender, setVerbGender] = useState(["masculine"])
     const [verbVoice, setVerbVoice] = useState(["active"])
     
@@ -49,8 +49,14 @@ export function VerbChecks(props: {}) {
                                                 {
                                                     Object.entries(gender[1]).map(mood => {
                                                         if (verbMood.includes(mood[0])) {
+                                                            console.log(mood[0])
+                                                            console.log(mood[1])
+
                                                             return (
                                                               <div>
+                                                                  <div>
+                                                                      {mood[0]}
+                                                                  </div>
                                                                   {
                                                                       Object.entries(mood[1]).map(tense => {
                                                                           if (verbTense.includes(tense[0])) {
@@ -215,6 +221,17 @@ export function VerbChecks(props: {}) {
                                 <ControlInputElement stringValue={0} originalArray={verbPerson} setter={setVerbPerson} genericClickListener={genericClickListener} />
                                 <ControlInputElement stringValue={1} originalArray={verbPerson} setter={setVerbPerson} genericClickListener={genericClickListener} />
                                 <ControlInputElement stringValue={2} originalArray={verbPerson} setter={setVerbPerson} genericClickListener={genericClickListener} />
+                            </div>
+                        </ControlPanelSection>
+
+                        <ControlPanelSection>
+                            <div>
+                                Mood
+                            </div>
+
+                            <div>
+                                <ControlInputElement stringValue={"indicative"} originalArray={verbMood} setter={setVerbMood} genericClickListener={genericClickListener} />
+                                <ControlInputElement stringValue={"subjunctive"} originalArray={verbMood} setter={setVerbMood} genericClickListener={genericClickListener} />
                             </div>
                         </ControlPanelSection>
                     </div>
