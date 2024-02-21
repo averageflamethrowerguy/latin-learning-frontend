@@ -14,7 +14,7 @@ export function VerbChecks(props: {}) {
     const [verbTense, setVerbTense] = useState(["present", "perfect"])
     const [verbMood, setVerbMood] = useState(["indicative", "subjunctive"])
     const [verbGender, setVerbGender] = useState(["masculine"])
-    const [verbVoice, setVerbVoice] = useState(["active"])
+    const [verbVoice, setVerbVoice] = useState(["active", "passive"])
     
     const genericClickListener = (modifyString: string, unmodifiedArray: string[], setter: any, remove: boolean) => {
         let newArray = [...unmodifiedArray]
@@ -41,6 +41,9 @@ export function VerbChecks(props: {}) {
                     if (verbVoice.includes(voice[0])) {
                         return (
                           <div>
+                              <div style={{fontWeight: "bold"}}>
+                                  {voice[0]}
+                              </div>
                               {
                                   Object.entries(voice[1]).map(gender => {
                                       if (verbGender.includes(gender[0])) {
@@ -148,6 +151,7 @@ export function VerbChecks(props: {}) {
                   }
                 )
             }
+
         </div>
             <div>
                 <div style={{backgroundColor: "white", padding: 10, borderRadius: 10, margin: 10}}>
@@ -232,6 +236,17 @@ export function VerbChecks(props: {}) {
                             <div>
                                 <ControlInputElement stringValue={"indicative"} originalArray={verbMood} setter={setVerbMood} genericClickListener={genericClickListener} />
                                 <ControlInputElement stringValue={"subjunctive"} originalArray={verbMood} setter={setVerbMood} genericClickListener={genericClickListener} />
+                            </div>
+                        </ControlPanelSection>
+
+                        <ControlPanelSection>
+                            <div>
+                                Voice
+                            </div>
+
+                            <div>
+                                <ControlInputElement stringValue={"active"} originalArray={verbVoice} setter={setVerbVoice} genericClickListener={genericClickListener} />
+                                <ControlInputElement stringValue={"passive"} originalArray={verbVoice} setter={setVerbVoice} genericClickListener={genericClickListener} />
                             </div>
                         </ControlPanelSection>
                     </div>
