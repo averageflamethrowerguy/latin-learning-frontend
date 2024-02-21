@@ -25,7 +25,7 @@ yarn-debug.log*
 yarn-error.log*
 
 notes.txt
-src/appConfiguration.tsx
+#src/appConfiguration.tsx
 .idea/vcs.xml
 .idea/workspace.xml
 src/services/numberChessStates.js
