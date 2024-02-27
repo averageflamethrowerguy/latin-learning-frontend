@@ -1,6 +1,8 @@
 import {useState} from "react";
 import {verbEndingStructure, verbFormList} from "./wordConfiguration";
+import { CompareTwoWords } from "./CompareTwoWords";
 import styled from "styled-components";
+import { WordInputElement } from "./WordInputElement";
 
 export function VerbChecks(props: {}) {
     // for now, we'll just show the verb chart
@@ -82,12 +84,12 @@ export function VerbChecks(props: {}) {
                                                                                                 <th style={{width: 35}}>1st</th>
                                                                                                 {
                                                                                                     (verbNumber.includes("singular")) &&
-                                                                                                    <VerbInputElement correctAnswer={workingObject[voice[0]][gender[0]][mood[0]][tense[0]].singular[0]}
+                                                                                                    <WordInputElement correctAnswer={workingObject[voice[0]][gender[0]][mood[0]][tense[0]].singular[0]}
                                                                                                                       didSubmit={didSubmit} />
                                                                                                 }
                                                                                                 {
                                                                                                     (verbNumber.includes("plural")) &&
-                                                                                                    <VerbInputElement correctAnswer={workingObject[voice[0]][gender[0]][mood[0]][tense[0]].plural[0]}
+                                                                                                    <WordInputElement correctAnswer={workingObject[voice[0]][gender[0]][mood[0]][tense[0]].plural[0]}
                                                                                                                       didSubmit={didSubmit} />
                                                                                                 }
                                                                                             </tr>
@@ -99,12 +101,12 @@ export function VerbChecks(props: {}) {
                                                                                                 <th style={{width: 35}}>2nd</th>
                                                                                                 {
                                                                                                     (verbNumber.includes("singular")) &&
-                                                                                                    <VerbInputElement correctAnswer={workingObject[voice[0]][gender[0]][mood[0]][tense[0]].singular[1]}
+                                                                                                    <WordInputElement correctAnswer={workingObject[voice[0]][gender[0]][mood[0]][tense[0]].singular[1]}
                                                                                                                       didSubmit={didSubmit} />
                                                                                                 }
                                                                                                 {
                                                                                                     (verbNumber.includes("plural")) &&
-                                                                                                    <VerbInputElement correctAnswer={workingObject[voice[0]][gender[0]][mood[0]][tense[0]].plural[1]}
+                                                                                                    <WordInputElement correctAnswer={workingObject[voice[0]][gender[0]][mood[0]][tense[0]].plural[1]}
                                                                                                                       didSubmit={didSubmit} />
                                                                                                 }
                                                                                             </tr>
@@ -116,12 +118,12 @@ export function VerbChecks(props: {}) {
                                                                                                 <th style={{width: 35}}>3rd</th>
                                                                                                 {
                                                                                                     (verbNumber.includes("singular")) &&
-                                                                                                    <VerbInputElement correctAnswer={workingObject[voice[0]][gender[0]][mood[0]][tense[0]].singular[2]}
+                                                                                                    <WordInputElement correctAnswer={workingObject[voice[0]][gender[0]][mood[0]][tense[0]].singular[2]}
                                                                                                                       didSubmit={didSubmit} />
                                                                                                 }
                                                                                                 {
                                                                                                     (verbNumber.includes("plural")) &&
-                                                                                                    <VerbInputElement correctAnswer={workingObject[voice[0]][gender[0]][mood[0]][tense[0]].plural[2]}
+                                                                                                    <WordInputElement correctAnswer={workingObject[voice[0]][gender[0]][mood[0]][tense[0]].plural[2]}
                                                                                                                       didSubmit={didSubmit} />
                                                                                                 }
                                                                                             </tr>
@@ -265,53 +267,6 @@ function ControlInputElement(props: {stringValue: any, originalArray: any[], set
           />
           {props.stringValue}
       </div>
-    )
-}
-
-function VerbInputElement(props: {correctAnswer: string, didSubmit: boolean}) {
-    const [testVerb, setTestVerb] = useState("")
-
-    return (
-        <th style={{width: 250}}>
-            <input
-                style={{maxWidth: 150}}
-                onChange={(e) => setTestVerb(e.target.value)}
-            />
-            {
-                props.didSubmit && <CompareTwoWords
-                    testedWord={props.correctAnswer}
-                    testingWord={testVerb}
-                />
-            }
-        </th>
-    )
-}
-
-/**
- * Compares two words, character by character. Highlight differences.
- * The testedWord is displayed in deserialized form.
- *
- * @param props
- * @constructor
- */
-function CompareTwoWords(props: {testedWord: string, testingWord: string}) {
-    return (
-        <span style={{marginLeft: 5}}>
-            {
-                props.testedWord.split("").map((char, index) => {
-                    console.log(char, props.testingWord[index])
-
-                    return <span
-                        key={index}
-                        style={{
-                            fontWeight: char===props.testingWord[index] ? 400 : "bold",
-                            color: char===props.testingWord[index] ? "black" : "red"
-                        }}
-                    >{char}</span>
-                })
-            }
-        </span>
-
     )
 }
 

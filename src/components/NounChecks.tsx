@@ -1,5 +1,6 @@
 import {useEffect, useState} from "react";
 import {nounFormList} from "./wordConfiguration";
+import { WordInputElement } from "./WordInputElement";
 
 export function RenderNounChecks(props: {workingObject: any}) {
     const [didSubmit, setDidSubmit] = useState(false)
@@ -22,28 +23,28 @@ export function RenderNounChecks(props: {workingObject: any}) {
                 </tr>
                 <tr>
                     <th>Nominative</th>
-                    <th><input />{didSubmit && props.workingObject.nominative.singular}</th>
-                    <th><input />{didSubmit && props.workingObject.nominative.plural}</th>
+                    <th><WordInputElement correctAnswer={props.workingObject.nominative.singular} didSubmit={didSubmit} /></th>
+                    <th><WordInputElement correctAnswer={props.workingObject.nominative.plural} didSubmit={didSubmit} /></th>
                 </tr>
                 <tr>
                     <th>Genitive</th>
-                    <th><input />{didSubmit && props.workingObject.genitive.singular}</th>
-                    <th><input />{didSubmit && props.workingObject.genitive.plural}</th>
+                    <th><WordInputElement correctAnswer={props.workingObject.genitive.singular} didSubmit={didSubmit} /></th>
+                    <th><WordInputElement correctAnswer={props.workingObject.genitive.plural} didSubmit={didSubmit} /></th>
                 </tr>
                 <tr>
                     <th>Dative</th>
-                    <th><input />{didSubmit && props.workingObject.dative.singular}</th>
-                    <th><input />{didSubmit && props.workingObject.dative.plural}</th>
+                    <th><WordInputElement correctAnswer={props.workingObject.dative.singular} didSubmit={didSubmit} /></th>
+                    <th><WordInputElement correctAnswer={props.workingObject.dative.plural} didSubmit={didSubmit} /></th>
                 </tr>
                 <tr>
                     <th>Accusative</th>
-                    <th><input />{didSubmit && props.workingObject.accusative.singular}</th>
-                    <th><input />{didSubmit && props.workingObject.accusative.plural}</th>
+                    <th><WordInputElement correctAnswer={props.workingObject.accusative.singular} didSubmit={didSubmit} /></th>
+                    <th><WordInputElement correctAnswer={props.workingObject.accusative.plural} didSubmit={didSubmit} /></th>
                 </tr>
                 <tr>
                     <th>Ablative</th>
-                    <th><input />{didSubmit && props.workingObject.ablative.singular}</th>
-                    <th><input />{didSubmit && props.workingObject.ablative.plural}</th>
+                    <th><WordInputElement correctAnswer={props.workingObject.ablative.singular} didSubmit={didSubmit} /></th>
+                    <th><WordInputElement correctAnswer={props.workingObject.ablative.plural} didSubmit={didSubmit} /></th>
                 </tr>
             </table>
 

@@ -37,6 +37,9 @@ export function PronounChecks(props: {}) {
                     </tr>
                     <tr>
                         <th>Nominative</th>
+                        <th><WordInputElement correctAnswer={workingObject.nominative.singular.masculine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.nominative.s} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.} didSubmit={didSubmit} /></th>
                         <th><input />{didSubmit && workingObject.nominative.singular.masculine}</th>
                         <th><input />{didSubmit && workingObject.nominative.singular.feminine}</th>
                         <th><input />{didSubmit && workingObject.nominative.singular.neuter}</th>

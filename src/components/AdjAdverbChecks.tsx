@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {adjAdverbList} from "./wordConfiguration";
+import { WordInputElement } from "./WordInputElement";
 
 export function AdjAdverbChecks(props: {}) {
     // for now, we'll just show the noun chart
@@ -33,15 +34,15 @@ export function AdjAdverbChecks(props: {}) {
                     </tr>
                     <tr>
                         <th>Adjective</th>
-                        <th><input />{didSubmit && workingObject.adjectives[0]}</th>
-                        <th><input />{didSubmit && workingObject.adjectives[1]}</th>
-                        <th><input />{didSubmit && workingObject.adjectives[2]}</th>
+                        <th><WordInputElement correctAnswer={workingObject.adjectives[0]} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.adjectives[1]} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.adjectives[2]} didSubmit={didSubmit} /></th>
                     </tr>
                     <tr>
                         <th>Adverb</th>
-                        <th><input />{didSubmit && workingObject.adverbs[0]}</th>
-                        <th><input />{didSubmit && workingObject.adverbs[1]}</th>
-                        <th><input />{didSubmit && workingObject.adverbs[2]}</th>
+                        <th><WordInputElement correctAnswer={workingObject.adverbs[0]} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.adverbs[1]} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.adverbs[2]} didSubmit={didSubmit} /></th>
                     </tr>
                 </table>
 

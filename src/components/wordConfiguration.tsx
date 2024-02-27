@@ -605,6 +605,30 @@ const nounFormList = [
             plural: "nōminibus"
         }
     },
+
+    // this is a fourth-declension masculine noun
+    {
+        nominative: {
+            singular: "portus",
+            plural: "portūs"
+        },
+        genitive: {
+            singular: "portūs",
+            plural: "portuum"
+        },
+        dative: {
+            singular: "portuī",
+            plural: "portibus"
+        },
+        accusative: {
+            singular: "portum",
+            plural: "portūs"
+        },
+        ablative: {
+            singular: "portū",
+            plural: "portibus"
+        }
+    },
 ]
 
 const pronounFormList = [
