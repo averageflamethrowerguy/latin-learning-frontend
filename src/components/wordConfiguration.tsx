@@ -40,10 +40,6 @@ const verbFormList = [
                         singular: ["portāvissem", "portāvissēs", "portāvisset"],
                         plural: ["portāvissēmus", "portāvissētis", "portāvissent"]
                     },
-                    future: {
-                        singular: ["portābor", "portāberis", "portābitur"],
-                        plural: ["portābimur", "portābiminī", "portābuntur"]
-                    },
                 }
             }
         },
@@ -57,6 +53,10 @@ const verbFormList = [
                     imperfect: {
                         singular: ["portābar", "portābāris", "portābātur"],
                         plural: ["portābāmur", "portābāminī", "portābantur"]
+                    },
+                    future: {
+                        singular: ["portābor", "portāberis", "portābitur"],
+                        plural: ["portābimur", "portābiminī", "portābuntur"]
                     },
                 }
             }
@@ -101,10 +101,6 @@ const verbFormList = [
                         singular: ["docuissem", "docuissēs", "docuisset"],
                         plural: ["docuissēmus", "docuissētis", "docuissent"]
                     },
-                    future: {
-                        singular: ["docēbor", "docēberis", "docēbitur"],
-                        plural: ["docēbimur", "docēbiminī", "docēbuntur"]
-                    },
                 }
             }
         },
@@ -118,6 +114,10 @@ const verbFormList = [
                     imperfect: {
                         singular: ["docēbar", "docēbāris", "docēbātur"],
                         plural: ["docēbāmur", "docēbāminī", "docēbantur"]
+                    },
+                    future: {
+                        singular: ["docēbor", "docēberis", "docēbitur"],
+                        plural: ["docēbimur", "docēbiminī", "docēbuntur"]
                     },
                 }
             }

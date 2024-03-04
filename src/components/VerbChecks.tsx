@@ -13,8 +13,8 @@ export function VerbChecks(props: {}) {
     
     const [verbPerson, setVerbPerson] = useState([0, 1, 2])
     const [verbNumber, setVerbNumber] = useState(["singular", "plural"])
-    const [verbTense, setVerbTense] = useState(["future", "future perfect"])
-    const [verbMood, setVerbMood] = useState(["indicative", "subjunctive"])
+    const [verbTense, setVerbTense] = useState(["present", "future"])
+    const [verbMood, setVerbMood] = useState(["indicative"])
     const [verbGender, setVerbGender] = useState(["masculine"])
     const [verbVoice, setVerbVoice] = useState(["active", "passive"])
     
@@ -31,6 +31,7 @@ export function VerbChecks(props: {}) {
         setter(newArray)
     }
 
+    console.log(verbFormList)
     const workingObject = inEndingMode ? verbEndingStructure : verbFormList[verbIndex]
 
     return (
@@ -54,9 +55,6 @@ export function VerbChecks(props: {}) {
                                                 {
                                                     Object.entries(gender[1]).map(mood => {
                                                         if (verbMood.includes(mood[0])) {
-                                                            console.log(mood[0])
-                                                            console.log(mood[1])
-
                                                             return (
                                                               <div>
                                                                   <div>
