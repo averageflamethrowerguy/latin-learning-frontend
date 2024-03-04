@@ -21,6 +21,14 @@ const verbFormList = [
                         singular: ["portāveram", "portāverās", "portāverat"],
                         plural: ["portāverāmus", "portāverātis", "portāverant"]
                     },
+                    future: {
+                        singular: ["portābō", "portābis", "portābit"],
+                        plural: ["portābimus", "portābitis", "portābunt"]
+                    },
+                    "future perfect": {
+                        singular: ["portāverō", "portāveris", "portāverit"],
+                        plural: ["portāverimus", "portāveritis", "portāverint"]
+                    },
                     infinitive: "portāre"
                 },
                 subjunctive: {
@@ -31,6 +39,10 @@ const verbFormList = [
                     pluperfect: {
                         singular: ["portāvissem", "portāvissēs", "portāvisset"],
                         plural: ["portāvissēmus", "portāvissētis", "portāvissent"]
+                    },
+                    future: {
+                        singular: ["portābor", "portāberis", "portābitur"],
+                        plural: ["portābimur", "portābiminī", "portābuntur"]
                     },
                 }
             }
@@ -70,6 +82,14 @@ const verbFormList = [
                         singular: ["docueram", "docuerās", "docuerat"],
                         plural: ["docuerāmus", "docuerātis", "docuerant"]
                     },
+                    future: {
+                        singular: ["docēbō", "docēbis", "docēbit"],
+                        plural: ["docēbimus", "docēbitis", "docēbunt"]
+                    },
+                    "future perfect": {
+                        singular: ["docuerō", "docueris", "docuerit"],
+                        plural: ["docuerimus", "docueritis", "docuerint"]
+                    },
                     infinitive: "docēre"
                 },
                 subjunctive: {
@@ -80,6 +100,10 @@ const verbFormList = [
                     pluperfect: {
                         singular: ["docuissem", "docuissēs", "docuisset"],
                         plural: ["docuissēmus", "docuissētis", "docuissent"]
+                    },
+                    future: {
+                        singular: ["docēbor", "docēberis", "docēbitur"],
+                        plural: ["docēbimur", "docēbiminī", "docēbuntur"]
                     },
                 }
             }
@@ -119,6 +143,14 @@ const verbFormList = [
                         singular: ["trāxeram", "trāxerās", "trāxerat"],
                         plural: ["trāxerāmus", "trāxerātis", "trāxerant"]
                     },
+                    future: {
+                        singular: ["traham", "trahēs", "trahet"],
+                        plural: ["trahēmus", "trahētis", "trahent"]
+                    },
+                    "future perfect": {
+                        singular: ["trāxerō", "trāxeris", "trāxerit"],
+                        plural: ["trāxerimus", "trāxeritis", "trāxerint"]
+                    },
                     infinitive: "trahere"
                 },
                 subjunctive: {
@@ -144,6 +176,10 @@ const verbFormList = [
                         singular: ["trahēbar", "trahēbāris", "trahēbātur"],
                         plural: ["trahēbāmur", "tragēbāminī", "tragēbantur"]
                     },
+                    future: {
+                        singular: ["trahar", "trahēris", "trahētur"],
+                        plural: ["trahēmur", "trahēminī", "trahentur"]
+                    },
                 }
             }
         }
@@ -167,6 +203,14 @@ const verbFormList = [
                     pluperfect: {
                         singular: ["audīveram", "audīverās", "audīverat"],
                         plural: ["audīverāmus", "audīverātis", "audīverant"]
+                    },
+                    future: {
+                        singular: ["audiam", "audiēs", "audiet"],
+                        plural: ["audiēmus", "audiētis", "audient"]
+                    },
+                    "future perfect": {
+                        singular: ["audīverō", "audīveris", "audīverit"],
+                        plural: ["audīverimus", "audīveritis", "audīverint"]
                     },
                     infinitive: "audīre"
                 },
@@ -192,6 +236,10 @@ const verbFormList = [
                     imperfect: {
                         singular: ["audiēbar", "audiēbāris", "audiēbātur"],
                         plural: ["audiēbāmur", "audiēbāminī", "audiēbantur"]
+                    },
+                    future: {
+                        singular: ["audiar", "audiēris", "audiētur"],
+                        plural: ["audiēmur", "audiēminī", "audientur"]
                     },
                 }
             }

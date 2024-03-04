@@ -1,5 +1,6 @@
 import {useState} from "react";
 import {pronounFormList} from "./wordConfiguration";
+import { WordInputElement } from "./WordInputElement";
 
 export function PronounChecks(props: {}) {
     // for now, we'll just show the noun chart
@@ -38,35 +39,32 @@ export function PronounChecks(props: {}) {
                     <tr>
                         <th>Nominative</th>
                         <th><WordInputElement correctAnswer={workingObject.nominative.singular.masculine} didSubmit={didSubmit} /></th>
-                        <th><WordInputElement correctAnswer={workingObject.nominative.s} didSubmit={didSubmit} /></th>
-                        <th><WordInputElement correctAnswer={workingObject.} didSubmit={didSubmit} /></th>
-                        <th><input />{didSubmit && workingObject.nominative.singular.masculine}</th>
-                        <th><input />{didSubmit && workingObject.nominative.singular.feminine}</th>
-                        <th><input />{didSubmit && workingObject.nominative.singular.neuter}</th>
+                        <th><WordInputElement correctAnswer={workingObject.nominative.singular.feminine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.nominative.singular.neuter} didSubmit={didSubmit} /></th>
                     </tr>
                     <tr>
                         <th>Genitive</th>
-                        <th><input />{didSubmit && workingObject.genitive.singular.masculine}</th>
-                        <th><input />{didSubmit && workingObject.genitive.singular.feminine}</th>
-                        <th><input />{didSubmit && workingObject.genitive.singular.neuter}</th>
+                        <th><WordInputElement correctAnswer={workingObject.genitive.singular.masculine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.genitive.singular.feminine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.genitive.singular.neuter} didSubmit={didSubmit} /></th>
                     </tr>
                     <tr>
                         <th>Dative</th>
-                        <th><input />{didSubmit && workingObject.dative.singular.masculine}</th>
-                        <th><input />{didSubmit && workingObject.dative.singular.feminine}</th>
-                        <th><input />{didSubmit && workingObject.dative.singular.neuter}</th>
+                        <th><WordInputElement correctAnswer={workingObject.dative.singular.masculine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.dative.singular.feminine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.dative.singular.neuter} didSubmit={didSubmit} /></th>
                     </tr>
                     <tr>
                         <th>Accusative</th>
-                        <th><input />{didSubmit && workingObject.accusative.singular.masculine}</th>
-                        <th><input />{didSubmit && workingObject.accusative.singular.feminine}</th>
-                        <th><input />{didSubmit && workingObject.accusative.singular.neuter}</th>
+                        <th><WordInputElement correctAnswer={workingObject.accusative.singular.masculine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.accusative.singular.feminine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.accusative.singular.neuter} didSubmit={didSubmit} /></th>
                     </tr>
                     <tr>
                         <th>Ablative</th>
-                        <th><input />{didSubmit && workingObject.ablative.singular.masculine}</th>
-                        <th><input />{didSubmit && workingObject.ablative.singular.feminine}</th>
-                        <th><input />{didSubmit && workingObject.ablative.singular.neuter}</th>
+                        <th><WordInputElement correctAnswer={workingObject.ablative.singular.masculine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.ablative.singular.feminine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.ablative.singular.neuter} didSubmit={didSubmit} /></th>
                     </tr>
                 </table>
 
@@ -83,33 +81,33 @@ export function PronounChecks(props: {}) {
                     </tr>
                     <tr>
                         <th>Nominative</th>
-                        <th><input />{didSubmit && workingObject.nominative.plural.masculine}</th>
-                        <th><input />{didSubmit && workingObject.nominative.plural.feminine}</th>
-                        <th><input />{didSubmit && workingObject.nominative.plural.neuter}</th>
+                        <th><WordInputElement correctAnswer={workingObject.nominative.plural.masculine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.nominative.plural.feminine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.nominative.plural.neuter} didSubmit={didSubmit} /></th>
                     </tr>
                     <tr>
                         <th>Genitive</th>
-                        <th><input />{didSubmit && workingObject.genitive.plural.masculine}</th>
-                        <th><input />{didSubmit && workingObject.genitive.plural.feminine}</th>
-                        <th><input />{didSubmit && workingObject.genitive.plural.neuter}</th>
+                        <th><WordInputElement correctAnswer={workingObject.genitive.plural.masculine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.genitive.plural.feminine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.genitive.plural.neuter} didSubmit={didSubmit} /></th>
                     </tr>
                     <tr>
                         <th>Dative</th>
-                        <th><input />{didSubmit && workingObject.dative.plural.masculine}</th>
-                        <th><input />{didSubmit && workingObject.dative.plural.feminine}</th>
-                        <th><input />{didSubmit && workingObject.dative.plural.neuter}</th>
+                        <th><WordInputElement correctAnswer={workingObject.dative.plural.masculine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.dative.plural.feminine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.dative.plural.neuter} didSubmit={didSubmit} /></th>
                     </tr>
                     <tr>
                         <th>Accusative</th>
-                        <th><input />{didSubmit && workingObject.accusative.plural.masculine}</th>
-                        <th><input />{didSubmit && workingObject.accusative.plural.feminine}</th>
-                        <th><input />{didSubmit && workingObject.accusative.plural.neuter}</th>
+                        <th><WordInputElement correctAnswer={workingObject.accusative.plural.masculine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.accusative.plural.feminine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.accusative.plural.neuter} didSubmit={didSubmit} /></th>
                     </tr>
                     <tr>
                         <th>Ablative</th>
-                        <th><input />{didSubmit && workingObject.ablative.plural.masculine}</th>
-                        <th><input />{didSubmit && workingObject.ablative.plural.feminine}</th>
-                        <th><input />{didSubmit && workingObject.ablative.plural.neuter}</th>
+                        <th><WordInputElement correctAnswer={workingObject.ablative.plural.masculine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.ablative.plural.feminine} didSubmit={didSubmit} /></th>
+                        <th><WordInputElement correctAnswer={workingObject.ablative.plural.neuter} didSubmit={didSubmit} /></th>
                     </tr>
                 </table>
 

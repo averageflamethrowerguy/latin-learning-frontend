@@ -13,7 +13,7 @@ export function VerbChecks(props: {}) {
     
     const [verbPerson, setVerbPerson] = useState([0, 1, 2])
     const [verbNumber, setVerbNumber] = useState(["singular", "plural"])
-    const [verbTense, setVerbTense] = useState(["present", "perfect"])
+    const [verbTense, setVerbTense] = useState(["future", "future perfect"])
     const [verbMood, setVerbMood] = useState(["indicative", "subjunctive"])
     const [verbGender, setVerbGender] = useState(["masculine"])
     const [verbVoice, setVerbVoice] = useState(["active", "passive"])
@@ -204,6 +204,8 @@ export function VerbChecks(props: {}) {
                                 <ControlInputElement stringValue={"imperfect"} originalArray={verbTense} setter={setVerbTense} genericClickListener={genericClickListener} />
                                 <ControlInputElement stringValue={"perfect"} originalArray={verbTense} setter={setVerbTense} genericClickListener={genericClickListener} />
                                 <ControlInputElement stringValue={"pluperfect"} originalArray={verbTense} setter={setVerbTense} genericClickListener={genericClickListener} />
+                                <ControlInputElement stringValue={"future"} originalArray={verbTense} setter={setVerbTense} genericClickListener={genericClickListener} />
+                                <ControlInputElement stringValue={"future perfect"} originalArray={verbTense} setter={setVerbTense} genericClickListener={genericClickListener} />
                             </div>
                         </ControlPanelSection>
 
