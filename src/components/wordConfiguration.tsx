@@ -54,6 +54,14 @@ const verbFormList = [
                         singular: ["portābar", "portābāris", "portābātur"],
                         plural: ["portābāmur", "portābāminī", "portābantur"]
                     },
+                    perfect: {
+                        singular: ["portātus sum", "portātus es", "portātus est"],
+                        plural: ["portātī sumus", "portātī estis", "portātī sunt"]
+                    },
+                    pluperfect: {
+                        singular: ["portātus eram", "portātus erās", "portātus erat"],
+                        plural: ["portātī erāmus", "portātī erātis", "portātī erant"]
+                    },
                     future: {
                         singular: ["portābor", "portāberis", "portābitur"],
                         plural: ["portābimur", "portābiminī", "portābuntur"]
@@ -114,6 +122,14 @@ const verbFormList = [
                     imperfect: {
                         singular: ["docēbar", "docēbāris", "docēbātur"],
                         plural: ["docēbāmur", "docēbāminī", "docēbantur"]
+                    },
+                    perfect: {
+                        singular: ["doctus sum", "doctus es", "doctus est"],
+                        plural: ["doctī sumus", "doctī estis", "doctī sunt"]
+                    },
+                    pluperfect: {
+                        singular: ["doctus eram", "doctus erās", "doctus erat"],
+                        plural: ["doctī erāmus", "doctī erātis", "doctī erant"]
                     },
                     future: {
                         singular: ["docēbor", "docēberis", "docēbitur"],
@@ -176,6 +192,14 @@ const verbFormList = [
                         singular: ["trahēbar", "trahēbāris", "trahēbātur"],
                         plural: ["trahēbāmur", "tragēbāminī", "tragēbantur"]
                     },
+                    perfect: {
+                        singular: ["tractus sum", "tractus es", "tractus est"],
+                        plural: ["tractī sumus", "tractī estis", "tractī sunt"]
+                    },
+                    pluperfect: {
+                        singular: ["tractus eram", "tractus erās", "tractus erat"],
+                        plural: ["tractī erāmus", "tractī erātis", "tractī erant"]
+                    },
                     future: {
                         singular: ["trahar", "trahēris", "trahētur"],
                         plural: ["trahēmur", "trahēminī", "trahentur"]
@@ -236,6 +260,14 @@ const verbFormList = [
                     imperfect: {
                         singular: ["audiēbar", "audiēbāris", "audiēbātur"],
                         plural: ["audiēbāmur", "audiēbāminī", "audiēbantur"]
+                    },
+                    perfect: {
+                        singular: ["audītus sum", "audītus es", "audītus est"],
+                        plural: ["audītī sumus", "audītī estis", "audītī sunt"]
+                    },
+                    pluperfect: {
+                        singular: ["audītus eram", "audītus erās", "audītus erat"],
+                        plural: ["audītī erāmus", "audītī erātis", "audītī erant"]
                     },
                     future: {
                         singular: ["audiar", "audiēris", "audiētur"],
