@@ -25,7 +25,7 @@ export function Vocabulary() {
       latin: wordObject}]
   })))
   const [ currentIndex, setCurrentIndex ] = useState(0);
-  const [ currentChapter, setCurrentChapter ] = useState(28)
+  const [ currentChapter, setCurrentChapter ] = useState(34)
   const vocabularyAsJSONFiltered = vocabularyAsJSON.filter(word => word.Stage <= currentChapter)
 
   const updateIndex = () => {

@@ -13,7 +13,7 @@ export function VerbChecks(props: {}) {
     
     const [verbPerson, setVerbPerson] = useState([0, 1, 2])
     const [verbNumber, setVerbNumber] = useState(["singular", "plural"])
-    const [verbTense, setVerbTense] = useState(["present", "future"])
+    const [verbTense, setVerbTense] = useState(["perfect", "pluperfect"])
     const [verbMood, setVerbMood] = useState(["indicative"])
     const [verbGender, setVerbGender] = useState(["masculine"])
     const [verbVoice, setVerbVoice] = useState(["active", "passive"])
