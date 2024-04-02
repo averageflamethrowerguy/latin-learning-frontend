@@ -4,7 +4,7 @@ import {EnglishToLatinMultipleChoice} from "./EnglishToLatinMultipleChoice";
 import {LatinToEnglishMultipleChoice} from "./LatinToEnglishMultipleChoice";
 import {LatinToLatin} from "./LatinToLatin";
 import {EnglishToLatinFreeResponse} from "./EnglishToLatinFreeResponse";
-import PriorityQueue from "./PriorityQueue";
+import PriorityQueue from "../utils/PriorityQueue";
 
 type queueElement = {
   learningLevel: number;
@@ -60,7 +60,7 @@ export function Vocabulary() {
   /* END learning levels map creation */
 
   /* BEGIN creation of other variables */
-  const [ currentChapter, setCurrentChapter ] = useState(34)
+  const [ currentChapter, setCurrentChapter ] = useState(36)
   // filter down the vocab list so it doesn't test chapters we haven't learned yet
   const vocabularyAsJSONFiltered = vocabularyAsJSON.filter(word => word.Stage <= currentChapter)
   const [ currentWord, setCurrentWord ] = useState(Array.from(vocabularyAsJSONFiltered)[0]);
@@ -98,10 +98,9 @@ export function Vocabulary() {
   const findValidInNonQueue = () => {
     let tempIndex = Math.floor(Math.random()*vocabularyAsJSONFiltered.length);
     
+    // skip anything already in the queue
     if (vocabularyAsJSONFiltered.length > 0) {
-      // skip any indexes with a level of 6
-      while (learningLevelsMap[vocabularyAsJSONFiltered[tempIndex].Latin.split(", ")[0]].learningLevel >= 6
-        ||
+      while (
         learningLevelsMap[vocabularyAsJSONFiltered[tempIndex].Latin.split(", ")[0]].inPriorityQueue === true
       ) {
         tempIndex = Math.floor(Math.random()*vocabularyAsJSONFiltered.length);
@@ -119,6 +118,10 @@ export function Vocabulary() {
     const currentTime = Date.now()
     const priorityQueueOption = priorityQueue.peek() as queueElement
 
+    console.log(priorityQueueOption)
+    console.log(priorityQueueOption.nextReview)
+    console.log(priorityQueueOption.nextReview && (priorityQueueOption.nextReview < currentTime))
+
     // if we should review this element now
     if (priorityQueueOption && priorityQueueOption.nextReview && priorityQueueOption.nextReview < currentTime) {
       const newPriorityQueue = priorityQueue
@@ -134,6 +137,8 @@ export function Vocabulary() {
       setCurrentWord(findValidInNonQueue())
     }
   }
+
+  useEffect(getNext, [])
   
   let trimmedWord = currentWord.Latin.split(", ")[0]
   const currentLevel = learningLevelsMap[trimmedWord].learningLevel
@@ -160,7 +165,10 @@ export function Vocabulary() {
     let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
     let delay = learningLevelsMap[trimmedWord].delay
     if (success) {
-      delay *= delay
+      delay = 8*delay
+    }
+    else {
+      delay = 3*60*1000 // 3 min
     }
     const queueElem: queueElement = {
       learningLevel: level,

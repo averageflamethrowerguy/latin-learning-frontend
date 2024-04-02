@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import AdvancedCheckString from "utils/AdvancedCheckString";
 
 interface PropTypes {
     vocabularyList: VocabEntry[];
@@ -32,7 +33,7 @@ export function EnglishToLatinFreeResponse(props: PropTypes) {
                 style={{cursor: "pointer", backgroundColor: "blue"}}
                 onClick={() => {
                 setDidSubmit(true)
-                const isCorrectTemp = (guessedWord === props.currentWord.Latin.split(", ")[0])
+                const isCorrectTemp = (AdvancedCheckString(guessedWord, props.currentWord.Latin.split(", ")[0]))
                 setIsCorrect(isCorrectTemp)
             }}>Submit</div>
 
