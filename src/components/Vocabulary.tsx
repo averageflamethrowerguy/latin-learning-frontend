@@ -4,6 +4,15 @@ import {EnglishToLatinMultipleChoice} from "./EnglishToLatinMultipleChoice";
 import {LatinToEnglishMultipleChoice} from "./LatinToEnglishMultipleChoice";
 import {LatinToLatin} from "./LatinToLatin";
 import {EnglishToLatinFreeResponse} from "./EnglishToLatinFreeResponse";
+import PriorityQueue from "./PriorityQueue";
+
+type queueElement = {
+  learningLevel: number;
+  delay: number;
+  nextReview: number | null;
+  inPriorityQueue: boolean;
+  latin: any
+}
 
 export function Vocabulary() {
   /**
@@ -16,38 +25,112 @@ export function Vocabulary() {
    * 6. Known word
    */
   const [ learningLevelsMap, setLearningLevelsMap ] = useState(Object.fromEntries(vocabularyAsJSON.map(wordObject => {
+    // for each element in the vocabulary list
     const firstLatinWord = wordObject.Latin.split(", ")[0]
-    const storedLevel = localStorage.getItem(firstLatinWord)
+    // get it from localstorage
+
+    const rawObject = JSON.parse(localStorage.getItem(firstLatinWord) || '')
+    let storedLevel = rawObject.storedLevel
+    let delay = rawObject.delay
+    let nextReview = rawObject.nextReview
+
+    // set it so it has a delay if not previously set
+    if (!storedLevel) {
+      storedLevel = rawObject
+      delay = 5 * 60 * 1000 // 5 minute timeout
+      nextReview = null
+    }
     // if (storedLevel) {
     //   console.log(storedLevel)
     // }
-    return [firstLatinWord, {learningLevel: storedLevel ? Number(storedLevel) : 1,
-      latin: wordObject}]
+    return [firstLatinWord, {
+      learningLevel: storedLevel ? Number(storedLevel) : 1,
+      delay,
+      nextReview,
+      inPriorityQueue: false,
+      latin: wordObject
+    }]
   })))
-  const [ currentIndex, setCurrentIndex ] = useState(0);
-  const [ currentChapter, setCurrentChapter ] = useState(34)
-  const vocabularyAsJSONFiltered = vocabularyAsJSON.filter(word => word.Stage <= currentChapter)
+  /* END learning levels map creation */
 
-  const updateIndex = () => {
+  /* BEGIN creation of other variables */
+  const [ currentChapter, setCurrentChapter ] = useState(34)
+  // filter down the vocab list so it doesn't test chapters we haven't learned yet
+  const vocabularyAsJSONFiltered = vocabularyAsJSON.filter(word => word.Stage <= currentChapter)
+  const [ currentWord, setCurrentWord ] = useState(Array.from(vocabularyAsJSONFiltered)[0]);
+
+  const [ priorityQueue, setPriorityQueue ] = useState(new PriorityQueue(
+    vocabularyAsJSONFiltered.map(wordObject => {
+      const firstLatinWord = wordObject.Latin.split(", ")[0]
+      // load it from the learningLevelsMap
+      const info = learningLevelsMap[firstLatinWord]
+  
+      // just return Null if we don't have a nextReview
+      if (info.nextReview === null) {
+        return null
+      }
+      else {
+        // update the learning levels map with the fact that we have a priority queuing location
+        const newLearningLevelsMap = learningLevelsMap
+        newLearningLevelsMap[firstLatinWord].inPriorityQueue = true
+        setLearningLevelsMap(newLearningLevelsMap)
+        return {priority: info.nextReview as number, value: info}
+      }
+      // filter out any elements without priority
+    }).filter(elem => elem !== null) as {priority: number, value: any}[])
+  )
+  /* END creation of other variables */
+
+  /******* findValidInNonQueue *******/
+  /*
+    Randomly selects a valid element that is not in the queue 
+  */
+  const findValidInNonQueue = () => {
     let tempIndex = Math.floor(Math.random()*vocabularyAsJSONFiltered.length);
+    
     if (vocabularyAsJSONFiltered.length > 0) {
       // skip any indexes with a level of 6
-      while (learningLevelsMap[
-        vocabularyAsJSONFiltered[tempIndex].Latin.split(", ")[0]].learningLevel >= 6
+      while (learningLevelsMap[vocabularyAsJSONFiltered[tempIndex].Latin.split(", ")[0]].learningLevel >= 6
+        ||
+        learningLevelsMap[vocabularyAsJSONFiltered[tempIndex].Latin.split(", ")[0]].inPriorityQueue === true
       ) {
         tempIndex = Math.floor(Math.random()*vocabularyAsJSONFiltered.length);
       }
     }
-    
-    setCurrentIndex(tempIndex)
+
+    return vocabularyAsJSONFiltered[tempIndex]
   }
-  
+
+  /******* getNext ********/
+  /*
+    Selects either the next element in the queue or a valid element not in the queue
+  */
+  const getNext = () => {
+    const currentTime = Date.now()
+    const priorityQueueOption = priorityQueue.peek() as queueElement
+
+    // if we should review this element now
+    if (priorityQueueOption.nextReview && priorityQueueOption.nextReview < currentTime) {
+      const newPriorityQueue = priorityQueue
+      // remove the element from the queue
+      newPriorityQueue.pop()
+      // force the queue to propagate 
+      setPriorityQueue(newPriorityQueue)
+      
+      setCurrentWord(priorityQueueOption.latin)
+    }
+    // otherwise, find a valid element not in the queue
+    else {
+      setCurrentWord(findValidInNonQueue())
+    }
+  }
+
   useEffect(() => {
-    updateIndex()
+    getNext()
   }, [])
   
-  const currentWord = vocabularyAsJSONFiltered[currentIndex]
-  const currentLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel
+  let trimmedWord = currentWord.Latin.split(", ")[0]
+  const currentLevel = learningLevelsMap[trimmedWord].learningLevel
   
   // console.log("before switch")
   
@@ -61,10 +144,38 @@ export function Vocabulary() {
     }
   }
 
-  const updateLearningLevel = (level: number) => {
+  /***** updateLearningLevel ******/
+  /*
+    1. updates learning level
+    2. sets delay
+    3. sets timeout
+  */
+  const updateLearningLevel = (level: number, success: boolean) => {
     let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
-    newLearningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel = level
-    localStorage.setItem(currentWord.Latin.split(", ")[0], `${level}`)
+    let delay = learningLevelsMap[trimmedWord].delay
+    if (success) {
+      delay *= delay
+    }
+    const queueElem: queueElement = {
+      learningLevel: level,
+      delay,
+      nextReview: Date.now() + (delay as number),
+      inPriorityQueue: true,
+      latin: currentWord
+    }
+    newLearningLevelsMap[trimmedWord] = queueElem
+
+    // set the priority queue
+    let newPriorityQueue = priorityQueue
+    newPriorityQueue.add(queueElem.nextReview as number, queueElem)
+
+    // set the local storage
+    localStorage.setItem(trimmedWord, JSON.stringify({
+      storedLevel: level,
+      delay,
+      nextReview: queueElem.nextReview
+    }))
+    // set the learning levels map
     setLearningLevelsMap(newLearningLevelsMap)
   }
   
@@ -73,54 +184,54 @@ export function Vocabulary() {
     case 1:
       componentToRender = <EnglishToLatinMultipleChoice vocabularyList={vocabularyAsJSONFiltered} currentWord={currentWord} updateLevel={
         (success) => {
-          let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + (success ? 1 : 0)
-          updateLearningLevel(newLearningLevel)
+          let newLearningLevel = learningLevelsMap[trimmedWord].learningLevel + (success ? 1 : 0)
+          updateLearningLevel(newLearningLevel, success)
         }
-      } updateCurrentIndex={updateIndex} />
+      } updateCurrentIndex={getNext} />
       break;
     case 2:
       componentToRender = <LatinToEnglishMultipleChoice vocabularyList={vocabularyAsJSONFiltered} currentWord={currentWord} updateLevel={
         (success) => {
-          let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + (success ? 1 : 0)
-          updateLearningLevel(newLearningLevel)
+          let newLearningLevel = learningLevelsMap[trimmedWord].learningLevel + (success ? 1 : 0)
+          updateLearningLevel(newLearningLevel, success)
         }
-      } updateCurrentIndex={updateIndex} />
+      } updateCurrentIndex={getNext} />
       break;
     case 3:
       // if (currentWord.Latin.split(", ").length > 1) {
       //   componentToRender = <LatinToLatin vocabularyList={vocabularyAsJSONFiltered} currentWord={currentWord} updateLevel={
       //     (success) => {
-      //       let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + (success ? 1 : 0)
-      //       updateLearningLevel(newLearningLevel)
+      //       let newLearningLevel = learningLevelsMap[trimmedWord].learningLevel + (success ? 1 : 0)
+      //       updateLearningLevel(newLearningLevel, success)
       //     }
       //   } updateCurrentIndex={updateIndex} />
       // }
       // else {
         componentToRender = <EnglishToLatinFreeResponse vocabularyList={vocabularyAsJSONFiltered} currentWord={currentWord} updateLevel={
           (success) => {
-            let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + (success ? 1 : 0)
-            updateLearningLevel(newLearningLevel)
+            let newLearningLevel = learningLevelsMap[trimmedWord].learningLevel + (success ? 1 : 0)
+            updateLearningLevel(newLearningLevel, success)
           }
-        } updateCurrentIndex={updateIndex} />
+        } updateCurrentIndex={getNext} />
       // }
       
       break;
     case 4:
       componentToRender = <EnglishToLatinFreeResponse vocabularyList={vocabularyAsJSONFiltered} currentWord={currentWord} updateLevel={
         (success) => {
-          let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + (success ? 1 : 0)
-          updateLearningLevel(newLearningLevel)
+          let newLearningLevel = learningLevelsMap[trimmedWord].learningLevel + (success ? 1 : 0)
+          updateLearningLevel(newLearningLevel, success)
         }
-      } updateCurrentIndex={updateIndex} />
+      } updateCurrentIndex={getNext} />
       break;
     default:
       componentToRender = <EnglishToLatinFreeResponse vocabularyList={vocabularyAsJSONFiltered} currentWord={currentWord} updateLevel={
         (success) => {
           let updateAmount = success ? 1 : -1
-          let newLearningLevel = learningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel + updateAmount
+          let newLearningLevel = learningLevelsMap[trimmedWord].learningLevel + updateAmount
           updateLearningLevel(newLearningLevel)
         }
-      } updateCurrentIndex={updateIndex} />
+      } updateCurrentIndex={getNext} />
       break;
   }
   
@@ -149,10 +260,10 @@ export function Vocabulary() {
           onClick={() => {
             let newLearningLevelsMap = Object.fromEntries(Object.entries(learningLevelsMap));
             let newLearningLevel = 6
-            newLearningLevelsMap[currentWord.Latin.split(", ")[0]].learningLevel = newLearningLevel
-            localStorage.setItem(currentWord.Latin.split(", ")[0], `${newLearningLevel}`)
+            newLearningLevelsMap[trimmedWord].learningLevel = newLearningLevel
+            updateLearningLevel(newLearningLevel, true)
             setLearningLevelsMap(newLearningLevelsMap)
-            updateIndex()
+            getNext()
           }}
         >
           I know this word
