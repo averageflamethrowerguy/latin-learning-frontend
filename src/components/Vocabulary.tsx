@@ -29,7 +29,13 @@ export function Vocabulary() {
     const firstLatinWord = wordObject.Latin.split(", ")[0]
     // get it from localstorage
 
-    const rawObject = JSON.parse(localStorage.getItem(firstLatinWord) || '')
+    let rawObject = null
+    try {
+      rawObject = JSON.parse(localStorage.getItem(firstLatinWord) || '')
+    }
+    catch (err) {
+      rawObject = 1
+    }
     let storedLevel = rawObject.storedLevel
     let delay = rawObject.delay
     let nextReview = rawObject.nextReview
@@ -47,7 +53,7 @@ export function Vocabulary() {
       learningLevel: storedLevel ? Number(storedLevel) : 1,
       delay,
       nextReview,
-      inPriorityQueue: false,
+      inPriorityQueue: nextReview !== null,
       latin: wordObject
     }]
   })))
@@ -60,7 +66,9 @@ export function Vocabulary() {
   const [ currentWord, setCurrentWord ] = useState(Array.from(vocabularyAsJSONFiltered)[0]);
 
   const [ priorityQueue, setPriorityQueue ] = useState(new PriorityQueue(
-    vocabularyAsJSONFiltered.map(wordObject => {
+    (() => {
+    const newLearningLevelsMap = learningLevelsMap
+    const list = vocabularyAsJSONFiltered.map(wordObject => {
       const firstLatinWord = wordObject.Latin.split(", ")[0]
       // load it from the learningLevelsMap
       const info = learningLevelsMap[firstLatinWord]
@@ -71,14 +79,16 @@ export function Vocabulary() {
       }
       else {
         // update the learning levels map with the fact that we have a priority queuing location
-        const newLearningLevelsMap = learningLevelsMap
         newLearningLevelsMap[firstLatinWord].inPriorityQueue = true
-        setLearningLevelsMap(newLearningLevelsMap)
         return {priority: info.nextReview as number, value: info}
       }
       // filter out any elements without priority
-    }).filter(elem => elem !== null) as {priority: number, value: any}[])
-  )
+    }).filter(elem => elem !== null) as {priority: number, value: any}[]
+
+    // finally set the learning levels map.
+    return list
+  })()
+  ))
   /* END creation of other variables */
 
   /******* findValidInNonQueue *******/
@@ -110,7 +120,7 @@ export function Vocabulary() {
     const priorityQueueOption = priorityQueue.peek() as queueElement
 
     // if we should review this element now
-    if (priorityQueueOption.nextReview && priorityQueueOption.nextReview < currentTime) {
+    if (priorityQueueOption && priorityQueueOption.nextReview && priorityQueueOption.nextReview < currentTime) {
       const newPriorityQueue = priorityQueue
       // remove the element from the queue
       newPriorityQueue.pop()
@@ -124,10 +134,6 @@ export function Vocabulary() {
       setCurrentWord(findValidInNonQueue())
     }
   }
-
-  useEffect(() => {
-    getNext()
-  }, [])
   
   let trimmedWord = currentWord.Latin.split(", ")[0]
   const currentLevel = learningLevelsMap[trimmedWord].learningLevel
@@ -229,7 +235,7 @@ export function Vocabulary() {
         (success) => {
           let updateAmount = success ? 1 : -1
           let newLearningLevel = learningLevelsMap[trimmedWord].learningLevel + updateAmount
-          updateLearningLevel(newLearningLevel)
+          updateLearningLevel(newLearningLevel, success)
         }
       } updateCurrentIndex={getNext} />
       break;
