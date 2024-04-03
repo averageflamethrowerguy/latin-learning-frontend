@@ -32,6 +32,10 @@ const verbFormList = [
                     infinitive: "portāre"
                 },
                 subjunctive: {
+                    present: {
+                        singular: ["portem", "portēs", "portet"],
+                        plural: ["portēmus", "portētis", "portent"]
+                    },
                     imperfect: {
                         singular: ["portārem", "portārēs", "portāret"],
                         plural: ["portārēmus", "portārētis", "portārent"]
@@ -101,6 +105,10 @@ const verbFormList = [
                     infinitive: "docēre"
                 },
                 subjunctive: {
+                    present: {
+                        singular: ["doceam", "doceās", "doceat"],
+                        plural: ["doceāmus", "doceātis", "doceant"]
+                    },
                     imperfect: {
                         singular: ["docērem", "docērēs", "docēret"],
                         plural: ["docērēmus", "docērētis", "docērent"]
@@ -170,6 +178,10 @@ const verbFormList = [
                     infinitive: "trahere"
                 },
                 subjunctive: {
+                    present: {
+                        singular: ["traham", "trahās", "trahātur"],
+                        plural: ["trahāmur", "trahāminī", "trahantur"]
+                    },
                     imperfect: {
                         singular: ["traherem", "traherēs", "traheret"],
                         plural: ["traherēmus", "traherētis", "traherent"]
@@ -239,6 +251,10 @@ const verbFormList = [
                     infinitive: "audīre"
                 },
                 subjunctive: {
+                    present: {
+                        singular: ["audiam", "audiās", "audiat"],
+                        plural: ["audiāmus", "audiātis", "audiant"]
+                    },
                     imperfect: {
                         singular: ["audīrem", "audīrēs", "audīret"],
                         plural: ["audīrēmus", "audīrētis", "audīrent"]
