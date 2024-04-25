@@ -33,14 +33,14 @@ export function EnglishToLatinFreeResponse(props: PropTypes) {
                 style={{cursor: "pointer", backgroundColor: "blue"}}
                 onClick={() => {
                 setDidSubmit(true)
-                const isCorrectTemp = (AdvancedCheckString(guessedWord, props.currentWord.Latin.split(", ")[0]))
+                const isCorrectTemp = (AdvancedCheckString(guessedWord, props.currentWord.Latin.split(", ")[0].split(": ")[0]))
                 setIsCorrect(isCorrectTemp)
             }}>Submit</div>
 
             {
                 didSubmit &&
                 <div>
-                    <div>{props.currentWord.Latin.split(", ")[0]}</div>
+                    <div>{props.currentWord.Latin.split(", ")[0].split(": ")[0]}</div>
                     <div
                         style={{cursor: 'pointer', color: "green"}}
                         onClick={() => {

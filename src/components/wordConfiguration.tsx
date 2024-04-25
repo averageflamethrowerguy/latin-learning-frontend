@@ -36,6 +36,10 @@ const verbFormList = [
                         singular: ["portem", "portēs", "portet"],
                         plural: ["portēmus", "portētis", "portent"]
                     },
+                    perfect: {
+                        singular: ["portāverim", "portāveris", "portāverit"],
+                        plural: ["portāverimus", "portāveritis", "portāverint"]
+                    },
                     imperfect: {
                         singular: ["portārem", "portārēs", "portāret"],
                         plural: ["portārēmus", "portārētis", "portārent"]
@@ -70,6 +74,16 @@ const verbFormList = [
                         singular: ["portābor", "portāberis", "portābitur"],
                         plural: ["portābimur", "portābiminī", "portābuntur"]
                     },
+                },
+                subjunctive: {
+                    perfect: {
+                        singular: ["portātus sim", "portātus sis", "portātus sit"],
+                        plural: ["portātī simus", "portātī sitis", "portātī sint"]
+                    },
+                    pluperfect: {
+                        singular: ["portātus essem", "portātus esses", "portātus esset"],
+                        plural: ["portātī essemus", "portāti essetis", "portātī essent"]
+                    }
                 }
             }
         }
@@ -109,6 +123,10 @@ const verbFormList = [
                         singular: ["doceam", "doceās", "doceat"],
                         plural: ["doceāmus", "doceātis", "doceant"]
                     },
+                    perfect: {
+                        singular: ["docuerim", "docueris", "docuerit"],
+                        plural: ["docuerimus", "docueritis", "docuerint"]
+                    },
                     imperfect: {
                         singular: ["docērem", "docērēs", "docēret"],
                         plural: ["docērēmus", "docērētis", "docērent"]
@@ -143,6 +161,16 @@ const verbFormList = [
                         singular: ["docēbor", "docēberis", "docēbitur"],
                         plural: ["docēbimur", "docēbiminī", "docēbuntur"]
                     },
+                },
+                subjunctive: {
+                    perfect: {
+                        singular: ["doctus sim", "doctus sis", "doctus sit"],
+                        plural: ["doctī simus", "doctī sitis", "doctī sint"]
+                    },
+                    pluperfect: {
+                        singular: ["doctus essem", "doctus esses", "doctus esset"],
+                        plural: ["doctī essemus", "doctī essetis", "doctī essent"]
+                    }
                 }
             }
         }
@@ -179,8 +207,12 @@ const verbFormList = [
                 },
                 subjunctive: {
                     present: {
-                        singular: ["traham", "trahās", "trahātur"],
-                        plural: ["trahāmur", "trahāminī", "trahantur"]
+                        singular: ["traham", "trahās", "trahat"],
+                        plural: ["trahāmus", "trahātis", "trahant"]
+                    },
+                    perfect: {
+                        singular: ["traxerim", "traxeris", "traxerit"],
+                        plural: ["traxerimus", "traxeritis", "traxerint"]
                     },
                     imperfect: {
                         singular: ["traherem", "traherēs", "traheret"],
@@ -216,6 +248,16 @@ const verbFormList = [
                         singular: ["trahar", "trahēris", "trahētur"],
                         plural: ["trahēmur", "trahēminī", "trahentur"]
                     },
+                },
+                subjunctive: {
+                    perfect: {
+                        singular: ["tractus sim", "tractus sis", "tractus sit"],
+                        plural: ["tractī simus", "tractī sitis", "tractī sint"]
+                    },
+                    pluperfect: {
+                        singular: ["tractus essem", "tractus esses", "tractus esset"],
+                        plural: ["tractī essemus", "tractī essetis", "tractī essent"]
+                    }
                 }
             }
         }
@@ -255,6 +297,10 @@ const verbFormList = [
                         singular: ["audiam", "audiās", "audiat"],
                         plural: ["audiāmus", "audiātis", "audiant"]
                     },
+                    perfect: {
+                        singular: ["audiverim", "audiveris", "audiverit"],
+                        plural: ["audiverimus", "audiveritis", "audiverint"]
+                    },
                     imperfect: {
                         singular: ["audīrem", "audīrēs", "audīret"],
                         plural: ["audīrēmus", "audīrētis", "audīrent"]
@@ -289,6 +335,16 @@ const verbFormList = [
                         singular: ["audiar", "audiēris", "audiētur"],
                         plural: ["audiēmur", "audiēminī", "audientur"]
                     },
+                },
+                subjunctive: {
+                    perfect: {
+                        singular: ["auditus sim", "auditus sis", "auditus sit"],
+                        plural: ["auditī simus", "auditī sitis", "auditī sint"]
+                    },
+                    pluperfect: {
+                        singular: ["auditus essem", "auditus esses", "auditus esset"],
+                        plural: ["auditī essemus", "auditī essetis", "auditī essent"]
+                    }
                 }
             }
         }
@@ -699,6 +755,30 @@ const nounFormList = [
         ablative: {
             singular: "nōmine",
             plural: "nōminibus"
+        }
+    },
+
+    // this is a 3rd-declension neuter i-stem
+    {
+        nominative: {
+            singular: "mare",
+            plural: "maria"
+        },
+        genitive: {
+            singular: "maris",
+            plural: "marium"
+        },
+        dative: {
+            singular: "marī",
+            plural: "maribus"
+        },
+        accusative: {
+            singular: "mare",
+            plural: "maria"
+        },
+        ablative: {
+            singular: "marī",
+            plural: "maribus"
         }
     },
 

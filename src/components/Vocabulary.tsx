@@ -60,7 +60,7 @@ export function Vocabulary() {
   /* END learning levels map creation */
 
   /* BEGIN creation of other variables */
-  const [ currentChapter, setCurrentChapter ] = useState(36)
+  const [ currentChapter, setCurrentChapter ] = useState(40)
   // filter down the vocab list so it doesn't test chapters we haven't learned yet
   const vocabularyAsJSONFiltered = vocabularyAsJSON.filter(word => word.Stage <= currentChapter)
   const [ currentWord, setCurrentWord ] = useState(Array.from(vocabularyAsJSONFiltered)[0]);

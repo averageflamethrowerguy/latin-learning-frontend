@@ -13,10 +13,10 @@ export function VerbChecks(props: {}) {
     
     const [verbPerson, setVerbPerson] = useState([0, 1, 2])
     const [verbNumber, setVerbNumber] = useState(["singular", "plural"])
-    const [verbTense, setVerbTense] = useState(["present", "future"])
+    const [verbTense, setVerbTense] = useState(["perfect", "pluperfect" ,"future perfect"])
     const [verbMood, setVerbMood] = useState(["indicative", "subjunctive"])
     const [verbGender, setVerbGender] = useState(["masculine"])
-    const [verbVoice, setVerbVoice] = useState(["active"])
+    const [verbVoice, setVerbVoice] = useState(["active", "passive"])
     
     const genericClickListener = (modifyString: string, unmodifiedArray: string[], setter: any, remove: boolean) => {
         let newArray = [...unmodifiedArray]
